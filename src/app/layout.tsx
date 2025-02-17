@@ -1,6 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import { ReactNode } from "react";
 
+import { CursorImageProvider } from "@/hooks/useCursorImage";
+
 import "./globals.css";
 
 const geistSans = Geist({
@@ -23,7 +25,7 @@ export default function RootLayout({
       <body
         className={`${geistMono.className} ${geistSans.variable} size-full antialiased`}
       >
-        {children}
+        <CursorImageProvider>{children}</CursorImageProvider>
       </body>
     </html>
   );
