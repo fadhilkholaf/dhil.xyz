@@ -11,7 +11,10 @@ import {
 } from "motion/react";
 
 const cursorImageVariants: Variants = {
-  initial: { scale: 0, opacity: 0 },
+  initial: {
+    scale: 0,
+    opacity: 0,
+  },
   animate: {
     scale: 1,
     opacity: 1,
@@ -76,7 +79,7 @@ const CursorImage = ({ cursorImage }: { cursorImage: string | null }) => {
       initial="initial"
       animate={cursorImage ? "animate" : "initial"}
       variants={cursorImageVariants}
-      className="ease-out-expo pointer-events-none fixed h-[20vw] min-h-[200px] w-[20vw] min-w-[200px] translate-x-[25px] translate-y-[25px] overflow-hidden transition-all duration-[500ms]"
+      className="ease-out-expo pointer-events-none fixed h-[169px] w-[300px] translate-x-[25px] translate-y-[25px] overflow-hidden transition-all duration-[500ms]"
       style={{ x, y, skewX: mX, skewY: mY }}
     >
       <AnimatePresence mode="popLayout">
@@ -91,10 +94,10 @@ const CursorImage = ({ cursorImage }: { cursorImage: string | null }) => {
             <Image
               src={cursorImage}
               alt="Preview"
-              width={500}
-              height={500}
+              width={300}
+              height={169}
               priority
-              className="aspect-square h-full w-full object-cover"
+              className="aspect-video object-cover"
             />
           </motion.div>
         )}
