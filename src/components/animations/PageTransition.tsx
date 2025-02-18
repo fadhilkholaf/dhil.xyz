@@ -10,6 +10,7 @@ const pageTransitionVariants: Variants = {
   animate: {
     transition: { staggerChildren: 0.025 },
   },
+  idle: {},
   exit: {
     transition: { staggerChildren: 0.025 },
   },
@@ -17,21 +18,26 @@ const pageTransitionVariants: Variants = {
 
 const transitionVariants: Variants = {
   initial: {
-    scaleX: 0,
-    originX: 0,
+    scaleX: 1,
+    originX: 1,
     transition: { duration: 0 },
   },
   animate: {
-    scaleX: 1,
-    originX: 0,
-    transition: { type: "tween", duration: 0.5, ease: [0.65, 0, 0.35, 1] },
-    transitionEnd: { originX: 1 },
-  },
-  exit: {
     scaleX: 0,
     originX: 1,
     transition: { type: "tween", duration: 0.5, ease: [0.65, 0, 0.35, 1] },
     transitionEnd: { originX: 0 },
+  },
+  idle: {
+    scaleX: 0,
+    originX: 0,
+    transition: { duration: 0 },
+  },
+  exit: {
+    scaleX: 1,
+    originX: 0,
+    transition: { type: "tween", duration: 0.5, ease: [0.65, 0, 0.35, 1] },
+    transitionEnd: { originX: 1 },
   },
 };
 
@@ -43,16 +49,10 @@ const PageTransition = ({
   return (
     <motion.main
       initial="initial"
-      animate={
-        pageTransition === "animate"
-          ? "animate"
-          : pageTransition === "exit"
-            ? "exit"
-            : "initial"
-      }
+      animate={pageTransition}
       variants={pageTransitionVariants}
       className={cn("fixed z-50 flex size-full flex-col", {
-        hidden: pageTransition === "initial" || pageTransition === null,
+        hidden: pageTransition === "idle",
       })}
     >
       {Array.from({ length: 10 }).map((_, i) => (

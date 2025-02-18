@@ -1,8 +1,8 @@
 import { Dispatch, SetStateAction } from "react";
 
 export interface PageTransitionContextInterface {
-  pageTransition: "initial" | "animate" | "exit" | null;
+  pageTransition: "initial" | "animate" | "idle" | "exit";
   setPageTransition: Dispatch<
-    SetStateAction<"initial" | "animate" | "exit" | null>
+    SetStateAction<"initial" | "animate" | "idle" | "exit">
   >;
 }

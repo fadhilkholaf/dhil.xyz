@@ -30,7 +30,7 @@ const PageTransitionLink = ({
     if (href === pathname) {
       router.refresh();
     } else {
-      setPageTransition("animate");
+      setPageTransition("exit");
 
       await sleep(750);
 

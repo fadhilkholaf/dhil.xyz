@@ -15,7 +15,7 @@ export const PageTransitionProvider = ({
   children: ReactNode;
 }) => {
   const [pageTransition, setPageTransition] =
-    useState<PageTransitionContextInterface["pageTransition"]>(null);
+    useState<PageTransitionContextInterface["pageTransition"]>("initial");
 
   return (
     <PageTransitionContext.Provider

@@ -5,7 +5,7 @@ import PageTransitionWrapper from "@/components/wrappers/PageTransitionWrapper";
 const page = async ({ params }: { params: Promise<{ id: string }> }) => {
   const { id } = await params;
 
-  await new Promise((resolve) => setTimeout(resolve, 10000));
+  await new Promise((resolve) => setTimeout(resolve, 3000));
 
   return (
     <PageTransitionWrapper>

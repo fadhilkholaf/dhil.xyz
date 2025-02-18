@@ -4,15 +4,15 @@ import PageTransitionLink from "./PageTransitionLink";
 
 const Navbar = () => {
   return (
-    <nav className="fixed top-0 left-0 z-40 flex gap-4 bg-white">
+    <nav className="fixed top-0 left-0 z-40 flex gap-8 bg-white">
       <PageTransitionLink href="/">Home</PageTransitionLink>
       <PageTransitionLink href="/work">Work</PageTransitionLink>
       <PageTransitionLink href="/work/detail">Work Detail</PageTransitionLink>
       <PageTransitionLink href="/work/detail/amba">
-        Work Detail
+        Delayed 3s server components
       </PageTransitionLink>
       <PageTransitionLink href="/work/detail/tukam">
-        Work Detail
+        Delayed 3s server components
       </PageTransitionLink>
     </nav>
   );
