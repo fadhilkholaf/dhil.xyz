@@ -7,6 +7,12 @@ settings:
 importers:
   .:
     dependencies:
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+      lenis:
+        specifier: ^1.1.20
+        version: 1.1.20(react@19.0.0)
       motion:
         specifier: ^12.4.3
         version: 12.4.3(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -19,6 +25,9 @@ importers:
       react-dom:
         specifier: ^19.0.0
         version: 19.0.0(react@19.0.0)
+      tailwind-merge:
+        specifier: ^3.0.1
+        version: 3.0.1
     devDependencies:
       "@eslint/eslintrc":
         specifier: ^3
@@ -906,6 +915,13 @@ packages:
       {
         integrity: sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA==,
       }
+
+  clsx@2.1.1:
+    resolution:
+      {
+        integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==,
+      }
+    engines: { node: ">=6" }
 
   color-convert@2.0.1:
     resolution:
@@ -1840,6 +1856,20 @@ packages:
       }
     engines: { node: ">=0.10" }
 
+  lenis@1.1.20:
+    resolution:
+      {
+        integrity: sha512-UE64mlJEN4W8DWP2tfHzPzygk94Q2BhjzeG/YHWoyeMJ2Fd6XziBCNN+IvHwmB4GkmKIYxgr0+TvRYTSAMTMFA==,
+      }
+    peerDependencies:
+      react: ">=17.0.0"
+      vue: ">=3.0.0"
+    peerDependenciesMeta:
+      react:
+        optional: true
+      vue:
+        optional: true
+
   levn@0.4.1:
     resolution:
       {
@@ -2620,6 +2650,12 @@ packages:
       }
     engines: { node: ">= 0.4" }
 
+  tailwind-merge@3.0.1:
+    resolution:
+      {
+        integrity: sha512-AvzE8FmSoXC7nC+oU5GlQJbip2UO7tmOhOfQyOmPhrStOGXHU08j8mZEHZ4BmCqY5dWTCo4ClWkNyRNx1wpT0g==,
+      }
+
   tailwindcss@4.0.0:
     resolution:
       {
@@ -3282,6 +3318,8 @@ snapshots:
       supports-color: 7.2.0
 
   client-only@0.0.1: {}
+
+  clsx@2.1.1: {}
 
   color-convert@2.0.1:
     dependencies:
@@ -3993,6 +4031,10 @@ snapshots:
     dependencies:
       language-subtag-registry: 0.3.23
 
+  lenis@1.1.20(react@19.0.0):
+    optionalDependencies:
+      react: 19.0.0
+
   levn@0.4.1:
     dependencies:
       prelude-ls: 1.2.1
@@ -4463,6 +4505,8 @@ snapshots:
       has-flag: 4.0.0
 
   supports-preserve-symlinks-flag@1.0.0: {}
+
+  tailwind-merge@3.0.1: {}
 
   tailwindcss@4.0.0: {}
 

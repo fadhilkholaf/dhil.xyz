@@ -3,5 +3,36 @@
 @theme {
   --font-sans: "Geist", "Geist Fallback";
   --font-mono: "Geist Mono", "Geist Mono Fallback";
-  --ease-out-expo: cubic-bezier(0.33, 1, 0.68, 1);
+
+  --ease-out-cubic: cubic-bezier(0.33, 1, 0.68, 1);
+
+  --animate-brightness: brightness 1s ease-in-out infinite;
+
+  @keyframes brightness {
+    0%,
+    100% {
+      filter: brightness(1);
+    }
+    50% {
+      filter: brightness(1.15);
+    }
+  }
+}
+
+@layer base {
+  ::selection {
+    @apply bg-gray-800 text-pink-200;
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-2 bg-pink-200;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-pink-200;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-800;
+  }
 }

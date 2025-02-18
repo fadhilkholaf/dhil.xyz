@@ -2,7 +2,7 @@
 
 import { createContext, ReactNode, useContext, useState } from "react";
 
-import CursorImage from "@/components/CursorImage";
+import CursorImage from "@/components/animations/CursorImage";
 import { CursorImageContextInterface } from "@/types/cursor-image";
 
 const CursorImageContext = createContext<
@@ -10,7 +10,8 @@ const CursorImageContext = createContext<
 >(undefined);
 
 export const CursorImageProvider = ({ children }: { children: ReactNode }) => {
-  const [cursorImage, setCursorImage] = useState<string | null>(null);
+  const [cursorImage, setCursorImage] =
+    useState<CursorImageContextInterface["cursorImage"]>(null);
 
   return (
     <CursorImageContext.Provider value={{ cursorImage, setCursorImage }}>
