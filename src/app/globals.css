@@ -14,12 +14,16 @@
       filter: brightness(1);
     }
     50% {
-      filter: brightness(1.15);
+      filter: brightness(1.25);
     }
   }
 }
 
 @layer base {
+  .layout {
+    @apply mx-auto size-full max-w-5xl p-8;
+  }
+
   ::selection {
     @apply bg-gray-800 text-pink-200;
   }

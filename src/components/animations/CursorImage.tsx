@@ -50,12 +50,8 @@ const CursorImage = ({ cursorImage }: { cursorImage: string | null }) => {
 
       x.set(e.clientX);
       y.set(e.clientY);
-      mX.set(
-        Math.max(-30, Math.min(30, e.movementX * e.movementY > 0 ? 5 : -5)),
-      );
-      mY.set(
-        Math.max(-30, Math.min(30, e.movementY * e.movementX > 0 ? 5 : -5)),
-      );
+      mX.set(Math.max(-30, Math.min(30, e.movementX)));
+      mY.set(Math.max(-30, Math.min(30, e.movementY)));
 
       movementTimeout = setTimeout(() => {
         mX.set(0);
