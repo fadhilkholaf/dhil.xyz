@@ -7,6 +7,14 @@ const menus: { label: string; href: string }[] = [
     label: "Home",
     href: "/",
   },
+  {
+    label: "Projects",
+    href: "/projects",
+  },
+  {
+    label: "About",
+    href: "/about",
+  },
 ];
 
 const Navbar = () => {
@@ -17,14 +25,6 @@ const Navbar = () => {
           {menu.label}
         </PageTransitionLink>
       ))}
-      <PageTransitionLink href="/work">Work</PageTransitionLink>
-      <PageTransitionLink href="/work/detail">Work Detail</PageTransitionLink>
-      <PageTransitionLink href="/work/detail/amba">
-        Delayed 3s server components
-      </PageTransitionLink>
-      <PageTransitionLink href="/work/detail/tukam">
-        Delayed 3s server components
-      </PageTransitionLink>
     </nav>
   );
 };

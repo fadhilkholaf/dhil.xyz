@@ -8,11 +8,11 @@ import { cn } from "@/utils/utils";
 const pageTransitionVariants: Variants = {
   initial: {},
   animate: {
-    transition: { staggerChildren: 0.025 },
+    transition: { staggerChildren: 0.05 },
   },
   idle: {},
   exit: {
-    transition: { staggerChildren: 0.025 },
+    transition: { staggerChildren: 0.05 },
   },
 };
 
@@ -44,11 +44,11 @@ const transitionVariants: Variants = {
 const textVariants: Variants = {
   initial: {},
   animate: {
-    transition: { staggerChildren: -0.025 },
+    transition: { staggerChildren: -0.05 },
   },
   idle: {},
   exit: {
-    transition: { staggerChildren: -0.025 },
+    transition: { staggerChildren: -0.05 },
   },
 };
 
