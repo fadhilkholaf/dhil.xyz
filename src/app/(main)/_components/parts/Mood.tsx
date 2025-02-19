@@ -30,6 +30,7 @@ const Mood = ({ data }: { data: SpotifyCurrentlyPlayingInterface | false }) => {
           {data && (
             <Link
               href={data.url}
+              target="_blank"
               onPointerEnter={() =>
                 setCursorImage(data ? data.image : "/images/home/lily.jpg")
               }

@@ -33,8 +33,16 @@ const socials: { title: string; href: string }[] = [
 
 const attributions: { title: string; href: string }[] = [
   {
-    title: "Awwwards",
-    href: "https://awwwards.com/fadhilkholaf",
+    title: "Motion",
+    href: "https://motion.dev",
+  },
+  {
+    title: "Next.js",
+    href: "https://nextjs.org",
+  },
+  {
+    title: "Vercel",
+    href: "https://vercel.com",
   },
 ];
 
@@ -67,6 +75,7 @@ const Footer = () => {
             {socials.map((social, i) => (
               <li key={i}>
                 <Link
+                  target="_blank"
                   href={social.href}
                   className="before:ease-out-cubic relative inline-block w-full no-underline before:absolute before:bottom-0 before:left-0 before:h-px before:w-full before:origin-right before:scale-x-0 before:bg-gray-800 before:transition-transform before:duration-[250ms] hover:before:origin-left hover:before:scale-x-100"
                 >
@@ -82,6 +91,7 @@ const Footer = () => {
             {attributions.map((attribute, i) => (
               <li key={i}>
                 <Link
+                  target="_blank"
                   href={attribute.href}
                   className="before:ease-out-cubic relative inline-block w-full no-underline before:absolute before:bottom-0 before:left-0 before:h-px before:w-full before:origin-right before:scale-x-0 before:bg-gray-800 before:transition-transform before:duration-[250ms] hover:before:origin-left hover:before:scale-x-100"
                 >
@@ -97,6 +107,7 @@ const Footer = () => {
             {inspo.map((insp, i) => (
               <li key={i}>
                 <Link
+                  target="_blank"
                   href={insp.href}
                   className="before:ease-out-cubic relative inline-block w-full no-underline before:absolute before:bottom-0 before:left-0 before:h-px before:w-full before:origin-right before:scale-x-0 before:bg-gray-800 before:transition-transform before:duration-[250ms] hover:before:origin-left hover:before:scale-x-100"
                 >

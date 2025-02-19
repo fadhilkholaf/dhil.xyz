@@ -32,9 +32,15 @@ const Hero = () => {
             <span className="underline">More about me</span> →
           </PageTransitionLink>
           <div className="flex flex-wrap gap-4">
-            <Link href="https://github.com/fadhilkholaf">GitHub</Link>
-            <Link href="https://x.com/fadhilkholaf">X</Link>
-            <Link href="https://github.com/in/fadhilkholaf">LinkedIn</Link>
+            <Link href="https://github.com/fadhilkholaf" target="_blank">
+              GitHub
+            </Link>
+            <Link href="https://x.com/fadhilkholaf" target="_blank">
+              X
+            </Link>
+            <Link href="https://github.com/in/fadhilkholaf" target="_blank">
+              LinkedIn
+            </Link>
           </div>
         </div>
         <Image
