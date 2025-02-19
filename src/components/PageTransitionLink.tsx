@@ -43,7 +43,7 @@ const PageTransitionLink = ({
       ref={ref}
       href={href}
       onClick={(e) => handlePageTransition(e)}
-      className={cn("", props.className)}
+      className={cn("no-underline", props.className)}
       {...props}
     >
       {children}

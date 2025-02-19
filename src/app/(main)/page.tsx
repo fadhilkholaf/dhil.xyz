@@ -1,25 +1,17 @@
-"use client";
+export const revalidate = 0;
 
-import { useCursorImage } from "@/hooks/useCursorImage";
+import { getCurrentlyPlaying } from "@/lib/spotify";
 
 import Hero from "./_components/parts/Hero";
+import Mood from "./_components/parts/Mood";
 
-const HomePage = () => {
-  const { setCursorImage } = useCursorImage();
+const HomePage = async () => {
+  const response = await getCurrentlyPlaying();
 
   return (
-    <main className="layout flex h-[200vh] flex-col gap-4">
+    <main className="layout flex h-fit flex-col">
       <Hero />
-      <div
-        onPointerEnter={() => setCursorImage("/images/lily0.jpeg")}
-        onPointerLeave={() => setCursorImage(null)}
-        className="h-[300px] w-[300px] bg-red-500"
-      ></div>
-      <div
-        onPointerEnter={() => setCursorImage("/images/lily1.jpg")}
-        onPointerLeave={() => setCursorImage(null)}
-        className="h-[300px] w-[300px] bg-red-500"
-      ></div>
+      <Mood data={response} />
     </main>
   );
 };

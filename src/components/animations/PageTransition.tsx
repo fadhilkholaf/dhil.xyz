@@ -44,11 +44,11 @@ const transitionVariants: Variants = {
 const textVariants: Variants = {
   initial: {},
   animate: {
-    transition: { staggerChildren: -0.05 },
+    transition: { staggerDirection: -1, staggerChildren: 0.025 },
   },
   idle: {},
   exit: {
-    transition: { staggerChildren: -0.05 },
+    transition: { staggerDirection: -1, staggerChildren: 0.025 },
   },
 };
 
@@ -60,20 +60,20 @@ const charVariants: Variants = {
   },
   animate: (i) => ({
     opacity: 0,
-    x: i * 16,
+    x: 128,
     y: Math.sin(i * 8) * 64,
-    transition: { duration: 0.25 },
+    transition: { type: "tween", duration: 0.5, ease: [0.65, 0, 0.35, 1] },
   }),
   idle: (i) => ({
     opacity: 0,
-    x: i * -16,
+    x: -128,
     y: Math.sin(i * 8) * 64,
   }),
   exit: {
     opacity: 1,
     x: 0,
     y: 0,
-    transition: { duration: 0.25 },
+    transition: { type: "tween", duration: 0.5, ease: [0.65, 0, 0.35, 1] },
   },
 };
 
@@ -83,25 +83,29 @@ const PageTransition = ({
   pageTransition: PageTransitionContextInterface["pageTransition"];
 }) => {
   return (
-    <motion.main
+    <motion.section
       initial="initial"
       animate={pageTransition}
-      variants={pageTransitionVariants}
-      className={cn("fixed z-50 flex size-full flex-col", {
+      className={cn("fixed z-50 size-full", {
         hidden: pageTransition === "idle",
       })}
     >
-      {Array.from({ length: 10 }).map((_, i) => (
-        <motion.div
-          key={i}
-          variants={transitionVariants}
-          className="animate-brightness h-full w-full scale-y-105 bg-pink-300"
-          style={{ animationDelay: `${i * 50}ms` }}
-        ></motion.div>
-      ))}
-      <motion.p
+      <motion.main
+        variants={pageTransitionVariants}
+        className="flex size-full flex-col"
+      >
+        {Array.from({ length: 10 }).map((_, i) => (
+          <motion.div
+            key={i}
+            variants={transitionVariants}
+            className="animate-brightness h-full w-full scale-y-105 bg-pink-200"
+            style={{ animationDelay: `${i * 50}ms` }}
+          ></motion.div>
+        ))}
+      </motion.main>
+      <motion.h1
         variants={textVariants}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl font-bold text-white"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
       >
         {"Loading...".split("").map((c, i) => (
           <motion.span
@@ -113,8 +117,8 @@ const PageTransition = ({
             {c}
           </motion.span>
         ))}
-      </motion.p>
-    </motion.main>
+      </motion.h1>
+    </motion.section>
   );
 };
 

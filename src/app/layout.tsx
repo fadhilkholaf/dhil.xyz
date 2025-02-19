@@ -1,12 +1,13 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import { ReactNode } from "react";
 
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 import LenisWrapper from "@/components/wrappers/LenisWrapper";
 import { CursorImageProvider } from "@/hooks/useCursorImage";
+import { PageTransitionProvider } from "@/hooks/usePageTransition";
 
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import { PageTransitionProvider } from "@/hooks/usePageTransition";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,6 +34,7 @@ export default function RootLayout({
             <CursorImageProvider>
               <Navbar />
               {children}
+              <Footer />
             </CursorImageProvider>
           </PageTransitionProvider>
         </LenisWrapper>

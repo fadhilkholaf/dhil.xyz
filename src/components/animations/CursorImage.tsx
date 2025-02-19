@@ -75,7 +75,7 @@ const CursorImage = ({ cursorImage }: { cursorImage: string | null }) => {
       initial="initial"
       animate={cursorImage ? "animate" : "initial"}
       variants={cursorImageVariants}
-      className="ease-out-cubic pointer-events-none fixed h-[169px] w-[300px] translate-x-[25px] translate-y-[25px] overflow-hidden transition-all duration-[500ms]"
+      className="ease-out-cubic pointer-events-none fixed z-30 h-[169px] w-[300px] translate-x-[25px] translate-y-[25px] overflow-hidden transition-all duration-[500ms]"
       style={{ x, y, skewX: mX, skewY: mY }}
     >
       <AnimatePresence mode="popLayout">

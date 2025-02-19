@@ -1,4 +1,6 @@
-"use client";
+import Image from "next/image";
+
+import Logo from "@/../public/images/main/fadhilkholaf.svg";
 
 import PageTransitionLink from "./PageTransitionLink";
 
@@ -19,12 +21,22 @@ const menus: { label: string; href: string }[] = [
 
 const Navbar = () => {
   return (
-    <nav className="fixed top-0 left-0 z-40 flex gap-8 bg-white">
-      {menus.map((menu, i) => (
-        <PageTransitionLink key={i} href={menu.href}>
-          {menu.label}
-        </PageTransitionLink>
-      ))}
+    <nav className="layout fixed top-0 left-1/2 z-40 flex h-fit -translate-x-1/2 justify-between sm:gap-4">
+      <PageTransitionLink href="/">
+        <Image
+          src={Logo}
+          alt="logo"
+          priority
+          className="hidden h-[72px] w-fit rounded-full bg-gray-800 px-8 py-4 sm:inline-block"
+        />
+      </PageTransitionLink>
+      <ul className="flex h-fit w-full justify-between gap-4 rounded-full bg-gray-800 px-8 py-4 text-pink-200 sm:w-1/2">
+        {menus.map((menu, i) => (
+          <PageTransitionLink key={i} href={menu.href}>
+            <h4>{menu.label}</h4>
+          </PageTransitionLink>
+        ))}
+      </ul>
     </nav>
   );
 };
