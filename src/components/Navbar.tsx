@@ -27,12 +27,16 @@ const Navbar = () => {
           src={Logo}
           alt="logo"
           priority
-          className="hidden h-[72px] w-fit rounded-full bg-gray-800 px-8 py-4 sm:inline-block"
+          className="hidden h-[72px] w-fit overflow-hidden rounded-full bg-gray-800 px-8 py-4 sm:inline-block"
         />
       </PageTransitionLink>
-      <ul className="flex h-fit w-full justify-between gap-4 rounded-full bg-gray-800 px-8 py-4 text-pink-200 sm:w-1/2">
+      <ul className="flex h-fit w-full justify-between gap-4 rounded-full bg-gray-800 px-4 text-pink-200 sm:w-1/2">
         {menus.map((menu, i) => (
-          <PageTransitionLink key={i} href={menu.href}>
+          <PageTransitionLink
+            key={i}
+            href={menu.href}
+            className="p-4 no-underline"
+          >
             <h4>{menu.label}</h4>
           </PageTransitionLink>
         ))}

@@ -56,6 +56,10 @@ const inspo: { title: string; href: string }[] = [
     href: "https://fiddle.digital",
   },
   {
+    title: "Lusion",
+    href: "https://lusion.co",
+  },
+  {
     title: "Stevia Please",
     href: "https://www.steviaplease.me",
   },
@@ -72,8 +76,8 @@ const Footer = () => {
         <h1>{"Let's connect"}</h1>
       </header>
       <hr />
-      <main className="flex flex-wrap justify-between gap-4">
-        <div>
+      <main className="flex flex-wrap justify-between gap-8">
+        <div className="min-w-[200]">
           <h3>Socials</h3>
           <ul className="flex flex-col gap-2">
             {socials.map((social, i) => (
@@ -89,7 +93,7 @@ const Footer = () => {
             ))}
           </ul>
         </div>
-        <div>
+        <div className="min-w-[200]">
           <h3>Attributions</h3>
           <ul className="flex flex-col gap-2">
             {attributions.map((attribute, i) => (
@@ -105,7 +109,7 @@ const Footer = () => {
             ))}
           </ul>
         </div>
-        <div>
+        <div className="min-w-[200]">
           <h3>Inspo</h3>
           <ul className="flex flex-col gap-2">
             {inspo.map((insp, i) => (

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
+import DummyImageLandscape from "@/../public/images/home/lily.jpg";
 import DummyImage from "@/../public/images/home/lily-squared.jpg";
 import { useCursorImage } from "@/hooks/useCursorImage";
 import { SpotifyCurrentlyPlayingInterface } from "@/types/spotify";
@@ -32,7 +33,7 @@ const Mood = ({ data }: { data: SpotifyCurrentlyPlayingInterface | false }) => {
               href={data.url}
               target="_blank"
               onPointerEnter={() =>
-                setCursorImage(data ? data.image : "/images/home/lily.jpg")
+                setCursorImage(data ? data.image : DummyImageLandscape.src)
               }
               onPointerLeave={() => setCursorImage(null)}
               className="w-fit no-underline"
@@ -50,8 +51,8 @@ const Mood = ({ data }: { data: SpotifyCurrentlyPlayingInterface | false }) => {
           onPointerEnter={() =>
             setCursorImage(
               data
-                ? (data.artists[0].image ?? "/images/home/lily.jpg")
-                : "/images/home/lily.jpg",
+                ? (data.artists[0].image ?? DummyImageLandscape.src)
+                : DummyImageLandscape.src,
             )
           }
           onPointerLeave={() => setCursorImage(null)}

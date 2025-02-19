@@ -75,7 +75,7 @@ const CursorImage = ({ cursorImage }: { cursorImage: string | null }) => {
       initial="initial"
       animate={cursorImage ? "animate" : "initial"}
       variants={cursorImageVariants}
-      className="ease-out-cubic pointer-events-none fixed z-30 h-[169px] w-[300px] translate-x-[25px] translate-y-[25px] overflow-hidden transition-all duration-[500ms]"
+      className="ease-out-cubic pointer-events-none fixed z-30 h-[225px] w-[400px] translate-x-[25px] translate-y-[25px] overflow-hidden transition-all duration-[500ms]"
       style={{ x, y, skewX: mX, skewY: mY }}
     >
       <AnimatePresence mode="popLayout">
@@ -90,8 +90,8 @@ const CursorImage = ({ cursorImage }: { cursorImage: string | null }) => {
             <Image
               src={cursorImage}
               alt="Preview"
-              width={300}
-              height={169}
+              width={400}
+              height={225}
               priority
               className="aspect-video object-cover"
             />

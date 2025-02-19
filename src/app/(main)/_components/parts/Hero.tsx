@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import Me from "@/../public/images/home/fadhilkholaf.jpg";
+import DummyImageLandscape from "@/../public/images/home/lily.jpg";
 import PageTransitionLink from "@/components/PageTransitionLink";
 import { useCursorImage } from "@/hooks/useCursorImage";
 
@@ -28,8 +29,11 @@ const Hero = () => {
             Junior front-end web developer, Vercel fanboy ▲[🤡]. Mostly using
             Next.js and Tailwind CSS. On the way doing Flutter and Laravel.
           </p>
-          <PageTransitionLink href="/about" className="w-fit no-underline">
-            <span className="underline">More about me</span> →
+          <PageTransitionLink
+            href="/about"
+            className="w-fit rounded-full bg-gray-800 px-4 py-2 text-pink-200 no-underline"
+          >
+            More about me →
           </PageTransitionLink>
           <div className="flex flex-wrap gap-4">
             <Link href="https://github.com/fadhilkholaf" target="_blank">
@@ -47,7 +51,7 @@ const Hero = () => {
           src={Me}
           alt="me"
           priority
-          onPointerEnter={() => setCursorImage("/images/home/lily.jpg")}
+          onPointerEnter={() => setCursorImage(DummyImageLandscape.src)}
           onPointerLeave={() => setCursorImage(null)}
           className="aspect-square h-fit w-2/3 min-w-[300px] -scale-x-100 self-center object-cover sm:w-1/3"
         />
