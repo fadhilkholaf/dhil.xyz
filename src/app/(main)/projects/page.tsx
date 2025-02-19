@@ -1,5 +1,5 @@
 const ProjectsPage = () => {
-  return <main className="layout">ProjectsPage</main>;
+  return <main className="layout h-screen">ProjectsPage</main>;
 };
 
 export default ProjectsPage;

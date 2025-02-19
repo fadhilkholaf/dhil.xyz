@@ -11,7 +11,7 @@ const Hero = () => {
   const { setCursorImage } = useCursorImage();
 
   return (
-    <section className="flex h-screen w-full items-center">
+    <section className="flex h-fit w-full items-center">
       <main className="flex h-fit w-full flex-col-reverse gap-16 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex flex-col gap-4 sm:w-1/2">
           <p>
@@ -38,7 +38,7 @@ const Hero = () => {
             <Link href="https://x.com/fadhilkholaf" target="_blank">
               X
             </Link>
-            <Link href="https://github.com/in/fadhilkholaf" target="_blank">
+            <Link href="https://linkedin.com/in/fadhilkholaf" target="_blank">
               LinkedIn
             </Link>
           </div>

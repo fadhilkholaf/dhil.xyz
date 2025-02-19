@@ -63,6 +63,11 @@ const charVariants: Variants = {
     x: 128,
     y: Math.sin(i * 8) * 64,
     transition: { type: "tween", duration: 0.5, ease: [0.65, 0, 0.35, 1] },
+    transitionEnd: {
+      opacity: 0,
+      x: -128,
+      y: Math.sin(i * 8) * 64,
+    },
   }),
   idle: (i) => ({
     opacity: 0,

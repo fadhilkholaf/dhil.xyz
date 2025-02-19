@@ -25,16 +25,18 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="en" className="size-full bg-pink-200 text-gray-800">
+    <html lang="en" className="h-fit w-full bg-pink-200 text-gray-800">
       <body
         className={`${geistMono.className} ${geistSans.variable} size-full antialiased`}
       >
         <LenisWrapper>
           <PageTransitionProvider>
             <CursorImageProvider>
-              <Navbar />
-              {children}
-              <Footer />
+              <main className="flex flex-col">
+                <Navbar />
+                {children}
+                <Footer />
+              </main>
             </CursorImageProvider>
           </PageTransitionProvider>
         </LenisWrapper>

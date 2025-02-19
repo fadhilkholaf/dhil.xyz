@@ -56,6 +56,10 @@ const inspo: { title: string; href: string }[] = [
     href: "https://fiddle.digital",
   },
   {
+    title: "Stevia Please",
+    href: "https://www.steviaplease.me",
+  },
+  {
     title: "Theodorus Clarence",
     href: "https://theodorusclarence.com",
   },
