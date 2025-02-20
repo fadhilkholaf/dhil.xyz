@@ -3,6 +3,8 @@ import {
   SpotifyCurrentlyPlayingInterface,
 } from "@/types/spotify";
 
+export const revalidate = 0;
+
 export const getAccessToken = async () => {
   const response = await fetch("https://accounts.spotify.com/api/token", {
     method: "POST",
