@@ -14,20 +14,21 @@ const Project = ({ project }: { project: ProjectInterface }) => {
 
   useEffect(() => {
     const isMedium = window.innerWidth >= 768;
+    const currentRef = ref.current;
 
-    if (ref.current && isMedium) {
-      ref.current.addEventListener("pointerenter", () =>
+    if (currentRef && isMedium) {
+      currentRef.addEventListener("pointerenter", () =>
         setCursorImage(project.image.src),
       );
-      ref.current.addEventListener("pointerleave", () => setCursorImage(null));
+      currentRef.addEventListener("pointerleave", () => setCursorImage(null));
     }
 
     return () => {
-      if (ref.current && isMedium) {
-        ref.current.removeEventListener("pointerenter", () =>
+      if (currentRef && isMedium) {
+        currentRef.removeEventListener("pointerenter", () =>
           setCursorImage(project.image.src),
         );
-        ref.current.removeEventListener("pointerleave", () =>
+        currentRef.removeEventListener("pointerleave", () =>
           setCursorImage(null),
         );
       }

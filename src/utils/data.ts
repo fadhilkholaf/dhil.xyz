@@ -1,3 +1,4 @@
+import { ExperienceInterface } from "@/types/experience";
 import { ProjectInterface } from "@/types/project";
 
 import KantinNegro from "@/../public/images/projects/kantin-negro.png";
@@ -37,5 +38,20 @@ export const miniProjects: ProjectInterface[] = [
     image: Hillaryours,
     tag: "Front-end - Web - Animation",
     url: "https://hillaryours.fadhilkholaf.my.id",
+  },
+];
+
+export const experiences: ExperienceInterface[] = [
+  {
+    dateRange: "Jul 2024 - Nov 2024",
+    position: "Front-end Developer Intern",
+    office: "PT. Ina Gata Persada - Malang, Indonesia",
+    description: [
+      "Worked as a front-end developer intern as part of the SMK Telkom Malang Internship Program. This internship followed a hybrid working model 60% remote and 40% on-site for 4 months.",
+    ],
+    works: [
+      "Converted internal web designs into code using Next.js and Tailwind CSS.",
+      "Contributed to client projects as a front-end developer, utilizing tools such as PHP Laravel, Blade Templating, and Bootstrap.",
+    ],
   },
 ];
