@@ -25,7 +25,7 @@ const transitionVariants: Variants = {
   animate: {
     scaleX: 0,
     originX: 1,
-    transition: { type: "tween", duration: 0.5, ease: [0.65, 0, 0.35, 1] },
+    transition: { type: "tween", duration: 0.4, ease: [0.65, 0, 0.35, 1] },
     transitionEnd: { originX: 0 },
   },
   idle: {
@@ -36,7 +36,7 @@ const transitionVariants: Variants = {
   exit: {
     scaleX: 1,
     originX: 0,
-    transition: { type: "tween", duration: 0.5, ease: [0.65, 0, 0.35, 1] },
+    transition: { type: "tween", duration: 0.4, ease: [0.65, 0, 0.35, 1] },
     transitionEnd: { originX: 1 },
   },
 };
@@ -44,11 +44,11 @@ const transitionVariants: Variants = {
 const textVariants: Variants = {
   initial: {},
   animate: {
-    transition: { staggerDirection: -1, staggerChildren: 0.025 },
+    transition: { staggerDirection: -1, staggerChildren: 0.03 },
   },
   idle: {},
   exit: {
-    transition: { staggerDirection: -1, staggerChildren: 0.025 },
+    transition: { staggerDirection: -1, staggerChildren: 0.03 },
   },
 };
 
@@ -63,28 +63,18 @@ const charVariants: Variants = {
     x: 128,
     y: Math.sin(i * 8) * 64,
     transition: { type: "tween", duration: 0.4, ease: [0.65, 0, 0.35, 1] },
-    transitionEnd: {
-      opacity: 0,
-      x: -128,
-      y: Math.sin(i * 8) * 64,
-    },
   }),
   idle: (i) => ({
     opacity: 0,
     x: -128,
     y: Math.sin(i * 8) * 64,
   }),
-  exit: (i) => ({
+  exit: {
     opacity: 1,
     x: 0,
     y: 0,
     transition: { type: "tween", duration: 0.4, ease: [0.65, 0, 0.35, 1] },
-    transitionEnd: {
-      opacity: 0,
-      x: 128,
-      y: Math.sin(i * 8) * 64,
-    },
-  }),
+  },
 };
 
 const PageTransition = ({

@@ -73,7 +73,9 @@ export const getCurrentlyPlaying = async (): Promise<
   return data;
 };
 
-export const getArtist = async (id: string): Promise<any | false> => {
+export const getArtist = async (
+  id: string,
+): Promise<{ images: { url: string }[]; genres: string[] } | false> => {
   const { access_token } = await getAccessToken();
 
   const response = await fetch(`https://api.spotify.com/v1/artists/${id}`, {
