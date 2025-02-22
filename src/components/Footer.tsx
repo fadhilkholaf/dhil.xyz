@@ -5,26 +5,22 @@ const socials: { title: string; href: string }[] = [
     title: "Awwwards",
     href: "https://awwwards.com/fadhilkholaf",
   },
-  // {
-  //   title: "BlueSky",
-  //   href: "https://bsky.app/profile/fadhilkholaf.my.id",
-  // },
   {
     title: "GitHub",
     href: "https://github.com/fadhilkholaf",
   },
-  // {
-  //   title: "Instagram",
-  //   href: "https://instagram.com/fadhilkholaf",
-  // },
+  {
+    title: "Instagram",
+    href: "https://instagram.com/fadhilkholaf",
+  },
   {
     title: "LinkedIn",
     href: "https://linkedin.com/in/fadhilkholaf",
   },
-  // {
-  //   title: "TikTok",
-  //   href: "https://tiktok.com/@fadhilkholaf",
-  // },
+  {
+    title: "TikTok",
+    href: "https://tiktok.com/@fadhilkholaf",
+  },
   {
     title: "X",
     href: "https://x.com/fadhilkholaf",
@@ -33,16 +29,8 @@ const socials: { title: string; href: string }[] = [
 
 const attributions: { title: string; href: string }[] = [
   {
-    title: "Motion",
-    href: "https://motion.dev",
-  },
-  {
-    title: "Next.js",
-    href: "https://nextjs.org",
-  },
-  {
-    title: "Vercel",
-    href: "https://vercel.com",
+    title: "Flower",
+    href: "https://unsplash.com/photos/selective-focus-photography-of-purple-petaled-flower-ko-Dt_501t4",
   },
 ];
 

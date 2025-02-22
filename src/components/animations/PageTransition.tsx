@@ -8,11 +8,11 @@ import { cn } from "@/utils/utils";
 const pageTransitionVariants: Variants = {
   initial: {},
   animate: {
-    transition: { staggerChildren: 0.05 },
+    transition: { staggerChildren: 0.03 },
   },
   idle: {},
   exit: {
-    transition: { staggerChildren: 0.05 },
+    transition: { staggerChildren: 0.03 },
   },
 };
 
@@ -62,7 +62,7 @@ const charVariants: Variants = {
     opacity: 0,
     x: 128,
     y: Math.sin(i * 8) * 64,
-    transition: { type: "tween", duration: 0.5, ease: [0.65, 0, 0.35, 1] },
+    transition: { type: "tween", duration: 0.4, ease: [0.65, 0, 0.35, 1] },
     transitionEnd: {
       opacity: 0,
       x: -128,
@@ -74,12 +74,17 @@ const charVariants: Variants = {
     x: -128,
     y: Math.sin(i * 8) * 64,
   }),
-  exit: {
+  exit: (i) => ({
     opacity: 1,
     x: 0,
     y: 0,
-    transition: { type: "tween", duration: 0.5, ease: [0.65, 0, 0.35, 1] },
-  },
+    transition: { type: "tween", duration: 0.4, ease: [0.65, 0, 0.35, 1] },
+    transitionEnd: {
+      opacity: 0,
+      x: 128,
+      y: Math.sin(i * 8) * 64,
+    },
+  }),
 };
 
 const PageTransition = ({
@@ -99,11 +104,11 @@ const PageTransition = ({
         variants={pageTransitionVariants}
         className="flex size-full flex-col"
       >
-        {Array.from({ length: 10 }).map((_, i) => (
+        {Array.from({ length: 8 }).map((_, i) => (
           <motion.div
             key={i}
             variants={transitionVariants}
-            className="animate-brightness h-full w-full scale-y-105 bg-pink-200"
+            className="animate-brightness h-full w-full scale-y-105 bg-pink-500"
             style={{ animationDelay: `${i * 50}ms` }}
           ></motion.div>
         ))}

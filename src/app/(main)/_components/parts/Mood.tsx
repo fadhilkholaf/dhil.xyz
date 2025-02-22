@@ -8,7 +8,11 @@ import DummyImage from "@/../public/images/home/lily-squared.jpg";
 import { useCursorImage } from "@/hooks/useCursorImage";
 import { SpotifyCurrentlyPlayingInterface } from "@/types/spotify";
 
-const Mood = ({ data }: { data: SpotifyCurrentlyPlayingInterface | false }) => {
+const Mood = ({
+  data,
+}: {
+  data: SpotifyCurrentlyPlayingInterface | false | "loading";
+}) => {
   const { setCursorImage } = useCursorImage();
 
   return (
@@ -17,18 +21,18 @@ const Mood = ({ data }: { data: SpotifyCurrentlyPlayingInterface | false }) => {
         <div className="flex flex-col gap-4 sm:w-1/2">
           <div>
             <h1>Current Mood</h1>
-            {data && data.artists[0].genres && (
+            {data !== "loading" && data && data?.artists?.[0].genres && (
               <p>[{data.artists[0].genres.join(", ")}]</p>
             )}
           </div>
           <p>
             {`${
-              data
+              data !== "loading" && data
                 ? data.artists.map((artist) => artist.name).join(", ")
                 : "Unknown"
-            } - ${data ? data.title : "Unnamed"}`}
+            } - ${data !== "loading" && data ? data.title : "Unnamed"}`}
           </p>
-          {data && (
+          {data !== "loading" && data && (
             <Link
               href={data.url}
               target="_blank"
@@ -43,14 +47,14 @@ const Mood = ({ data }: { data: SpotifyCurrentlyPlayingInterface | false }) => {
           )}
         </div>
         <Image
-          src={data ? data.image : DummyImage}
+          src={data !== "loading" && data ? data.image : DummyImage}
           alt="mood"
           width={data ? 640 : undefined}
           height={data ? 640 : undefined}
           priority
           onPointerEnter={() =>
             setCursorImage(
-              data
+              data !== "loading" && data
                 ? (data.artists[0].image ?? DummyImageLandscape.src)
                 : DummyImageLandscape.src,
             )

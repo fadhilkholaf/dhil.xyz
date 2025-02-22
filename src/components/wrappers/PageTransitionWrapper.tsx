@@ -12,7 +12,7 @@ const PageTransitionWrapper = ({ children }: { children: ReactNode }) => {
     const initialTransition = async () => {
       if (pageTransition !== "idle") {
         setPageTransition("animate");
-        await sleep(1000);
+        await sleep(650);
         setPageTransition("idle");
       }
     };
