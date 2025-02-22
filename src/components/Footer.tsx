@@ -32,6 +32,10 @@ const attributions: { title: string; href: string }[] = [
     title: "Flower",
     href: "https://unsplash.com/photos/selective-focus-photography-of-purple-petaled-flower-ko-Dt_501t4",
   },
+  {
+    title: "Lily",
+    href: "https://tenor.com/view/love-mylofly-jkt48-lily-cantik-lily-lucu-gif-2165950836249670182",
+  },
 ];
 
 const inspo: { title: string; href: string }[] = [

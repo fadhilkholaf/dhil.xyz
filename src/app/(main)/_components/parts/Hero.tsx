@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import Me from "@/../public/images/home/fadhilkholaf.jpg";
-import DummyImageLandscape from "@/../public/images/home/lily.jpg";
+import DummyImageLandscape from "@/../public/images/main/gif.gif";
 import PageTransitionLink from "@/components/PageTransitionLink";
 import { useCursorImage } from "@/hooks/useCursorImage";
 
