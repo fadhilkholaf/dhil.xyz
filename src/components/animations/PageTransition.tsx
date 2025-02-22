@@ -108,7 +108,7 @@ const PageTransition = ({
           <motion.div
             key={i}
             variants={transitionVariants}
-            className="animate-brightness h-full w-full scale-y-105 bg-pink-500"
+            className="animate-brightness h-full w-full scale-y-105 bg-pink-200"
             style={{ animationDelay: `${i * 50}ms` }}
           ></motion.div>
         ))}
