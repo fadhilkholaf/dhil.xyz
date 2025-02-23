@@ -36,10 +36,6 @@ const Mood = ({
             <Link
               href={data.url}
               target="_blank"
-              onPointerEnter={() =>
-                setCursorImage(data ? data.image : DummyImageLandscape.src)
-              }
-              onPointerLeave={() => setCursorImage(null)}
               className="w-fit no-underline"
             >
               <span className="underline">Listen together</span> →
@@ -49,13 +45,13 @@ const Mood = ({
         <Image
           src={data !== "loading" && data ? data.image : DummyImage}
           alt="mood"
-          width={data ? 640 : undefined}
-          height={data ? 640 : undefined}
+          width={data ? 300 : undefined}
+          height={data ? 300 : undefined}
           priority
           onPointerEnter={() =>
             setCursorImage(
-              data !== "loading" && data
-                ? (data.artists[0].image ?? DummyImageLandscape.src)
+              data !== "loading" && data && data.artists[0].image
+                ? data.artists[0].image
                 : DummyImageLandscape.src,
             )
           }
