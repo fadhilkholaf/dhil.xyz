@@ -14,7 +14,7 @@ const Experience = ({ experience }: { experience: ExperienceInterface }) => {
         <main className="flex flex-col gap-2">
           {experience.description &&
             experience.description.map((d, i) => <p key={i}>{d}</p>)}
-          <ul className="ms-4.5 list-disc">
+          <ul className="ms-4.5 flex list-disc flex-col gap-2">
             {experience.works &&
               experience.works.map((w, i) => <li key={i}>{w}</li>)}
           </ul>

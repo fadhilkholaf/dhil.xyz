@@ -55,3 +55,76 @@ export const experiences: ExperienceInterface[] = [
     ],
   },
 ];
+
+export const education: ExperienceInterface[] = [
+  {
+    dateRange: "Jul 2022 - Present",
+    position: "Software Engineering",
+    office: "SMK Telkom Malang - Malang, Indonesia",
+    description: [
+      "Majoring in Software Engineering with a curriculum focused on web development, object-oriented programming (OOP), and fundamental programming concepts. Participating in the Moklet Dev Organization.",
+    ],
+    works: [
+      "Fundamentals of coding and an introduction to object-oriented programming (OOP) using Java.",
+      "Introduction to MySQL databases and querying techniques.",
+      "Introduction to web development using PHP, Node.js, Express, and React.js.",
+    ],
+  },
+];
+
+export const footerData: {
+  [key: string]: { title: string; href: string }[];
+}[] = [
+  {
+    Socials: [
+      {
+        title: "GitHub",
+        href: "https://github.com/fadhilkholaf",
+      },
+      {
+        title: "LinkedIn",
+        href: "https://linkedin.com/in/fadhilkholaf",
+      },
+      {
+        title: "X",
+        href: "https://x.com/fadhilkholaf",
+      },
+    ],
+  },
+  {
+    Attributions: [
+      {
+        title: "Flower",
+        href: "https://unsplash.com/photos/selective-focus-photography-of-purple-petaled-flower-ko-Dt_501t4",
+      },
+      {
+        title: "Lily",
+        href: "https://tenor.com/view/love-mylofly-jkt48-lily-cantik-lily-lucu-gif-2165950836249670182",
+      },
+    ],
+  },
+  {
+    Inspo: [
+      {
+        title: "Ahsan Azizan",
+        href: "https://www.ahsanzizan.xyz",
+      },
+      {
+        title: "Fiddle Digital",
+        href: "https://fiddle.digital",
+      },
+      {
+        title: "Lusion",
+        href: "https://lusion.co",
+      },
+      {
+        title: "Stevia Please",
+        href: "https://www.steviaplease.me",
+      },
+      {
+        title: "Theodorus Clarence",
+        href: "https://theodorusclarence.com",
+      },
+    ],
+  },
+];

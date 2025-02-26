@@ -44,11 +44,11 @@ const transitionVariants: Variants = {
 const textVariants: Variants = {
   initial: {},
   animate: {
-    transition: { staggerDirection: -1, staggerChildren: 0.03 },
+    transition: { staggerDirection: -1, staggerChildren: 0.015 },
   },
   idle: {},
   exit: {
-    transition: { staggerDirection: -1, staggerChildren: 0.03 },
+    transition: { staggerDirection: -1, staggerChildren: 0.015 },
   },
 };
 
