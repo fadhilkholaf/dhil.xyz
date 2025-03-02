@@ -28,7 +28,7 @@ const Hero = () => {
           </div>
           <AnimatedText
             text={
-              "I'm a junior front-end dev who's all about Next.js and Tailwind CSS."
+              "Junior front-end dev all about Next.js and Tailwind CSS, plus a total tech enthusiast."
             }
           />
           <PageTransitionLink
