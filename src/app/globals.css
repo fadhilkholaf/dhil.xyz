@@ -6,15 +6,15 @@
 
   --ease-out-cubic: cubic-bezier(0.33, 1, 0.68, 1);
 
-  --animate-brightness: brightness 1s ease-in-out infinite;
+  --animate-background-position: background-position 1s ease-in-out infinite;
 
-  @keyframes brightness {
+  @keyframes background-position {
     0%,
     100% {
-      filter: brightness(1);
+      background-position: 0 0;
     }
     50% {
-      filter: brightness(1.15);
+      background-position: 0 100%;
     }
   }
 }

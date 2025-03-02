@@ -32,7 +32,7 @@ const PageTransitionLink = ({
     } else {
       setPageTransition("exit");
 
-      await sleep(650);
+      await sleep(900);
 
       router.push(href);
     }

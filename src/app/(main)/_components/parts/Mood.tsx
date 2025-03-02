@@ -56,7 +56,7 @@ const Mood = ({
             )
           }
           onPointerLeave={() => setCursorImage(null)}
-          className="aspect-square h-fit w-2/3 min-w-[300px] self-center object-cover sm:w-1/3"
+          className="aspect-square h-fit w-2/3 min-w-[200px] -scale-x-100 self-center object-cover sm:w-1/3 sm:self-baseline"
         />
       </main>
     </section>
