@@ -4,7 +4,6 @@ import Image from "next/image";
 
 import Me from "@/../public/images/home/fadhilkholaf.jpg";
 import DummyImageLandscape from "@/../public/images/main/gif.gif";
-import AnimatedText from "@/components/animations/AnimatedText";
 import { useCursorImage } from "@/hooks/useCursorImage";
 
 const Hero = () => {
@@ -51,10 +50,6 @@ const Hero = () => {
             GLSL, GSAP, Motion, Lenis, etc. (It was hard, though.)`}
           </p>
           <p>{`That's it for now (I'm totally cooked).`}</p>
-          <AnimatedText
-            text={`P.S. I also enjoy learning about AI, PHP Laravel, and Flutter. Teach me, please.`}
-            className="italic"
-          />
         </div>
         <Image
           src={Me}

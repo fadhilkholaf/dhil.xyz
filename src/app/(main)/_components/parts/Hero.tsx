@@ -27,7 +27,9 @@ const Hero = () => {
             <p>[fadhilkholaf]</p>
           </div>
           <AnimatedText
-            text={`Junior front-end web developer, Vercel fanboy ▲[:3]. Mostly using Next.js and Tailwind CSS. On the way doing Flutter and Laravel.`}
+            text={
+              "I'm a junior front-end dev who's all about Next.js and Tailwind CSS."
+            }
           />
           <PageTransitionLink
             href="/about"
