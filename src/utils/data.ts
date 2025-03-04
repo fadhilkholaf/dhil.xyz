@@ -6,6 +6,9 @@ import Chat from "@/../public/images/mini-projects/chat.png";
 import Lily from "@/../public/images/mini-projects/lily.png";
 import Hillaryours from "@/../public/images/mini-projects/hillaryours.png";
 
+export const baseUrl = "https://fadhilkholaf.my.id";
+export const openGraphImageURL = `${baseUrl}/images/og/image.jpg`;
+
 export const projects: ProjectInterface[] = [
   {
     name: "Kantin: Anti Starving",

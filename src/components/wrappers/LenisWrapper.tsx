@@ -9,6 +9,20 @@ const LenisWrapper = ({ children }: { children: ReactNode }) => {
   const lenisRef = useRef<LenisRef>(null);
 
   useEffect(() => {
+    console.log(`
+        ___         ___     
+       /  /\\       /__/|    
+      /  /:/_     |  |:|    
+     /  /:/ /\\    |  |:|    
+    /  /:/ /:/  __|  |:|    
+   /__/:/ /:/  /__/\\_|:|____
+   \\  \\:\\/:/   \\  \\:\\/:::::/
+    \\  \\::/     \\  \\::/~~~~ 
+     \\  \\:\\      \\  \\:\\     
+      \\  \\:\\      \\  \\:\\    
+       \\__\\/       \\__\\/    
+   `);
+
     function update(data: { timestamp: number }) {
       const time = data.timestamp;
       lenisRef.current?.lenis?.raf(time);

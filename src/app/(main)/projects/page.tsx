@@ -1,5 +1,11 @@
+import { Metadata } from "next";
+
 import Hero from "./_components/parts/Hero";
 import MiniProjects from "./_components/parts/MiniProjects";
+
+export const metadata: Metadata = {
+  title: "Projects",
+};
 
 const ProjectsPage = () => {
   return (
