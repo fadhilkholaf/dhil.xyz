@@ -7,7 +7,8 @@ import Navbar from "@/components/Navbar";
 import LenisWrapper from "@/components/wrappers/LenisWrapper";
 import { CursorImageProvider } from "@/hooks/useCursorImage";
 import { PageTransitionProvider } from "@/hooks/usePageTransition";
-import { baseUrl, openGraphImageURL } from "@/utils/data";
+import { PageTransitionTypeProvider } from "@/hooks/usePageTransitionType";
+import { baseUrl, openGraphDefaultImageURL } from "@/utils/data";
 
 import "./globals.css";
 
@@ -55,16 +56,16 @@ export const metadata: Metadata = {
     url: baseUrl,
     images: [
       {
-        url: openGraphImageURL,
-        width: 1200,
-        height: 630,
+        url: openGraphDefaultImageURL,
+        width: 800,
+        height: 418,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     creator: "@fadhilkholaf",
-    images: openGraphImageURL,
+    images: openGraphDefaultImageURL,
   },
 };
 
@@ -79,15 +80,17 @@ export default function RootLayout({
         className={`${geistMono.className} ${geistSans.variable} size-full antialiased`}
       >
         <LenisWrapper>
-          <PageTransitionProvider>
-            <CursorImageProvider>
-              <main className="flex flex-col">
-                <Navbar />
-                {children}
-                <Footer />
-              </main>
-            </CursorImageProvider>
-          </PageTransitionProvider>
+          <PageTransitionTypeProvider>
+            <PageTransitionProvider>
+              <CursorImageProvider>
+                <main className="flex flex-col">
+                  <Navbar />
+                  {children}
+                  <Footer />
+                </main>
+              </CursorImageProvider>
+            </PageTransitionProvider>
+          </PageTransitionTypeProvider>
         </LenisWrapper>
       </body>
     </html>

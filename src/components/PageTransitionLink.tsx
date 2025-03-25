@@ -5,15 +5,19 @@ import { usePathname, useRouter } from "next/navigation";
 import React, { JSX, MouseEvent, ReactNode, Ref } from "react";
 
 import { usePageTransition } from "@/hooks/usePageTransition";
+import { usePageTransitionType } from "@/hooks/usePageTransitionType";
+import { PageTransitionType } from "@/types/page-transition";
 import { cn, sleep } from "@/utils/utils";
 
 const PageTransitionLink = ({
   href,
+  transitionType,
   children,
   ref,
   ...props
 }: {
   href: string;
+  transitionType?: PageTransitionType;
   children: ReactNode;
   ref?: Ref<HTMLAnchorElement>;
 } & JSX.IntrinsicElements["a"]) => {
@@ -21,15 +25,20 @@ const PageTransitionLink = ({
   const router = useRouter();
 
   const { setPageTransition } = usePageTransition();
+  const { setType } = usePageTransitionType();
 
   const handlePageTransition = async (
     e: MouseEvent<HTMLAnchorElement, globalThis.MouseEvent>,
   ) => {
     e.preventDefault();
 
+    setType(transitionType || "horizontal");
+
     if (href === pathname) {
       router.refresh();
     } else {
+      await sleep(100);
+
       setPageTransition("exit");
 
       await sleep(900);

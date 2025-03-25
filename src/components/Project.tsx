@@ -7,6 +7,8 @@ import { useEffect, useRef } from "react";
 import { useCursorImage } from "@/hooks/useCursorImage";
 import { ProjectInterface } from "@/types/project";
 
+import PageTransitionLink from "./PageTransitionLink";
+
 const Project = ({ project }: { project: ProjectInterface }) => {
   const { setCursorImage } = useCursorImage();
 
@@ -50,6 +52,12 @@ const Project = ({ project }: { project: ProjectInterface }) => {
         {project.slogan && <p>{project.slogan}</p>}
       </main>
       <footer className="flex gap-4">
+        <PageTransitionLink
+          href={`/projects/${encodeURIComponent(`Working on "${project.name}" project details.`)}`}
+          transitionType="vertical"
+        >
+          <span className="underline">Details</span> →
+        </PageTransitionLink>
         {project.url && (
           <Link href={project.url} target="_blank" className="no-underline">
             <span className="underline">Visit site</span> →

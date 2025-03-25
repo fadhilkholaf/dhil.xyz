@@ -7,7 +7,8 @@ import Lily from "@/../public/images/mini-projects/lily.png";
 import Hillaryours from "@/../public/images/mini-projects/hillaryours.png";
 
 export const baseUrl = "https://fadhilkholaf.my.id";
-export const openGraphImageURL = `${baseUrl}/images/og/image.jpg`;
+export const openGraphBaseURL = `${baseUrl}/images/og/`;
+export const openGraphDefaultImageURL = `${baseUrl}/images/og/main.png`;
 
 export const projects: ProjectInterface[] = [
   {

@@ -6,7 +6,7 @@
 
   --ease-out-cubic: cubic-bezier(0.33, 1, 0.68, 1);
 
-  --animate-background-position: background-position 1s ease-in-out infinite;
+  --animate-background-position: background-position 2s ease-in-out infinite;
 
   @keyframes background-position {
     0%,

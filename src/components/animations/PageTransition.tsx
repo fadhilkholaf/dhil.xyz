@@ -2,17 +2,9 @@
 
 import { motion, Variants } from "motion/react";
 
+import { usePageTransitionType } from "@/hooks/usePageTransitionType";
 import { PageTransitionContextInterface } from "@/types/page-transition";
 import { cn } from "@/utils/utils";
-
-const pageTransitionVariants: Variants = {
-  animate: {
-    transition: { staggerChildren: 0.03 },
-  },
-  exit: {
-    transition: { staggerChildren: 0.03 },
-  },
-};
 
 const transitionVariants: Variants = {
   initial: {
@@ -20,23 +12,68 @@ const transitionVariants: Variants = {
     originX: 1,
     transition: { duration: 0 },
   },
-  animate: {
+  animate: (i: number) => ({
     scaleX: 0,
     originX: 1,
-    transition: { type: "tween", duration: 0.5, ease: [0.65, 0, 0.35, 1] },
+    transition: {
+      type: "tween",
+      duration: 0.5,
+      ease: [0.65, 0, 0.35, 1],
+      delay: i * 0.03,
+    },
     transitionEnd: { originX: 0 },
-  },
+  }),
   idle: {
     scaleX: 0,
     originX: 0,
     transition: { duration: 0 },
   },
-  exit: {
+  exit: (i: number) => ({
     scaleX: 1,
     originX: 0,
-    transition: { type: "tween", duration: 0.5, ease: [0.65, 0, 0.35, 1] },
+    transition: {
+      type: "tween",
+      duration: 0.5,
+      ease: [0.65, 0, 0.35, 1],
+      delay: i * 0.03,
+    },
     transitionEnd: { originX: 1 },
+  }),
+};
+
+const verticalTransitionVariants: Variants = {
+  initial: {
+    scaleY: 1,
+    originY: 1,
+    transition: { duration: 0 },
   },
+  animate: (i: number) => ({
+    scaleY: 0,
+    originY: 1,
+    transition: {
+      type: "tween",
+      duration: 0.5,
+      ease: [0.65, 0, 0.35, 1],
+      delay: i * 0.05,
+    },
+    transitionEnd: { originY: 0 },
+  }),
+  idle: {
+    scaleY: 0,
+    originY: 0,
+    transition: { duration: 0 },
+  },
+  exit: (i: number) => ({
+    scaleY: 1,
+    originY: 0,
+    transition: {
+      type: "tween",
+      duration: 0.5,
+      ease: [0.65, 0, 0.35, 1],
+      delay: i * 0.05,
+    },
+    transitionEnd: { originY: 1 },
+  }),
 };
 
 const PageTransition = ({
@@ -44,32 +81,83 @@ const PageTransition = ({
 }: {
   pageTransition: PageTransitionContextInterface["pageTransition"];
 }) => {
-  return (
-    <motion.section
-      initial="initial"
-      animate={pageTransition}
-      className={cn("fixed z-50 size-full", {
-        hidden: pageTransition === "idle",
-      })}
-    >
-      <motion.main
-        variants={pageTransitionVariants}
-        className="flex size-full flex-col"
-      >
-        {Array.from({ length: 12 }).map((_, i) => (
-          <motion.div
-            key={i}
-            variants={transitionVariants}
-            className="animate-background-position h-full w-full scale-y-105 bg-gradient-to-b from-pink-50 from-25% to-pink-200"
-            style={{
-              backgroundSize: "100% 200%",
-              animationDelay: `${i * 100}ms`,
-            }}
-          ></motion.div>
-        ))}
-      </motion.main>
-    </motion.section>
-  );
+  const { type } = usePageTransitionType();
+
+  switch (type) {
+    case "horizontal":
+      return (
+        <motion.section
+          animate={pageTransition}
+          className={cn("fixed z-50 size-full", {
+            hidden: pageTransition === "idle",
+          })}
+        >
+          <motion.main className="flex size-full flex-col">
+            {Array.from({ length: 12 }).map((_, i) => (
+              <motion.div
+                key={i}
+                custom={i}
+                variants={transitionVariants}
+                className="animate-background-position h-full w-full scale-y-105 bg-gradient-to-b from-pink-100 from-25% to-pink-200 to-75%"
+                style={{
+                  backgroundSize: "100% 200%",
+                  animationDelay: `${i * 100}ms`,
+                }}
+              ></motion.div>
+            ))}
+          </motion.main>
+        </motion.section>
+      );
+
+    case "vertical":
+      return (
+        <motion.section
+          animate={pageTransition}
+          className={cn("fixed z-50 size-full", {
+            hidden: pageTransition === "idle",
+          })}
+        >
+          <motion.main className="flex size-full flex-row">
+            {Array.from({ length: 19 }).map((_, i) => (
+              <motion.div
+                key={i}
+                custom={Math.abs(i - 9)}
+                variants={verticalTransitionVariants}
+                className="animate-background-position h-full w-full scale-x-105 bg-linear-150 from-pink-100 from-25% via-pink-200 via-50% to-pink-100 to-75%"
+                style={{
+                  backgroundSize: "100% 200%",
+                  animationDelay: `${Math.abs(i - 9) * 100}ms`,
+                }}
+              ></motion.div>
+            ))}
+          </motion.main>
+        </motion.section>
+      );
+
+    default:
+      return (
+        <motion.section
+          animate={pageTransition}
+          className={cn("fixed z-50 size-full", {
+            hidden: pageTransition === "idle",
+          })}
+        >
+          <motion.main className="flex size-full flex-col">
+            {Array.from({ length: 12 }).map((_, i) => (
+              <motion.div
+                key={i}
+                variants={transitionVariants}
+                className="animate-background-position h-full w-full scale-y-105 bg-gradient-to-b from-pink-100 from-25% to-pink-200 to-75%"
+                style={{
+                  backgroundSize: "100% 200%",
+                  animationDelay: `${i * 100}ms`,
+                }}
+              ></motion.div>
+            ))}
+          </motion.main>
+        </motion.section>
+      );
+  }
 };
 
 export default PageTransition;

@@ -3,7 +3,10 @@
 import { createContext, ReactNode, useContext, useState } from "react";
 
 import PageTransition from "@/components/animations/PageTransition";
-import { PageTransitionContextInterface } from "@/types/page-transition";
+import {
+  PageTransitionContextInterface,
+  PageTransitionEvent,
+} from "@/types/page-transition";
 
 const PageTransitionContext = createContext<
   PageTransitionContextInterface | undefined
@@ -15,7 +18,7 @@ export const PageTransitionProvider = ({
   children: ReactNode;
 }) => {
   const [pageTransition, setPageTransition] =
-    useState<PageTransitionContextInterface["pageTransition"]>("initial");
+    useState<PageTransitionEvent>("initial");
 
   return (
     <PageTransitionContext.Provider

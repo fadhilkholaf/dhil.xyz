@@ -93,6 +93,7 @@ const CursorImage = ({ cursorImage }: { cursorImage: string | null }) => {
               width={400}
               height={225}
               priority
+              unoptimized={cursorImage.split(".").slice(-1)[0] === "gif"}
               className="aspect-video object-cover"
             />
           </motion.div>
