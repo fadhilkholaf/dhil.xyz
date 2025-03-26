@@ -1,23 +1,9 @@
 import Image from "next/image";
 
 import Logo from "@/../public/images/main/fadhilkholaf.svg";
+import { menus } from "@/utils/data";
 
 import PageTransitionLink from "./PageTransitionLink";
-
-const menus: { label: string; href: string }[] = [
-  {
-    label: "Home",
-    href: "/",
-  },
-  {
-    label: "Projects",
-    href: "/projects",
-  },
-  {
-    label: "About",
-    href: "/about",
-  },
-];
 
 const Navbar = () => {
   return (

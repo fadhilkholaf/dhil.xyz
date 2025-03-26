@@ -2,6 +2,7 @@ import { ExperienceInterface } from "@/types/experience";
 import { ProjectInterface } from "@/types/project";
 
 import KantinNegro from "@/../public/images/projects/kantin-negro.png";
+import KeretaApi from "@/../public/images/projects/kereta-api.png";
 import Chat from "@/../public/images/mini-projects/chat.png";
 import Lily from "@/../public/images/mini-projects/lily.png";
 import Hillaryours from "@/../public/images/mini-projects/hillaryours.png";
@@ -10,21 +11,44 @@ export const baseUrl = "https://fadhilkholaf.my.id";
 export const openGraphBaseURL = `${baseUrl}/images/og/`;
 export const openGraphDefaultImageURL = `${baseUrl}/images/og/main.png`;
 
+export const menus: { label: string; href: string }[] = [
+  {
+    label: "Home",
+    href: "/",
+  },
+  {
+    label: "Projects",
+    href: "/projects",
+  },
+  {
+    label: "About",
+    href: "/about",
+  },
+];
+
 export const projects: ProjectInterface[] = [
   {
     name: "Kantin: Anti Starving",
-    slogan: "Find your perfect foods and drinks",
+    slogan: "Find your perfect foods and drinks.",
     image: KantinNegro,
     tag: "Full-stack - Web - Animation",
     url: "https://kantin.fadhilkholaf.my.id",
     source: "https://github.com/fadhilkholaf/web-kantin-negro-ukk-2025",
+  },
+  {
+    name: "Ticketing Kereta API",
+    slogan: "Feels the simplicity.",
+    image: KeretaApi,
+    tag: "Backend - Node.js - Express",
+    url: "https://kereta.apidog.fadhilkholaf.my.id",
+    source: "https://github.com/fadhilkholaf/ukk-kereta-api-2025",
   },
 ];
 
 export const miniProjects: ProjectInterface[] = [
   {
     name: "Chat",
-    slogan: "Personal AI assistant",
+    slogan: "Personal AI chat bot assistant",
     image: Chat,
     tag: "AI - Chat - Bot",
     url: "https://chat.fadhilkholaf.my.id",
@@ -44,6 +68,8 @@ export const miniProjects: ProjectInterface[] = [
     url: "https://hillaryours.fadhilkholaf.my.id",
   },
 ];
+
+export const allProjects: ProjectInterface[] = projects.concat(miniProjects);
 
 export const experiences: ExperienceInterface[] = [
   {

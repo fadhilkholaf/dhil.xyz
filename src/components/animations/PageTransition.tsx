@@ -19,7 +19,7 @@ const transitionVariants: Variants = {
       type: "tween",
       duration: 0.5,
       ease: [0.65, 0, 0.35, 1],
-      delay: i * 0.03,
+      delay: i * 0.04,
     },
     transitionEnd: { originX: 0 },
   }),
@@ -35,7 +35,7 @@ const transitionVariants: Variants = {
       type: "tween",
       duration: 0.5,
       ease: [0.65, 0, 0.35, 1],
-      delay: i * 0.03,
+      delay: i * 0.04,
     },
     transitionEnd: { originX: 1 },
   }),
@@ -88,7 +88,7 @@ const PageTransition = ({
       return (
         <motion.section
           animate={pageTransition}
-          className={cn("fixed z-50 size-full", {
+          className={cn("fixed z-50 h-screen w-screen", {
             hidden: pageTransition === "idle",
           })}
         >
@@ -98,7 +98,7 @@ const PageTransition = ({
                 key={i}
                 custom={i}
                 variants={transitionVariants}
-                className="animate-background-position h-full w-full scale-y-105 bg-gradient-to-b from-pink-100 from-25% to-pink-200 to-75%"
+                className="animate-background-position h-full w-full scale-y-105 bg-gradient-to-b from-pink-200 from-20% to-pink-300 to-80%"
                 style={{
                   backgroundSize: "100% 200%",
                   animationDelay: `${i * 100}ms`,
@@ -113,7 +113,7 @@ const PageTransition = ({
       return (
         <motion.section
           animate={pageTransition}
-          className={cn("fixed z-50 size-full", {
+          className={cn("fixed z-50 h-screen w-screen", {
             hidden: pageTransition === "idle",
           })}
         >
@@ -125,7 +125,7 @@ const PageTransition = ({
                 variants={verticalTransitionVariants}
                 className={cn(
                   "animate-background-position hidden h-full w-full md:z-0 md:block md:scale-x-105",
-                  "bg-linear-150 from-pink-100 from-25% via-pink-200 via-50% to-pink-100 to-75%",
+                  "bg-linear-150 from-pink-200 from-20% via-pink-300 via-50% to-pink-200 to-80%",
                   { "z-10 block scale-x-125": i % 2 === 0 },
                 )}
                 style={{
@@ -142,7 +142,7 @@ const PageTransition = ({
       return (
         <motion.section
           animate={pageTransition}
-          className={cn("fixed z-50 size-full", {
+          className={cn("fixed z-50 h-screen w-screen", {
             hidden: pageTransition === "idle",
           })}
         >
@@ -151,7 +151,7 @@ const PageTransition = ({
               <motion.div
                 key={i}
                 variants={transitionVariants}
-                className="animate-background-position h-full w-full scale-y-105 bg-gradient-to-b from-pink-100 from-25% to-pink-200 to-75%"
+                className="animate-background-position h-full w-full scale-y-105 bg-gradient-to-b from-pink-200 from-20% to-pink-300 to-80%"
                 style={{
                   backgroundSize: "100% 200%",
                   animationDelay: `${i * 100}ms`,

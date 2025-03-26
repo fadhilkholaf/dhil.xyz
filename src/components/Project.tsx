@@ -53,7 +53,7 @@ const Project = ({ project }: { project: ProjectInterface }) => {
       </main>
       <footer className="flex gap-4">
         <PageTransitionLink
-          href={`/projects/${encodeURIComponent(`Working on "${project.name}" project details.`)}`}
+          href={`/projects/${encodeURIComponent(project.name)}`}
           transitionType="vertical"
         >
           <span className="underline">Details</span> →

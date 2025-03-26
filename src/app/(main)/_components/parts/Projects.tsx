@@ -2,9 +2,9 @@
 
 import PageTransitionLink from "@/components/PageTransitionLink";
 import Project from "@/components/Project";
-import { projects } from "@/utils/data";
+import { allProjects } from "@/utils/data";
 
-const featuredProjectName: string[] = ["Kantin: Anti Starving"];
+const featuredProjectName: string[] = ["Kantin: Anti Starving", "Lily"];
 
 const Projects = () => {
   return (
@@ -14,7 +14,7 @@ const Projects = () => {
       </header>
       <main>
         <ul className="grid grid-cols-1 gap-16 md:grid-cols-2">
-          {projects
+          {allProjects
             .filter((project) => featuredProjectName.includes(project.name))
             .map((project, i) => (
               <Project key={i} project={project} />
