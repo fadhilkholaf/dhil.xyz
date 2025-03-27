@@ -45,7 +45,7 @@ const Hero = () => {
               LinkedIn
             </Link>
             <Link href="https://x.com/fadhilkholaf" target="_blank">
-              X
+              Twitter / X
             </Link>
           </div>
         </div>
