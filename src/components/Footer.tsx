@@ -4,17 +4,17 @@ import { footerData } from "@/utils/data";
 
 const Footer = () => {
   return (
-    <footer className="layout mt-16 flex h-fit flex-col gap-4 py-16">
-      <header>
-        <h1>{"Let's connect"}</h1>
+    <footer className="layout mt-16 flex h-fit flex-wrap justify-between gap-8 py-16">
+      <header className="min-w-[200]">
+        <h3>ファディル</h3>
+        <p>050307</p>
       </header>
-      <hr />
       <main className="flex flex-wrap justify-between gap-8">
         {footerData.map((section, i) => {
           const [[name, links]] = Object.entries(section);
           return (
             <div key={i} className="flex min-w-[200] flex-col gap-2">
-              <h3>{name}</h3>
+              {/* <h3>{name}</h3> */}
               <ul className="flex flex-col gap-2">
                 {links.map((link, j) => (
                   <li key={j}>
