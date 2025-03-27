@@ -21,7 +21,7 @@ const Hero = () => {
             <h3>Muhammad Fadhil Kholaf</h3>
             <p>Or you can call me Fadhil.</p>
           </div>
-          <p>
+          {/* <p>
             {`I am a software engineering student at SMK Telkom Malang. I was born
             in 2006 in Tulungagung, and I spent the first 16 years of my life in
             Tulungagung and Trenggalek. My journey to becoming a programmer
@@ -49,7 +49,8 @@ const Hero = () => {
             discovered many more tools for web animations, like Three.js, WebGL,
             GLSL, GSAP, Motion, Lenis, etc. (It was hard, though.)`}
           </p>
-          <p>{`That's it for now (I'm totally cooked).`}</p>
+          <p>{`That's it for now (I'm totally cooked).`}</p> */}
+          <p>I Don't yapp.</p>
         </div>
         <Image
           src={Me}
