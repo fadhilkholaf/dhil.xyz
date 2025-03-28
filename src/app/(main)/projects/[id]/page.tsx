@@ -20,6 +20,8 @@ export const generateMetadata = async ({
   return {
     title: project.name,
     openGraph: {
+      siteName: "Fadhilkholaf",
+      url: baseUrl,
       images: [
         {
           url: `${baseUrl}/api/og/${project.name}`,
@@ -28,7 +30,11 @@ export const generateMetadata = async ({
         },
       ],
     },
-    twitter: { images: `${baseUrl}/api/og/${project.name}` },
+    twitter: {
+      card: "summary_large_image",
+      creator: "@fadhilkholaf",
+      images: `${baseUrl}/api/og/${project.name}`,
+    },
   };
 };
 

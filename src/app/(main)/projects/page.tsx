@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 
-import { openGraphBaseURL } from "@/utils/data";
+import { baseUrl, openGraphBaseURL } from "@/utils/data";
 
 import Hero from "./_components/parts/Hero";
 import MiniProjects from "./_components/parts/MiniProjects";
@@ -8,6 +8,8 @@ import MiniProjects from "./_components/parts/MiniProjects";
 export const metadata: Metadata = {
   title: "Projects",
   openGraph: {
+    siteName: "Fadhilkholaf",
+    url: baseUrl,
     images: [
       {
         url: `${openGraphBaseURL}projects.png`,
@@ -16,7 +18,11 @@ export const metadata: Metadata = {
       },
     ],
   },
-  twitter: { images: `${openGraphBaseURL}p.png` },
+  twitter: {
+    card: "summary_large_image",
+    creator: "@fadhilkholaf",
+    images: `${openGraphBaseURL}p.png`,
+  },
 };
 
 const ProjectsPage = () => {
