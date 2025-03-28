@@ -4,7 +4,7 @@ import { footerData } from "@/utils/data";
 
 const Footer = () => {
   return (
-    <footer className="layout mt-16 flex h-fit flex-wrap justify-between gap-8 py-16">
+    <footer className="layout flex h-fit flex-wrap justify-between gap-8 py-32">
       <header className="min-w-[200]">
         <h3>ファディル</h3>
         <p>050307</p>
@@ -14,7 +14,7 @@ const Footer = () => {
           const [[name, links]] = Object.entries(section);
           return (
             <div key={i} className="flex min-w-[200] flex-col gap-2">
-              {/* <h3>{name}</h3> */}
+              <h4>{name}</h4>
               <ul className="flex flex-col gap-2">
                 {links.map((link, j) => (
                   <li key={j}>

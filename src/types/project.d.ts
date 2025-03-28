@@ -2,9 +2,10 @@ import { StaticImageData } from "next/image";
 
 export interface ProjectInterface {
   name: string;
-  slogan?: string;
-  image: StaticImageData;
-  tag: string;
+  type?: string;
+  tag?: string;
+  description?: string;
+  image?: StaticImageData;
   url?: string;
   source?: string;
 }

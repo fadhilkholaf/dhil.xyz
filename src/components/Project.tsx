@@ -17,18 +17,19 @@ const Project = ({ project }: { project: ProjectInterface }) => {
   useEffect(() => {
     const isMedium = window.innerWidth >= 768;
     const currentRef = ref.current;
+    const image = project.image;
 
-    if (currentRef && isMedium) {
+    if (currentRef && isMedium && image) {
       currentRef.addEventListener("pointerenter", () =>
-        setCursorImage(project.image.src),
+        setCursorImage(image.src),
       );
       currentRef.addEventListener("pointerleave", () => setCursorImage(null));
     }
 
     return () => {
-      if (currentRef && isMedium) {
+      if (currentRef && isMedium && image) {
         currentRef.removeEventListener("pointerenter", () =>
-          setCursorImage(project.image.src),
+          setCursorImage(image.src),
         );
         currentRef.removeEventListener("pointerleave", () =>
           setCursorImage(null),
@@ -40,16 +41,18 @@ const Project = ({ project }: { project: ProjectInterface }) => {
   return (
     <li ref={ref} className="flex flex-col gap-4">
       <header>
-        <Image
-          src={project.image}
-          alt={project.name}
-          className="aspect-video h-fit w-full object-cover md:hidden"
-        />
-        <p className="mt-2">{project.tag}</p>
+        {project.image && (
+          <Image
+            src={project.image}
+            alt={project.name}
+            className="aspect-video h-fit w-full object-cover md:hidden"
+          />
+        )}
+        <p className="mt-2">{project.type}</p>
       </header>
       <main>
         <h3>{project.name}</h3>
-        {project.slogan && <p>{project.slogan}</p>}
+        <p>{project.tag}</p>
       </main>
       <footer className="flex gap-4">
         <PageTransitionLink

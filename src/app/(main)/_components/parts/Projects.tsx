@@ -2,9 +2,7 @@
 
 import PageTransitionLink from "@/components/PageTransitionLink";
 import Project from "@/components/Project";
-import { allProjects } from "@/utils/data";
-
-const featuredProjectName: string[] = ["Kantin: Anti Starving", "Lily"];
+import { allProjects, featuredProjectName } from "@/utils/data";
 
 const Projects = () => {
   return (

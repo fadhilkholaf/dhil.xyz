@@ -7,7 +7,7 @@ import Chat from "@/../public/images/mini-projects/chat.png";
 import Lily from "@/../public/images/mini-projects/lily.png";
 import Hillaryours from "@/../public/images/mini-projects/hillaryours.png";
 
-export const baseUrl = "https://fadhilkholaf.my.id";
+export const baseUrl = `${process.env.NODE_ENV === "development" ? "http://localhost:3000" : "https://fadhilkholaf.my.id"}`;
 export const openGraphBaseURL = `${baseUrl}/images/og/`;
 export const openGraphDefaultImageURL = `${baseUrl}/images/og/main.png`;
 
@@ -28,18 +28,20 @@ export const menus: { label: string; href: string }[] = [
 
 export const projects: ProjectInterface[] = [
   {
-    name: "Kantin: Anti Starving",
-    slogan: "Find your perfect foods and drinks.",
+    name: "Kantin Negro",
+    type: "Full-stack - Web - Animation",
+    description: "Find your perfect foods and drinks.",
+    tag: "UKK 2024/2025 Project",
     image: KantinNegro,
-    tag: "Full-stack - Web - Animation",
     url: "https://kantin.fadhilkholaf.my.id",
     source: "https://github.com/fadhilkholaf/web-kantin-negro-ukk-2025",
   },
   {
     name: "Ticketing Kereta API",
-    slogan: "Feels the simplicity.",
+    type: "Backend - Node.js - Express",
+    description: "I'm still wondering why I make this piece of crap",
+    tag: "UKK 2024/2025 Project",
     image: KeretaApi,
-    tag: "Backend - Node.js - Express",
     url: "https://kereta.apidog.fadhilkholaf.my.id",
     source: "https://github.com/fadhilkholaf/ukk-kereta-api-2025",
   },
@@ -48,28 +50,33 @@ export const projects: ProjectInterface[] = [
 export const miniProjects: ProjectInterface[] = [
   {
     name: "Chat",
-    slogan: "Personal AI chat bot assistant",
+    type: "AI - Chat - Bot",
+    description: "Personal AI chat bot assistant",
+    tag: "Mini Project #3",
     image: Chat,
-    tag: "AI - Chat - Bot",
     url: "https://chat.fadhilkholaf.my.id",
   },
   {
     name: "Lily",
-    slogan: "リリー",
+    type: "Front-end - Web - Animation",
+    description: "This is my girlfriend y'all",
+    tag: "Mini Project #2",
     image: Lily,
-    tag: "Front-end - Web - Animation",
     url: "https://lily.fadhilkholaf.my.id",
   },
   {
     name: "Hillaryours",
-    slogan: "New spirit of blume",
+    type: "Front-end - Web - Animation",
+    description: "New spirit of blume",
+    tag: "Mini Project #1",
     image: Hillaryours,
-    tag: "Front-end - Web - Animation",
     url: "https://hillaryours.fadhilkholaf.my.id",
   },
 ];
 
 export const allProjects: ProjectInterface[] = projects.concat(miniProjects);
+
+export const featuredProjectName: string[] = ["Kantin Negro", "Lily"];
 
 export const experiences: ExperienceInterface[] = [
   {
@@ -108,15 +115,27 @@ export const footerData: {
   {
     Socials: [
       {
+        title: "Awwwards",
+        href: "https://awwwards.com/fadhilkholaf",
+      },
+      {
         title: "GitHub",
         href: "https://github.com/fadhilkholaf",
+      },
+      {
+        title: "Instagram",
+        href: "https://instagram.com/fadhilkholaf",
       },
       {
         title: "LinkedIn",
         href: "https://linkedin.com/in/fadhilkholaf",
       },
       {
-        title: "X",
+        title: "Tiktok",
+        href: "https://tiktok.com/@fadhilkholaf",
+      },
+      {
+        title: "Twitter / X",
         href: "https://x.com/fadhilkholaf",
       },
     ],
@@ -130,6 +149,10 @@ export const footerData: {
       {
         title: "Lily",
         href: "https://tenor.com/view/love-mylofly-jkt48-lily-cantik-lily-lucu-gif-2165950836249670182",
+      },
+      {
+        title: "Tiny.png",
+        href: "https://tinypng.com",
       },
     ],
   },
