@@ -21,7 +21,6 @@ const Navbar = () => {
           <PageTransitionLink
             key={i}
             href={menu.href}
-            transitionType={menu.label === "Projects" ? "vertical" : undefined}
             className="p-4 no-underline"
           >
             <h4>{menu.label}</h4>

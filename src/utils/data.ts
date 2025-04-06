@@ -114,26 +114,26 @@ export const footerData: {
 }[] = [
   {
     Socials: [
-      {
-        title: "Awwwards",
-        href: "https://awwwards.com/fadhilkholaf",
-      },
+      // {
+      //   title: "Awwwards",
+      //   href: "https://awwwards.com/fadhilkholaf",
+      // },
       {
         title: "GitHub",
         href: "https://github.com/fadhilkholaf",
       },
-      {
-        title: "Instagram",
-        href: "https://instagram.com/fadhilkholaf",
-      },
+      // {
+      //   title: "Instagram",
+      //   href: "https://instagram.com/fadhilkholaf",
+      // },
       {
         title: "LinkedIn",
         href: "https://linkedin.com/in/fadhilkholaf",
       },
-      {
-        title: "Tiktok",
-        href: "https://tiktok.com/@fadhilkholaf",
-      },
+      // {
+      //   title: "Tiktok",
+      //   href: "https://tiktok.com/@fadhilkholaf",
+      // },
       {
         title: "Twitter / X",
         href: "https://x.com/fadhilkholaf",

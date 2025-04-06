@@ -124,9 +124,9 @@ const PageTransition = ({
                 custom={Math.abs(i - 9)}
                 variants={verticalTransitionVariants}
                 className={cn(
-                  "animate-background-position hidden h-full w-full md:z-0 md:block md:scale-x-105",
+                  "animate-background-position z-0 block h-full scale-x-105 md:w-full",
                   "bg-linear-150 from-pink-100 from-20% via-pink-300 via-50% to-pink-100 to-80%",
-                  { "z-10 block scale-x-125": i % 2 === 0 },
+                  { "w-full": Math.abs(i - 9) < 5 },
                 )}
                 style={{
                   backgroundSize: "100% 200%",

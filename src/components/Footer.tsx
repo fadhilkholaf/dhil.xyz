@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="layout flex h-fit flex-wrap justify-between gap-8 py-32">
       <header className="min-w-[200]">
         <h3>ファディル</h3>
-        <p>050307</p>
+        {/* <p>050307</p> */}
       </header>
       <main className="flex flex-wrap justify-between gap-8">
         {footerData.map((section, i) => {

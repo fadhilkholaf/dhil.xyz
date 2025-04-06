@@ -34,9 +34,7 @@ const PageTransitionLink = ({
 
     setType(transitionType || "horizontal");
 
-    if (href === pathname) {
-      router.refresh();
-    } else {
+    if (href !== pathname) {
       await sleep(100);
 
       setPageTransition("exit");

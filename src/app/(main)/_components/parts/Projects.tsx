@@ -22,7 +22,6 @@ const Projects = () => {
       <footer className="flex justify-center">
         <PageTransitionLink
           href="/projects"
-          transitionType="vertical"
           className="rounded-full bg-gray-800 px-4 py-2 text-pink-200 no-underline"
         >
           All projects →
