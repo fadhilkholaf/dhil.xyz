@@ -6,8 +6,9 @@ export interface SpotifyArtistInterface {
 }
 
 export interface SpotifyCurrentlyPlayingInterface {
+  image: string;
   title: string;
   artists: SpotifyArtistInterface[];
-  image: string;
+  album: string;
   url: string;
 }

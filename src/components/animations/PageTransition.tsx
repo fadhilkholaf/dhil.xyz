@@ -19,7 +19,7 @@ const transitionVariants: Variants = {
       type: "tween",
       duration: 0.5,
       ease: [0.65, 0, 0.35, 1],
-      delay: i * 0.04,
+      delay: i * 0.005,
     },
     transitionEnd: { originX: 0 },
   }),
@@ -35,7 +35,7 @@ const transitionVariants: Variants = {
       type: "tween",
       duration: 0.5,
       ease: [0.65, 0, 0.35, 1],
-      delay: i * 0.04,
+      delay: i * 0.005,
     },
     transitionEnd: { originX: 1 },
   }),
@@ -54,7 +54,7 @@ const verticalTransitionVariants: Variants = {
       type: "tween",
       duration: 0.5,
       ease: [0.65, 0, 0.35, 1],
-      delay: i * 0.05,
+      delay: i * 0.005,
     },
     transitionEnd: { originY: 0 },
   }),
@@ -70,7 +70,7 @@ const verticalTransitionVariants: Variants = {
       type: "tween",
       duration: 0.5,
       ease: [0.65, 0, 0.35, 1],
-      delay: i * 0.05,
+      delay: i * 0.005,
     },
     transitionEnd: { originY: 1 },
   }),
@@ -93,19 +93,19 @@ const PageTransition = ({
           })}
         >
           <motion.main className="flex size-full flex-row">
-            {Array.from({ length: 19 }).map((_, i) => (
+            {Array.from({ length: 23 }).map((_, i) => (
               <motion.div
                 key={i}
-                custom={Math.abs(i - 9)}
+                custom={Math.abs(i - 11)}
                 variants={verticalTransitionVariants}
                 className={cn(
-                  "animate-background-position z-0 block h-full scale-x-105 md:w-full",
-                  "bg-linear-150 from-pink-100 from-20% via-pink-300 via-50% to-pink-100 to-80%",
-                  { "w-full": Math.abs(i - 9) < 5 },
+                  "animate-background-position-vertical z-0 block h-full scale-x-105 md:w-full",
+                  "bg-gradient-to-r from-pink-200 from-30% to-pink-300 to-70%",
+                  { "w-full": Math.abs(i - 11) < 4 },
                 )}
                 style={{
-                  backgroundSize: "100% 200%",
-                  animationDelay: `${Math.abs(i - 9) * 100}ms`,
+                  backgroundSize: "200% 100%",
+                  animationDelay: `${Math.abs(i - 11) * 100}ms`,
                 }}
               ></motion.div>
             ))}
@@ -122,15 +122,15 @@ const PageTransition = ({
           })}
         >
           <motion.main className="flex size-full flex-col">
-            {Array.from({ length: 12 }).map((_, i) => (
+            {Array.from({ length: 15 }).map((_, i) => (
               <motion.div
                 key={i}
-                custom={i}
+                custom={Math.abs(i - 7)}
                 variants={transitionVariants}
-                className="animate-background-position h-full w-full scale-y-105 bg-gradient-to-b from-pink-100 from-20% to-pink-300 to-80%"
+                className="animate-background-position h-full w-full scale-y-105 bg-gradient-to-b from-pink-200 from-30% to-pink-300 to-70%"
                 style={{
                   backgroundSize: "100% 200%",
-                  animationDelay: `${i * 100}ms`,
+                  animationDelay: `${Math.abs(i - 7) * 100}ms`,
                 }}
               ></motion.div>
             ))}

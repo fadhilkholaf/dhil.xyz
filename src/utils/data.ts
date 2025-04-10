@@ -157,7 +157,7 @@ export const footerData: {
     ],
   },
   {
-    Inspo: [
+    Inspirations: [
       {
         title: "Ahsan Azizan",
         href: "https://www.ahsanzizan.xyz",

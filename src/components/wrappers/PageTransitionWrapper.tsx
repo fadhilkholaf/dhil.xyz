@@ -10,10 +10,10 @@ const PageTransitionWrapper = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     const initialTransition = async () => {
-      await sleep(100);
+      await sleep(1);
       if (pageTransition !== "idle") {
         setPageTransition("animate");
-        await sleep(900);
+        await sleep(750);
         setPageTransition("idle");
       }
     };

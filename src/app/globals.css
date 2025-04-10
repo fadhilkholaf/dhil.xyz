@@ -6,7 +6,9 @@
 
   --ease-out-cubic: cubic-bezier(0.33, 1, 0.68, 1);
 
-  --animate-background-position: background-position 2s ease-in-out infinite;
+  --animate-background-position: background-position 1s ease-in-out infinite;
+  --animate-background-position-vertical: background-position-vertical 1s
+    ease-in-out infinite;
 
   @keyframes background-position {
     0%,
@@ -15,6 +17,16 @@
     }
     50% {
       background-position: 0 100%;
+    }
+  }
+
+  @keyframes background-position-vertical {
+    0%,
+    100% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 100% 0;
     }
   }
 }

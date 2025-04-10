@@ -50,8 +50,8 @@ const CursorImage = ({ cursorImage }: { cursorImage: string | null }) => {
 
       x.set(e.clientX);
       y.set(e.clientY);
-      mX.set(Math.max(-30, Math.min(30, e.movementX)));
-      mY.set(Math.max(-30, Math.min(30, e.movementY)));
+      mX.set(Math.max(-45, Math.min(45, e.movementX * 2)));
+      mY.set(Math.max(-45, Math.min(45, e.movementY * 2)));
 
       movementTimeout = setTimeout(() => {
         mX.set(0);
@@ -69,6 +69,9 @@ const CursorImage = ({ cursorImage }: { cursorImage: string | null }) => {
       });
     };
   }, []);
+
+  const splitedImageUrl = cursorImage?.split(".");
+  const isGif = splitedImageUrl?.slice(-1)[0] === "gif";
 
   return (
     <motion.div
@@ -93,8 +96,8 @@ const CursorImage = ({ cursorImage }: { cursorImage: string | null }) => {
               width={400}
               height={225}
               priority
-              unoptimized={cursorImage.split(".").slice(-1)[0] === "gif"}
-              className="aspect-video object-cover"
+              unoptimized={isGif}
+              className="aspect-video"
             />
           </motion.div>
         )}

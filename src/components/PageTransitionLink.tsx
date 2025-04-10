@@ -35,11 +35,11 @@ const PageTransitionLink = ({
     setType(transitionType || "horizontal");
 
     if (href !== pathname) {
-      await sleep(100);
+      await sleep(1);
 
       setPageTransition("exit");
 
-      await sleep(900);
+      await sleep(750);
 
       router.push(href);
     }

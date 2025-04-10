@@ -52,8 +52,8 @@ export const getCurrentlyPlaying = async (): Promise<
   const firstArtist = await getArtist(currentlyPlaying.item.artists[0].id);
 
   const data: SpotifyCurrentlyPlayingInterface = {
-    title: currentlyPlaying.item.name,
     image: currentlyPlaying.item.album.images[1].url,
+    title: currentlyPlaying.item.name,
     artists: currentlyPlaying.item.artists.map(
       (artist: SpotifyArtistInterface, i: number) => {
         if (i === 0 && firstArtist !== false) {
@@ -67,6 +67,7 @@ export const getCurrentlyPlaying = async (): Promise<
         return { id: artist.id, name: artist.name };
       },
     ),
+    album: currentlyPlaying.item.album.name,
     url: currentlyPlaying.item.external_urls.spotify,
   };
 
