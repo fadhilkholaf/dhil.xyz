@@ -84,31 +84,6 @@ const PageTransition = ({
   const { type } = usePageTransitionType();
 
   switch (type) {
-    case "horizontal":
-      return (
-        <motion.section
-          animate={pageTransition}
-          className={cn("fixed z-50 h-screen w-screen", {
-            hidden: pageTransition === "idle",
-          })}
-        >
-          <motion.main className="flex size-full flex-col">
-            {Array.from({ length: 12 }).map((_, i) => (
-              <motion.div
-                key={i}
-                custom={i}
-                variants={transitionVariants}
-                className="animate-background-position h-full w-full scale-y-105 bg-gradient-to-b from-pink-100 from-20% to-pink-300 to-80%"
-                style={{
-                  backgroundSize: "100% 200%",
-                  animationDelay: `${i * 100}ms`,
-                }}
-              ></motion.div>
-            ))}
-          </motion.main>
-        </motion.section>
-      );
-
     case "vertical":
       return (
         <motion.section
@@ -150,6 +125,7 @@ const PageTransition = ({
             {Array.from({ length: 12 }).map((_, i) => (
               <motion.div
                 key={i}
+                custom={i}
                 variants={transitionVariants}
                 className="animate-background-position h-full w-full scale-y-105 bg-gradient-to-b from-pink-100 from-20% to-pink-300 to-80%"
                 style={{

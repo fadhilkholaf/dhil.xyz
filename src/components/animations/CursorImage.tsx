@@ -43,7 +43,7 @@ const CursorImage = ({ cursorImage }: { cursorImage: string | null }) => {
   useEffect(() => {
     let movementTimeout: ReturnType<typeof setTimeout> | null = null;
 
-    const setMotionValue = (e: PointerEvent) => {
+    const setMotionValue = (e: MouseEvent) => {
       if (movementTimeout) {
         clearTimeout(movementTimeout);
       }
@@ -59,12 +59,12 @@ const CursorImage = ({ cursorImage }: { cursorImage: string | null }) => {
       }, 10);
     };
 
-    window.addEventListener("pointermove", (e) => {
+    window.addEventListener("mousemove", (e) => {
       setMotionValue(e);
     });
 
     return () => {
-      window.removeEventListener("pointermove", (e) => {
+      window.removeEventListener("mousemove", (e) => {
         setMotionValue(e);
       });
     };
