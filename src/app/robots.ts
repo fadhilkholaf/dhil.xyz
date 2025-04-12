@@ -1,15 +1,15 @@
 import { MetadataRoute } from "next";
 
 const robots = (): MetadataRoute.Robots => {
-  return {
-    rules: [
-      {
-        userAgent: "*",
-        allow: "/",
-      },
-    ],
-    sitemap: "https://fadhilkholaf.my.id/sitemap.xml",
-  };
+    return {
+        rules: [
+            {
+                userAgent: "*",
+                allow: "/",
+            },
+        ],
+        sitemap: "https://fadhilkholaf.my.id/sitemap.xml",
+    };
 };
 
 export default robots;

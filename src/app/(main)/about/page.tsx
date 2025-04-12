@@ -7,33 +7,33 @@ import Experiences from "./_components/parts/Experiences";
 import Hero from "./_components/parts/Hero";
 
 export const metadata: Metadata = {
-  title: "About",
-  openGraph: {
-    siteName: "Fadhilkholaf",
-    url: baseUrl,
-    images: [
-      {
-        url: `${openGraphBaseURL}about.png`,
-        width: 800,
-        height: 418,
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    creator: "@fadhilkholaf",
-    images: `${openGraphBaseURL}a.png`,
-  },
+    title: "About",
+    openGraph: {
+        siteName: "Fadhilkholaf",
+        url: baseUrl,
+        images: [
+            {
+                url: `${openGraphBaseURL}about.png`,
+                width: 800,
+                height: 418,
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        creator: "@fadhilkholaf",
+        images: `${openGraphBaseURL}a.png`,
+    },
 };
 
 const AboutPage = () => {
-  return (
-    <main className="layout flex h-fit flex-col gap-32 pt-32">
-      <Hero />
-      <Experiences />
-      <Education />
-    </main>
-  );
+    return (
+        <>
+            <Hero />
+            <Experiences />
+            <Education />
+        </>
+    );
 };
 
 export default AboutPage;
