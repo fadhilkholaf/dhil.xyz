@@ -42,6 +42,7 @@ export const projects: ProjectInterface[] = [
         image: KeretaApi,
         url: "https://kereta.apidog.fadhilkholaf.my.id",
         source: "https://github.com/fadhilkholaf/ukk-kereta-api-2025",
+        detail: true,
     },
 ];
 
