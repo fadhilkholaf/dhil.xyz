@@ -6,22 +6,22 @@ import { usePageTransition } from "@/hooks/usePageTransition";
 import { sleep } from "@/utils/utils";
 
 const PageTransitionWrapper = ({ children }: { children: ReactNode }) => {
-  const { pageTransition, setPageTransition } = usePageTransition();
+    const { pageTransition, setPageTransition } = usePageTransition();
 
-  useEffect(() => {
-    const initialTransition = async () => {
-      await sleep(100);
-      if (pageTransition !== "idle") {
-        setPageTransition("animate");
-        await sleep(900);
-        setPageTransition("idle");
-      }
-    };
+    useEffect(() => {
+        const initialTransition = async () => {
+            await sleep(1);
+            if (pageTransition !== "idle") {
+                setPageTransition("animate");
+                await sleep(500);
+                setPageTransition("idle");
+            }
+        };
 
-    initialTransition();
-  }, []);
+        initialTransition();
+    }, []);
 
-  return <>{children}</>;
+    return <>{children}</>;
 };
 
 export default PageTransitionWrapper;

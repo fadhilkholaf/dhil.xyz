@@ -6,10 +6,10 @@ import { LenisRef, ReactLenis } from "lenis/react";
 import { cancelFrame, frame } from "motion";
 
 const LenisWrapper = ({ children }: { children: ReactNode }) => {
-  const lenisRef = useRef<LenisRef>(null);
+    const lenisRef = useRef<LenisRef>(null);
 
-  useEffect(() => {
-    console.log(`
+    useEffect(() => {
+        console.log(`
         ___         ___     
        /  /\\       /__/|    
       /  /:/_     |  |:|    
@@ -23,21 +23,21 @@ const LenisWrapper = ({ children }: { children: ReactNode }) => {
        \\__\\/       \\__\\/    
    `);
 
-    function update(data: { timestamp: number }) {
-      const time = data.timestamp;
-      lenisRef.current?.lenis?.raf(time);
-    }
+        function update(data: { timestamp: number }) {
+            const time = data.timestamp;
+            lenisRef.current?.lenis?.raf(time);
+        }
 
-    frame.update(update, true);
+        frame.update(update, true);
 
-    return () => cancelFrame(update);
-  }, []);
+        return () => cancelFrame(update);
+    }, []);
 
-  return (
-    <ReactLenis root options={{ autoRaf: false }} ref={lenisRef}>
-      {children}
-    </ReactLenis>
-  );
+    return (
+        <ReactLenis root options={{ autoRaf: false }} ref={lenisRef}>
+            {children}
+        </ReactLenis>
+    );
 };
 
 export default LenisWrapper;
