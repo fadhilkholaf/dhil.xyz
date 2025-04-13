@@ -5,7 +5,6 @@ import KantinNegro from "@/../public/images/projects/kantin-negro.png";
 import KeretaApi from "@/../public/images/projects/kereta-api.png";
 import Chat from "@/../public/images/mini-projects/chat.png";
 import Lily from "@/../public/images/mini-projects/lily.png";
-import Hillaryours from "@/../public/images/mini-projects/hillaryours.png";
 
 export const baseUrl = `${process.env.NODE_ENV === "development" ? "http://localhost:3000" : "https://fadhilkholaf.my.id"}`;
 export const openGraphBaseURL = `${baseUrl}/images/og/`;
@@ -34,6 +33,7 @@ export const projects: ProjectInterface[] = [
         image: KantinNegro,
         url: "https://kantin.fadhilkholaf.my.id",
         source: "https://github.com/fadhilkholaf/web-kantin-negro-ukk-2025",
+        detail: true,
     },
     {
         name: "Ticketing Kereta API",
@@ -42,7 +42,6 @@ export const projects: ProjectInterface[] = [
         image: KeretaApi,
         url: "https://kereta.apidog.fadhilkholaf.my.id",
         source: "https://github.com/fadhilkholaf/ukk-kereta-api-2025",
-        detail: true,
     },
 ];
 
@@ -60,13 +59,6 @@ export const miniProjects: ProjectInterface[] = [
         tag: "Mini Project #2",
         image: Lily,
         url: "https://lily.fadhilkholaf.my.id",
-    },
-    {
-        name: "Hillaryours",
-        type: "Front-end - Web - Animation",
-        tag: "Mini Project #1",
-        image: Hillaryours,
-        url: "https://hillaryours.fadhilkholaf.my.id",
     },
 ];
 

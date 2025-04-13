@@ -33,23 +33,6 @@ const Hero = () => {
                     <PageTransitionLink href="/about">
                         More about me →
                     </PageTransitionLink>
-                    <div className="flex flex-wrap gap-4">
-                        <a
-                            href="https://github.com/fadhilkholaf"
-                            target="_blank"
-                        >
-                            GitHub
-                        </a>
-                        <a
-                            href="https://linkedin.com/in/fadhilkholaf"
-                            target="_blank"
-                        >
-                            LinkedIn
-                        </a>
-                        <a href="https://x.com/fadhilkholaf" target="_blank">
-                            Twitter / X
-                        </a>
-                    </div>
                 </div>
                 <Image
                     src={Me}

@@ -73,15 +73,35 @@ const ProjectDetailsPage = async ({
     return (
         <>
             <main className="flex flex-col gap-y-8">
-                <div className="flex justify-center">
-                    <PageTransitionLink
-                        href="/projects"
-                        transitionType="vertical"
-                    >
-                        ← Back To Projects
-                    </PageTransitionLink>
-                </div>
+                <PageTransitionLink
+                    href="/projects"
+                    transitionType="vertical"
+                    className="no-underline"
+                >
+                    ← <span className="underline">Back to projects</span>
+                </PageTransitionLink>
                 <header className="flex flex-col gap-y-4">
+                    <h1 className="mt-2">{project.name}</h1>
+                    <div className="flex gap-x-4">
+                        {project.url && (
+                            <a
+                                href={project.url}
+                                target="_blank"
+                                className="size-fit rounded-lg bg-gray-800 px-4 py-2 text-pink-200 no-underline"
+                            >
+                                Visit site →
+                            </a>
+                        )}
+                        {project.source && (
+                            <a
+                                href={project.source}
+                                target="_blank"
+                                className="size-fit rounded-lg bg-gray-800 px-4 py-2 text-pink-200 no-underline"
+                            >
+                                Source code →
+                            </a>
+                        )}
+                    </div>
                     {project.image && (
                         <Image
                             src={project.image}
@@ -89,33 +109,30 @@ const ProjectDetailsPage = async ({
                             className="w-full rounded-lg"
                         />
                     )}
-                    <h1 className="mt-2">{project.name}</h1>
-                    <div className="flex gap-x-4">
-                        {project.url && (
-                            <a
-                                href={project.url}
-                                target="_blank"
-                                className="no-underline"
-                            >
-                                <span className="underline">Visit site</span> →
-                            </a>
-                        )}
-                        {project.source && (
-                            <a
-                                href={project.source}
-                                target="_blank"
-                                className="no-underline"
-                            >
-                                <span className="underline">Source code</span> →
-                            </a>
-                        )}
-                    </div>
                 </header>
-                <main className="flex flex-col gap-y-4">
-                    {project.detail && <ProjectDetail />}
-                </main>
+                {project.detail && (
+                    <>
+                        <hr />
+                        <main className="flex flex-col gap-y-4">
+                            <ProjectDetail />
+                        </main>
+                        <hr />
+                    </>
+                )}
             </main>
-            <footer className="flex flex-col items-center gap-y-8">
+            <footer className="flex flex-col gap-y-8">
+                <PageTransitionLink
+                    href={`/projects/${allProjects[
+                        projectIndex + 1 < allProjects.length
+                            ? projectIndex + 1
+                            : 0
+                    ].name
+                        .toLowerCase()
+                        .replaceAll(" ", "-")}`}
+                    transitionType="vertical"
+                >
+                    Next Project →
+                </PageTransitionLink>
                 <article>
                     <header>
                         {nextProject.image && (
@@ -132,18 +149,6 @@ const ProjectDetailsPage = async ({
                         <p>{nextProject.tag}</p>
                     </main>
                 </article>
-                <PageTransitionLink
-                    href={`/projects/${allProjects[
-                        projectIndex + 1 < allProjects.length
-                            ? projectIndex + 1
-                            : 0
-                    ].name
-                        .toLowerCase()
-                        .replaceAll(" ", "-")}`}
-                    transitionType="vertical"
-                >
-                    Next Project →
-                </PageTransitionLink>
             </footer>
         </>
     );
