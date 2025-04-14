@@ -10,21 +10,6 @@ export const baseUrl = `${process.env.NODE_ENV === "development" ? "http://local
 export const openGraphBaseURL = `${baseUrl}/images/og/`;
 export const openGraphDefaultImageURL = `${baseUrl}/images/og/main.png`;
 
-export const menus: { label: string; href: string }[] = [
-    {
-        label: "Home",
-        href: "/",
-    },
-    {
-        label: "Projects",
-        href: "/projects",
-    },
-    {
-        label: "About",
-        href: "/about",
-    },
-];
-
 export const projects: ProjectInterface[] = [
     {
         name: "Kantin Negro",

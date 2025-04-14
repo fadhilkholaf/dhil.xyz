@@ -28,7 +28,7 @@ export const generateMetadata = async ({
             url: baseUrl,
             images: [
                 {
-                    url: `${baseUrl}/api/og/${project.name}`,
+                    url: `${baseUrl}/api/og/${id}`,
                     width: 800,
                     height: 418,
                 },
@@ -76,18 +76,19 @@ const ProjectDetailsPage = async ({
                 <PageTransitionLink
                     href="/projects"
                     transitionType="vertical"
-                    className="no-underline"
+                    className="text-secondary flex gap-x-2 bg-transparent"
                 >
-                    ← <span className="underline">Back to projects</span>
+                    ←
+                    <span className="animated-underline">Back to projects</span>
                 </PageTransitionLink>
                 <header className="flex flex-col gap-y-4">
-                    <h1 className="mt-2">{project.name}</h1>
+                    <h1>{project.name}</h1>
                     <div className="flex gap-x-4">
                         {project.url && (
                             <a
                                 href={project.url}
                                 target="_blank"
-                                className="size-fit rounded-lg bg-gray-800 px-4 py-2 text-pink-200 no-underline"
+                                className="bg-secondary text-primary size-fit rounded-lg px-4 py-2 no-underline"
                             >
                                 Visit site →
                             </a>
@@ -96,13 +97,13 @@ const ProjectDetailsPage = async ({
                             <a
                                 href={project.source}
                                 target="_blank"
-                                className="size-fit rounded-lg bg-gray-800 px-4 py-2 text-pink-200 no-underline"
+                                className="bg-secondary text-primary size-fit rounded-lg px-4 py-2 no-underline"
                             >
                                 Source code →
                             </a>
                         )}
                     </div>
-                    {project.image && (
+                    {!project.detail && project.image && (
                         <Image
                             src={project.image}
                             alt={project.name}
@@ -111,13 +112,9 @@ const ProjectDetailsPage = async ({
                     )}
                 </header>
                 {project.detail && (
-                    <>
-                        <hr />
-                        <main className="flex flex-col gap-y-4">
-                            <ProjectDetail />
-                        </main>
-                        <hr />
-                    </>
+                    <main className="flex flex-col gap-y-4">
+                        <ProjectDetail />
+                    </main>
                 )}
             </main>
             <footer className="flex flex-col gap-y-8">

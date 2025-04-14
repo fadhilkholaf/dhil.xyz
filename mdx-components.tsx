@@ -18,11 +18,18 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
                     />
                 );
             }
-            return <a href={href} target="_blank" {...props} />;
+            return (
+                <a
+                    href={href}
+                    target="_blank"
+                    className="animated-underline"
+                    {...props}
+                />
+            );
         },
         blockquote: (props: ComponentPropsWithoutRef<"blockquote">) => (
             <blockquote
-                className="rounded-lg border-l-2 bg-pink-300 px-2 py-1 text-gray-700"
+                className="rounded-lg border-l-2 bg-pink-300/50 px-2 py-1"
                 {...props}
             />
         ),
@@ -35,8 +42,17 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
                 />
             );
         },
+        hr: (props: ComponentPropsWithoutRef<"hr">) => (
+            <hr className="my-4" {...props} />
+        ),
         ul: (props: ComponentPropsWithoutRef<"ul">) => (
-            <ul className="list-disc pl-5" {...props} />
+            <ul className="flex list-disc flex-col gap-y-1 pl-5" {...props} />
+        ),
+        ol: (props: ComponentPropsWithoutRef<"ol">) => (
+            <ul
+                className="flex list-decimal flex-col gap-y-1 pl-8"
+                {...props}
+            />
         ),
         li: (props: ComponentPropsWithoutRef<"li">) => <li {...props} />,
         img: (props: ImageProps) => {

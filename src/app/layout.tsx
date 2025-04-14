@@ -78,7 +78,7 @@ export default function RootLayout({
     children: ReactNode;
 }>) {
     return (
-        <html lang="en" className="h-fit w-full bg-pink-200 text-gray-800">
+        <html lang="en" className="bg-primary text-secondary h-fit w-full">
             <body
                 className={`${geistMono.className} ${geistSans.variable} size-full antialiased`}
             >

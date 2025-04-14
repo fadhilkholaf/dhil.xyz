@@ -15,13 +15,13 @@ const Footer = () => {
                             className="flex min-w-[200] flex-col gap-2"
                         >
                             <h4>{name}</h4>
-                            <ul className="flex flex-col gap-2">
+                            <ul className="flex flex-col gap-y-1">
                                 {links.map((link, j) => (
                                     <li key={j}>
                                         <a
                                             target="_blank"
                                             href={link.href}
-                                            className="before:ease-out-cubic relative inline-block w-full no-underline before:absolute before:bottom-0 before:left-0 before:h-px before:w-full before:origin-right before:scale-x-0 before:bg-gray-800 before:transition-transform before:duration-[250ms] hover:before:origin-left hover:before:scale-x-100"
+                                            className="animated-underline"
                                         >
                                             {link.title}
                                         </a>

@@ -41,9 +41,11 @@ const Mood = ({
                             <Image
                                 src={Spotify_Primary_Logo_RGB_Black}
                                 alt="Spotify_Primary_Logo_RGB_Black"
-                                className="h-[24px] w-fit"
+                                className="flex h-[24px] w-fit gap-x-2"
                             />
-                            <span className="underline">Listen On Spotify</span>{" "}
+                            <span className="animated-underline">
+                                Listen On Spotify
+                            </span>
                             →
                         </a>
                     )}
@@ -55,7 +57,7 @@ const Mood = ({
                     height={data ? 640 : undefined}
                     priority
                     unoptimized
-                    className="aspect-square h-fit w-2/3 min-w-[200px] self-center object-cover sm:w-1/3 sm:self-baseline"
+                    className="aspect-square h-fit w-2/3 max-w-[300px] self-center object-cover sm:self-baseline"
                 />
             </main>
         </section>

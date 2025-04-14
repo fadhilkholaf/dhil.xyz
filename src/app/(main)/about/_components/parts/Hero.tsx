@@ -42,7 +42,7 @@ const Hero = () => {
                         setCursorImage(DummyImageLandscape.src)
                     }
                     onPointerLeave={() => setCursorImage(null)}
-                    className="aspect-square h-fit w-2/3 min-w-[200px] -scale-x-100 self-center rounded-lg object-cover sm:w-1/3 sm:self-baseline"
+                    className="aspect-square h-fit w-2/3 max-w-[300px] -scale-x-100 self-center rounded-lg object-cover sm:self-baseline"
                 />
             </main>
         </section>

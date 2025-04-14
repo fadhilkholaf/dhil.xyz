@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
+import Link, { LinkProps } from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import React, { JSX, MouseEvent, ReactNode, Ref } from "react";
+import React, { MouseEvent, ReactNode, Ref } from "react";
 
 import { usePageTransition } from "@/hooks/usePageTransition";
 import { usePageTransitionType } from "@/hooks/usePageTransitionType";
@@ -12,15 +12,17 @@ import { cn, sleep } from "@/utils/utils";
 const PageTransitionLink = ({
     href,
     transitionType,
+    className,
     children,
     ref,
     ...props
 }: {
     href: string;
     transitionType?: PageTransitionType;
+    className?: string;
     children?: ReactNode;
     ref?: Ref<HTMLAnchorElement>;
-} & JSX.IntrinsicElements["a"]) => {
+} & LinkProps) => {
     const pathname = usePathname();
     const router = useRouter();
 
@@ -51,8 +53,8 @@ const PageTransitionLink = ({
             href={href}
             onClick={(e) => handlePageTransition(e)}
             className={cn(
-                "size-fit rounded-lg bg-gray-800 px-4 py-2 text-pink-200 no-underline",
-                props.className,
+                "bg-secondary text-primary size-fit rounded-lg px-4 py-2 no-underline",
+                className,
             )}
             scroll={false}
             {...props}

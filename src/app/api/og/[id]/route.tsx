@@ -12,7 +12,9 @@ export const GET = async (
 ) => {
     const { id } = await params;
 
-    const project = allProjects.find((p) => p.name === decodeURIComponent(id));
+    const project = allProjects.find(
+        (p) => p.name.toLowerCase().replaceAll(" ", "-") === id,
+    );
 
     const fontData = await fetch(
         new URL(
@@ -41,7 +43,6 @@ export const GET = async (
                         position: "absolute",
                         left: 103,
                         bottom: 97,
-                        letterSpacing: -2,
                     }}
                 >
                     Project:

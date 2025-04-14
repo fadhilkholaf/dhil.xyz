@@ -10,7 +10,7 @@ const ErrorPage = () => {
                 <div>
                     <h1>Something Went Wrong</h1>
                     <PageTransitionLink href="/">
-                        <span className="underline">Back to home page</span> →
+                        Back to home page →
                     </PageTransitionLink>
                 </div>
             </main>

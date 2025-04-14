@@ -100,8 +100,8 @@ const PageTransition = ({
                                 variants={verticalTransitionVariants}
                                 className={cn(
                                     "animate-background-position-vertical z-0 block h-full scale-x-105 md:w-full",
-                                    "bg-gradient-to-r from-pink-200 from-30% to-pink-300 to-70%",
-                                    { "w-full": Math.abs(i - 11) < 4 },
+                                    "from-primary bg-gradient-to-r from-30% to-pink-300 to-70%",
+                                    { "w-full": Math.abs(i - 11) < 6 },
                                 )}
                                 style={{
                                     backgroundSize: "200% 100%",
@@ -127,7 +127,7 @@ const PageTransition = ({
                                 key={i}
                                 custom={Math.abs(i - 7)}
                                 variants={transitionVariants}
-                                className="animate-background-position h-full w-full scale-y-105 bg-gradient-to-b from-pink-200 from-30% to-pink-300 to-70%"
+                                className="animate-background-position from-primary h-full w-full scale-y-105 bg-gradient-to-b from-30% to-pink-300 to-70%"
                                 style={{
                                     backgroundSize: "100% 200%",
                                     animationDelay: `${Math.abs(i - 7) * 50}ms`,
