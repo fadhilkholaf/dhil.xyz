@@ -53,7 +53,6 @@ export const GET = async (
                         position: "absolute",
                         left: 103,
                         bottom: 55,
-                        letterSpacing: -2,
                     }}
                 >
                     {project ? project.name : "Not Found"}

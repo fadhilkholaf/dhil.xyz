@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         creator: "@fadhilkholaf",
-        images: `${openGraphBaseURL}a.png`,
+        images: `${openGraphBaseURL}about.png`,
     },
 };
 

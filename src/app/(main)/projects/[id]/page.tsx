@@ -37,7 +37,7 @@ export const generateMetadata = async ({
         twitter: {
             card: "summary_large_image",
             creator: "@fadhilkholaf",
-            images: `${baseUrl}/api/og/${project.name}`,
+            images: `${baseUrl}/api/og/${id}`,
         },
     };
 };
