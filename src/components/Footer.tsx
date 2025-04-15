@@ -15,7 +15,7 @@ const Footer = () => {
                             className="flex min-w-[200] flex-col gap-2"
                         >
                             <h4>{name}</h4>
-                            <ul className="flex flex-col gap-y-1">
+                            <ul className="flex flex-col gap-y-2">
                                 {links.map((link, j) => (
                                     <li key={j}>
                                         <a

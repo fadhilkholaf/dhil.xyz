@@ -69,7 +69,8 @@
         @apply text-base font-bold md:text-lg;
     }
 
-    a {
+    a,
+    button {
         @apply cursor-pointer underline underline-offset-[6px];
     }
 
@@ -97,6 +98,18 @@
         @apply mx-auto size-full max-w-5xl p-4;
     }
 
+    .offset-top {
+        @apply top-[calc(40px+2rem)];
+
+        @media (width < 48rem) {
+            @apply top-[calc(36px+2rem)];
+        }
+    }
+
+    .animated-underline {
+        @apply before:ease-out-cubic before:bg-secondary after:ease-out-cubic after:bg-secondary relative inline-block w-fit no-underline before:absolute before:bottom-0 before:left-0 before:h-px before:w-full before:origin-left before:scale-x-0 before:transition-transform before:duration-[500ms] after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-right after:scale-x-100 after:transition-transform after:duration-[750ms] hover:before:scale-x-100 hover:before:duration-[750ms] hover:after:scale-x-0 hover:after:duration-[500ms];
+    }
+
     ::selection {
         @apply bg-secondary text-primary;
     }
@@ -112,8 +125,4 @@
     ::-webkit-scrollbar-thumb {
         @apply bg-secondary rounded-lg;
     }
-}
-
-@utility animated-underline {
-    @apply before:ease-out-cubic before:bg-secondary after:ease-out-cubic after:bg-secondary relative inline-block w-fit no-underline before:absolute before:bottom-0 before:left-0 before:h-px before:w-full before:origin-left before:scale-x-0 before:transition-transform before:duration-[500ms] after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-right after:scale-x-100 after:transition-transform after:duration-[750ms] hover:before:scale-x-100 hover:before:duration-[750ms] hover:after:scale-x-0 hover:after:duration-[500ms];
 }

@@ -112,7 +112,7 @@ export const footerData: {
                 href: "https://tenor.com/view/love-mylofly-jkt48-lily-cantik-lily-lucu-gif-2165950836249670182",
             },
             {
-                title: "Tiny.png",
+                title: "TinyPNG",
                 href: "https://tinypng.com",
             },
         ],
@@ -134,6 +134,10 @@ export const footerData: {
             {
                 title: "Lusion",
                 href: "https://lusion.co",
+            },
+            {
+                title: "Olivier Larose",
+                href: "https://olivierlarose.com",
             },
             {
                 title: "Stevia Please",

@@ -112,9 +112,9 @@ const ProjectDetailsPage = async ({
                     )}
                 </header>
                 {project.detail && (
-                    <main className="flex flex-col gap-y-4">
+                    <article className="flex flex-col gap-y-4">
                         <ProjectDetail />
-                    </main>
+                    </article>
                 )}
             </main>
             <footer className="flex flex-col gap-y-8">

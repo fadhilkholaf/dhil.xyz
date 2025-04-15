@@ -46,15 +46,14 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
             <hr className="my-4" {...props} />
         ),
         ul: (props: ComponentPropsWithoutRef<"ul">) => (
-            <ul className="flex list-disc flex-col gap-y-1 pl-5" {...props} />
+            <ul className="list-disc pl-5" {...props} />
         ),
         ol: (props: ComponentPropsWithoutRef<"ol">) => (
-            <ul
-                className="flex list-decimal flex-col gap-y-1 pl-8"
-                {...props}
-            />
+            <ul className="list-decimal pl-8" {...props} />
         ),
-        li: (props: ComponentPropsWithoutRef<"li">) => <li {...props} />,
+        li: (props: ComponentPropsWithoutRef<"li">) => (
+            <li className="mt-2" {...props} />
+        ),
         img: (props: ImageProps) => {
             const { alt, ...rest } = props;
             return (
