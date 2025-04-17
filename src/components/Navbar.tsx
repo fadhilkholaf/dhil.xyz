@@ -85,6 +85,8 @@ const Navbar = () => {
     const duration = useMotionValue(0);
 
     useEffect(() => {
+        console.log(spotifyCurrentlyPlaying);
+
         let interval: ReturnType<typeof setInterval>;
         let timeout: ReturnType<typeof setTimeout>;
 

@@ -8,7 +8,10 @@ export const runtime = "edge";
 
 export const contentType = "image/png";
 
-const routes: string[] = ["projects", "notes"];
+const routes: string[] = [
+    "projects",
+    // "notes"
+];
 
 export const GET = async (
     req: Request,

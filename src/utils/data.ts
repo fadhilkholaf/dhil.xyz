@@ -112,7 +112,7 @@ export const footerData: {
     {
         Collections: [
             {
-                title: "Awwards",
+                title: "Awwwards",
                 href: "https://www.awwwards.com/fadhilkholaf/collections/inspo",
             },
             {
