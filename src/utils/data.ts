@@ -34,14 +34,14 @@ export const miniProjects: ProjectInterface[] = [
     {
         name: "Chat",
         type: "AI - Chat - Bot",
-        tag: "Mini Project #3",
+        tag: "Mini Project #2",
         image: Chat,
         url: "https://chat.fadhilkholaf.my.id",
     },
     {
         name: "Lily",
         type: "Front-end - Web - Animation",
-        tag: "Mini Project #2",
+        tag: "Mini Project #1",
         image: Lily,
         url: "https://lily.fadhilkholaf.my.id",
     },
@@ -102,50 +102,22 @@ export const footerData: {
         ],
     },
     {
-        Attributions: [
-            {
-                title: "Flower",
-                href: "https://unsplash.com/photos/selective-focus-photography-of-purple-petaled-flower-ko-Dt_501t4",
-            },
-            {
-                title: "Lily",
-                href: "https://tenor.com/view/love-mylofly-jkt48-lily-cantik-lily-lucu-gif-2165950836249670182",
-            },
-            {
-                title: "TinyPNG",
-                href: "https://tinypng.com",
-            },
+        Website: [
+            { title: "About", href: "/about" },
+            { title: "Attribution", href: "/attribution" },
+            { title: "Home", href: "/" },
+            { title: "Projects", href: "/projects" },
         ],
     },
     {
-        Inspirations: [
+        Collections: [
             {
-                title: "Ahsan Azizan",
-                href: "https://www.ahsanzizan.xyz",
+                title: "Awwards",
+                href: "https://www.awwwards.com/fadhilkholaf/collections/inspo",
             },
             {
-                title: "Fiddle Digital",
-                href: "https://fiddle.digital",
-            },
-            {
-                title: "Lee Robinson",
-                href: "https://leerob.com",
-            },
-            {
-                title: "Lusion",
-                href: "https://lusion.co",
-            },
-            {
-                title: "Olivier Larose",
-                href: "https://olivierlarose.com",
-            },
-            {
-                title: "Stevia Please",
-                href: "https://www.steviaplease.me",
-            },
-            {
-                title: "Theodorus Clarence",
-                href: "https://theodorusclarence.com",
+                title: "Unsplash",
+                href: "https://unsplash.com/@fadhilkholaf/likes",
             },
         ],
     },

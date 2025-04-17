@@ -10,13 +10,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     return {
         a: ({ href, ...props }: ComponentPropsWithoutRef<"a">) => {
             if (href?.startsWith("/")) {
-                return (
-                    <PageTransitionLink
-                        href={href}
-                        transitionType="vertical"
-                        {...props}
-                    />
-                );
+                return <PageTransitionLink href={href} {...props} />;
             }
             return (
                 <a

@@ -1,6 +1,6 @@
 import { StaticImageData } from "next/image";
 
-export interface ProjectInterface {
+export type ProjectInterface = {
     name: string;
     type?: string;
     tag?: string;
@@ -8,4 +8,4 @@ export interface ProjectInterface {
     url?: string;
     source?: string;
     detail?: true;
-}
+};

@@ -86,13 +86,11 @@ export default function RootLayout({
                     <PageTransitionTypeProvider>
                         <PageTransitionProvider>
                             <CursorImageProvider>
-                                <main className="flex flex-col">
-                                    <Navbar />
-                                    <main className="layout flex h-fit flex-col gap-32 pt-32">
-                                        {children}
-                                    </main>
-                                    <Footer />
+                                <Navbar />
+                                <main className="layout flex h-fit flex-col gap-32 pt-32">
+                                    {children}
                                 </main>
+                                <Footer />
                             </CursorImageProvider>
                         </PageTransitionProvider>
                     </PageTransitionTypeProvider>

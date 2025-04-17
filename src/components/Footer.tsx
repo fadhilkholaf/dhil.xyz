@@ -1,5 +1,7 @@
 import { footerData } from "@/utils/data";
 
+import PageTransitionLink from "./PageTransitionLink";
+
 const Footer = () => {
     return (
         <footer className="layout flex h-fit flex-wrap justify-between gap-8 py-32">
@@ -18,13 +20,22 @@ const Footer = () => {
                             <ul className="flex flex-col gap-y-2">
                                 {links.map((link, j) => (
                                     <li key={j}>
-                                        <a
-                                            target="_blank"
-                                            href={link.href}
-                                            className="animated-underline"
-                                        >
-                                            {link.title}
-                                        </a>
+                                        {link.href.startsWith("/") ? (
+                                            <PageTransitionLink
+                                                href={link.href}
+                                                className="text-secondary animated-underline bg-transparent p-0"
+                                            >
+                                                {link.title}
+                                            </PageTransitionLink>
+                                        ) : (
+                                            <a
+                                                target="_blank"
+                                                href={link.href}
+                                                className="animated-underline"
+                                            >
+                                                {link.title}
+                                            </a>
+                                        )}
                                     </li>
                                 ))}
                             </ul>

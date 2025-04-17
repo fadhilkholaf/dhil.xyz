@@ -25,54 +25,60 @@ export const getAccessToken = async () => {
     return await response.json();
 };
 
-export const getCurrentlyPlaying = async (): Promise<
-    SpotifyCurrentlyPlayingInterface | false
-> => {
-    const { access_token } = await getAccessToken();
+export const getCurrentlyPlaying =
+    async (): Promise<SpotifyCurrentlyPlayingInterface | null> => {
+        const { access_token } = await getAccessToken();
 
-    const response = await fetch(
-        "https://api.spotify.com/v1/me/player/currently-playing",
-        {
-            headers: {
-                Authorization: `Bearer ${access_token}`,
+        const response = await fetch(
+            "https://api.spotify.com/v1/me/player/currently-playing",
+            {
+                headers: {
+                    Authorization: `Bearer ${access_token}`,
+                },
             },
-        },
-    );
+        );
 
-    if (response.status !== 200) {
-        return false;
-    }
+        if (response.status !== 200) {
+            return null;
+        }
 
-    const currentlyPlaying = await response.json();
+        const currentlyPlaying = await response.json();
 
-    if (currentlyPlaying.currently_playing_type !== "track") {
-        return false;
-    }
+        if (
+            currentlyPlaying.currently_playing_type !== "track" ||
+            !currentlyPlaying.item.id
+        ) {
+            return null;
+        }
 
-    const firstArtist = await getArtist(currentlyPlaying.item.artists[0].id);
+        const firstArtist = await getArtist(
+            currentlyPlaying.item.artists[0].id,
+        );
 
-    const data: SpotifyCurrentlyPlayingInterface = {
-        image: currentlyPlaying.item.album.images[0].url,
-        title: currentlyPlaying.item.name,
-        artists: currentlyPlaying.item.artists.map(
-            (artist: SpotifyArtistInterface, i: number) => {
-                if (i === 0 && firstArtist !== false) {
-                    return {
-                        id: artist.id,
-                        name: artist.name,
-                        image: firstArtist.images[0].url,
-                        genres: firstArtist.genres,
-                    };
-                }
-                return { id: artist.id, name: artist.name };
-            },
-        ),
-        album: currentlyPlaying.item.album.name,
-        url: currentlyPlaying.item.external_urls.spotify,
+        const data: SpotifyCurrentlyPlayingInterface = {
+            image: currentlyPlaying.item.album.images[0].url,
+            title: currentlyPlaying.item.name,
+            artists: currentlyPlaying.item.artists.map(
+                (artist: SpotifyArtistInterface, i: number) => {
+                    if (i === 0 && firstArtist !== false) {
+                        return {
+                            id: artist.id,
+                            name: artist.name,
+                            image: firstArtist.images[0].url,
+                            genres: firstArtist.genres,
+                        };
+                    }
+                    return { id: artist.id, name: artist.name };
+                },
+            ),
+            album: currentlyPlaying.item.album.name,
+            url: currentlyPlaying.item.external_urls.spotify,
+            progress: currentlyPlaying.progress_ms,
+            duration: currentlyPlaying.item.duration_ms,
+        };
+
+        return data;
     };
-
-    return data;
-};
 
 export const getArtist = async (
     id: string,

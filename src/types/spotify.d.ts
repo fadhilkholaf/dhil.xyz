@@ -11,4 +11,6 @@ export interface SpotifyCurrentlyPlayingInterface {
     artists: SpotifyArtistInterface[];
     album: string;
     url: string;
+    progress: number;
+    duration: number;
 }

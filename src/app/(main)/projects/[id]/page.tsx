@@ -28,7 +28,7 @@ export const generateMetadata = async ({
             url: baseUrl,
             images: [
                 {
-                    url: `${baseUrl}/api/og/${id}`,
+                    url: `${baseUrl}/api/og/projects/${id}`,
                     width: 800,
                     height: 418,
                 },
@@ -37,7 +37,7 @@ export const generateMetadata = async ({
         twitter: {
             card: "summary_large_image",
             creator: "@fadhilkholaf",
-            images: `${baseUrl}/api/og/${id}`,
+            images: `${baseUrl}/api/og/projects/${id}`,
         },
     };
 };
@@ -75,7 +75,6 @@ const ProjectDetailsPage = async ({
             <main className="flex flex-col gap-y-8">
                 <PageTransitionLink
                     href="/projects"
-                    transitionType="vertical"
                     className="text-secondary flex gap-x-2 bg-transparent"
                 >
                     ←
