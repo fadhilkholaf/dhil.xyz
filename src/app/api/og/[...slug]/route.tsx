@@ -1,17 +1,15 @@
 import { ImageResponse } from "next/og";
 
 import { Note, notes } from "@/constants/data/notes";
-import { allProjects, baseUrl } from "@/utils/data";
+import { allProjects } from "@/constants/data/projects";
+import { baseUrl } from "@/constants/data/urls";
 import { ProjectInterface } from "@/types/project";
 
 export const runtime = "edge";
 
 export const contentType = "image/png";
 
-const routes: string[] = [
-    "projects",
-    // "notes"
-];
+const routes: string[] = ["projects", "notes"];
 
 export const GET = async (
     req: Request,

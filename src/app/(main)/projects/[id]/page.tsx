@@ -2,8 +2,9 @@ import { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-import { allProjects, baseUrl, projects } from "@/utils/data";
 import PageTransitionLink from "@/components/PageTransitionLink";
+import { allProjects, projects } from "@/constants/data/projects";
+import { baseUrl } from "@/constants/data/urls";
 
 export const generateMetadata = async ({
     params,
@@ -62,7 +63,7 @@ const ProjectDetailsPage = async ({
     );
 
     const { default: ProjectDetail } = await import(
-        `@/contents/${projectIndex < projects.length ? "projects" : "mini-projects"}/${project.name.toLowerCase().replaceAll(" ", "-")}.mdx`
+        `@/contents/projects/${projectIndex < projects.length ? "main" : "mini"}/${project.name.toLowerCase().replaceAll(" ", "-")}.mdx`
     );
 
     const nextProject =

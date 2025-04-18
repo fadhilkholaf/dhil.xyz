@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 
 import PageTransitionLink from "@/components/PageTransitionLink";
 import { notes } from "@/constants/data/notes";
-import { baseUrl } from "@/utils/data";
+import { baseUrl } from "@/constants/data/urls";
 
 export const generateMetadata = async ({
     params,

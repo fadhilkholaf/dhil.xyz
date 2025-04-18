@@ -14,6 +14,7 @@
     --animate-background-position: background-position 1s ease-in-out infinite;
     --animate-background-position-vertical: background-position-vertical 1s
         ease-in-out infinite;
+    --animate-slide: slide var(--slide-duration) linear infinite;
 
     @keyframes background-position {
         0%,
@@ -34,6 +35,15 @@
             background-position: 100% 0;
         }
     }
+
+    @keyframes slide {
+        0% {
+            transform: translate(0, 0);
+        }
+        100% {
+            transform: translate(calc(var(--title-width) * -1 - 4rem), 0);
+        }
+    }
 }
 
 :root {
@@ -46,6 +56,9 @@
     --sh-string: oklch(75% 0.2 20);
     --sh-keyword: oklch(80% 0.18 280);
     --sh-comment: oklch(60% 0.05 260);
+
+    --title-width: 0%;
+    --slide-duration: 0ms;
 }
 
 @layer base {

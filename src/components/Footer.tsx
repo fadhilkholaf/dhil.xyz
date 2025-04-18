@@ -1,4 +1,4 @@
-import { footerData } from "@/utils/data";
+import { footerData } from "@/constants/data/footer";
 
 import PageTransitionLink from "./PageTransitionLink";
 

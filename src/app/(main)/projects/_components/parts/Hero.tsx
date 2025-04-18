@@ -1,5 +1,5 @@
 import Project from "@/components/Project";
-import { projects } from "@/utils/data";
+import { projects } from "@/constants/data/projects";
 
 const Hero = () => {
     return (

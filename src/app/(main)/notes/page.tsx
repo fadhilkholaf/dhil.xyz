@@ -2,17 +2,14 @@ import { Metadata } from "next";
 
 import { baseUrl, openGraphBaseURL } from "@/constants/data/urls";
 
-import Hero from "./_components/parts/Hero";
-import MiniProjects from "./_components/parts/MiniProjects";
-
 export const metadata: Metadata = {
-    title: "Projects",
+    title: "Notes",
     openGraph: {
         siteName: "Fadhilkholaf",
         url: baseUrl,
         images: [
             {
-                url: `${openGraphBaseURL}projects.png`,
+                url: `${openGraphBaseURL}notes.png`,
                 width: 800,
                 height: 418,
             },
@@ -21,17 +18,16 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         creator: "@fadhilkholaf",
-        images: `${openGraphBaseURL}projects.png`,
+        images: `${openGraphBaseURL}notes.png`,
     },
 };
 
-const ProjectsPage = () => {
+const NotesPage = () => {
     return (
         <>
-            <Hero />
-            <MiniProjects />
+            <h1>{`IT'S NOT DONE YET!!!`}</h1>
         </>
     );
 };
 
-export default ProjectsPage;
+export default NotesPage;

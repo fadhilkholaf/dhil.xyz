@@ -11,7 +11,7 @@ import LenisWrapper from "@/components/wrappers/LenisWrapper";
 import { CursorImageProvider } from "@/hooks/useCursorImage";
 import { PageTransitionProvider } from "@/hooks/usePageTransition";
 import { PageTransitionTypeProvider } from "@/hooks/usePageTransitionType";
-import { baseUrl, openGraphDefaultImageURL } from "@/utils/data";
+import { baseUrl, openGraphDefaultImageURL } from "@/constants/data/urls";
 
 import "./globals.css";
 

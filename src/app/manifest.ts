@@ -1,11 +1,13 @@
 import { MetadataRoute } from "next";
 
-import { baseUrl } from "@/utils/data";
+import { baseUrl } from "@/constants/data/urls";
 
 const manifest = (): MetadataRoute.Manifest => {
     return {
         name: "Fadhilkholaf",
-        short_name: "Fadhilkholaf",
+        short_name: "Fadhil",
+        start_url: "/",
+        lang: "en-US",
         icons: [
             {
                 src: `${baseUrl}/images/icons/web-app-manifest-192x192.png`,

@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 
 import { motion, useMotionValue, Variants } from "motion/react";
 
+import { menus, extraMenus } from "@/constants/data/navbar";
 import { getCurrentlyPlaying } from "@/lib/spotify";
 import { SpotifyCurrentlyPlayingInterface } from "@/types/spotify";
 import { cn } from "@/utils/utils";
@@ -14,40 +15,6 @@ import LilySquaredImage from "@/public/images/home/lily-squared.jpg";
 import Spotify_Primary_Logo_RGB_White from "@/public/images/spotify/Spotify_Primary_Logo_RGB_White.png";
 
 import PageTransitionLink from "./PageTransitionLink";
-
-const menus: { label: string; href: string }[] = [
-    {
-        label: "Home",
-        href: "/",
-    },
-    {
-        label: "Projects",
-        href: "/projects",
-    },
-    {
-        label: "About",
-        href: "/about",
-    },
-];
-
-const extraMenus: { label: string; href: string }[] = [
-    // {
-    //     label: "Blog",
-    //     href: "/blog",
-    // },
-    // {
-    //     label: "Notes",
-    //     href: "/notes",
-    // },
-    // {
-    //     label: "Friends",
-    //     href: "/friends",
-    // },
-    {
-        label: "Attribution",
-        href: "/attribution",
-    },
-];
 
 const activeVariants: Variants = {
     initial: (i: number) => ({
@@ -77,6 +44,10 @@ const activeVariants: Variants = {
 const Navbar = () => {
     const extraMenuButtonRef = useRef<HTMLButtonElement>(null);
     const extraMenuContainerRef = useRef<HTMLDivElement>(null);
+    const durationRef = useRef<HTMLParagraphElement>(null);
+    const progressRef = useRef<HTMLParagraphElement>(null);
+    const progressBarRef = useRef<HTMLDivElement>(null);
+    const titleRef = useRef<HTMLHeadingElement>(null);
     const [isActive, setIsActive] = useState(false);
     const [spotifyCurrentlyPlaying, setSpotifyCurrentlyPlaying] = useState<
         "loading" | SpotifyCurrentlyPlayingInterface | null
@@ -87,15 +58,12 @@ const Navbar = () => {
     useEffect(() => {
         console.log(spotifyCurrentlyPlaying);
 
+        const cssRoot = document.documentElement;
         let interval: ReturnType<typeof setInterval>;
         let timeout: ReturnType<typeof setTimeout>;
 
-        const progressElement = document.getElementById("progress");
-        const durationElement = document.getElementById("duration");
-        const progressBarElement = document.getElementById("progressBar");
-
-        if (progressBarElement) {
-            progressBarElement.style.transform = `scale(0,1)`;
+        if (progressBarRef.current) {
+            progressBarRef.current.style.transform = `scale(0,1)`;
         }
 
         const getSpotifyCurrentlyPlaying = async () => {
@@ -129,8 +97,20 @@ const Navbar = () => {
             progress.set(spotifyCurrentlyPlaying.progress);
             duration.set(spotifyCurrentlyPlaying.duration);
 
-            if (progressElement) {
-                progressElement.innerText = "0:00";
+            if (progressRef.current && titleRef.current) {
+                progressRef.current.innerText = "0:00";
+                cssRoot.style.setProperty(
+                    "--title-width",
+                    `${titleRef.current.getBoundingClientRect().width}px`,
+                );
+                cssRoot.style.setProperty(
+                    "--slide-duration",
+                    `${
+                        (titleRef.current.getBoundingClientRect().width / 100) *
+                        1000 *
+                        1.5
+                    }ms`,
+                );
             }
 
             const updateSpotifyCurrentlyPlaying = () => {
@@ -152,8 +132,8 @@ const Navbar = () => {
         const durationSeconds = durationDatetime.getSeconds();
 
         if (spotifyCurrentlyPlaying && spotifyCurrentlyPlaying !== "loading") {
-            if (durationElement) {
-                durationElement.innerText = `${durationMinutes}:${durationSeconds < 10 ? `0${durationSeconds}` : durationSeconds}`;
+            if (durationRef.current) {
+                durationRef.current.innerText = `${durationMinutes}:${durationSeconds < 10 ? `0${durationSeconds}` : durationSeconds}`;
             }
 
             const updateProgress = () => {
@@ -165,9 +145,9 @@ const Navbar = () => {
                 const progressMinutes = progressDatetime.getMinutes();
                 const progressSeconds = progressDatetime.getSeconds();
 
-                if (progressElement && progressBarElement) {
-                    progressElement.innerText = `${progressMinutes}:${progressSeconds < 10 ? `0${progressSeconds}` : progressSeconds}`;
-                    progressBarElement.style.transform = `scale(${progress.get() / duration.get()},1)`;
+                if (progressRef.current && progressBarRef.current) {
+                    progressRef.current.innerText = `${progressMinutes}:${progressSeconds < 10 ? `0${progressSeconds}` : progressSeconds}`;
+                    progressBarRef.current.style.transform = `scale(${progress.get() / duration.get()},1)`;
                 }
             };
 
@@ -187,12 +167,31 @@ const Navbar = () => {
             }
         };
 
+        const handleResize = () => {
+            if (titleRef.current) {
+                cssRoot.style.setProperty(
+                    "--title-width",
+                    `${titleRef.current.getBoundingClientRect().width}px`,
+                );
+                cssRoot.style.setProperty(
+                    "--slide-duration",
+                    `${
+                        (titleRef.current.getBoundingClientRect().width / 100) *
+                        1000 *
+                        1.5
+                    }ms`,
+                );
+            }
+        };
+
         window.addEventListener("mousedown", handleOutsideClick);
+        window.addEventListener("resize", handleResize);
 
         return () => {
             clearTimeout(timeout);
             clearInterval(interval);
             window.removeEventListener("mousedown", handleOutsideClick);
+            window.removeEventListener("resize", handleResize);
         };
     }, [spotifyCurrentlyPlaying]);
 
@@ -253,7 +252,7 @@ const Navbar = () => {
                     animate={isActive ? "animate" : "initial"}
                     custom={1}
                     variants={activeVariants}
-                    className="bg-secondary flex h-fit w-full origin-left flex-col justify-evenly gap-y-2 rounded-lg py-2"
+                    className="bg-secondary flex h-fit w-full origin-left flex-col justify-evenly rounded-lg py-2"
                 >
                     {extraMenus.map((menu, i) => (
                         <li key={i} onClick={() => setIsActive(false)}>
@@ -273,7 +272,7 @@ const Navbar = () => {
                     variants={activeVariants}
                     className="bg-secondary text-primary flex h-fit w-full origin-right flex-col gap-y-4 rounded-lg p-4"
                 >
-                    <div className="flex h-[8rem] w-full gap-x-4">
+                    <div className="flex h-[6rem] w-full gap-x-4">
                         <Image
                             src={
                                 spotifyCurrentlyPlaying !== "loading" &&
@@ -293,7 +292,7 @@ const Navbar = () => {
                             priority
                             unoptimized
                         />
-                        <div className="flex h-full flex-col justify-evenly gap-y-2 overflow-y-auto">
+                        <div className="flex h-full w-full flex-col items-center justify-evenly gap-y-2 overflow-hidden">
                             {spotifyCurrentlyPlaying === "loading" ? (
                                 <p>Loading</p>
                             ) : spotifyCurrentlyPlaying ? (
@@ -301,7 +300,7 @@ const Navbar = () => {
                                     <a
                                         href={spotifyCurrentlyPlaying.url}
                                         target="_blank"
-                                        className="flex w-fit flex-row items-center gap-2 no-underline"
+                                        className="flex w-full flex-row items-center gap-2 no-underline"
                                     >
                                         <Image
                                             src={Spotify_Primary_Logo_RGB_White}
@@ -310,15 +309,22 @@ const Navbar = () => {
                                             priority
                                         />
                                         <span className="animated-underline before:bg-primary after:bg-primary">
-                                            Listen On Spotify
+                                            Play on Spotify
                                         </span>
                                         →
                                     </a>
-                                    <div>
-                                        <h4>{spotifyCurrentlyPlaying.title}</h4>
-                                        <p>
-                                            {`${spotifyCurrentlyPlaying.artists.map((artist) => artist.name).join(", ")}`}
-                                        </p>
+                                    <div className="w-[102%] mask-x-from-90% mask-x-to-[98%]">
+                                        <div className="animate-slide flex gap-x-16">
+                                            <p
+                                                ref={titleRef}
+                                                className="min-w-full shrink-0 text-nowrap"
+                                            >
+                                                {`${spotifyCurrentlyPlaying.title} by ${spotifyCurrentlyPlaying.artists.map((artist) => artist.name).join(", ")}`}
+                                            </p>
+                                            <p className="min-w-full shrink-0 text-nowrap">
+                                                {`${spotifyCurrentlyPlaying.title} by ${spotifyCurrentlyPlaying.artists.map((artist) => artist.name).join(", ")}`}
+                                            </p>
+                                        </div>
                                     </div>
                                 </>
                             ) : (
@@ -327,16 +333,16 @@ const Navbar = () => {
                         </div>
                     </div>
                     <div className="flex h-fit w-full items-center justify-between gap-x-2">
-                        <p id="progress" className="shrink-0">
+                        <p ref={progressRef} className="shrink-0">
                             -:--
                         </p>
                         <div className="bg-primary/50 h-2 w-full overflow-hidden rounded-lg">
                             <motion.div
-                                id="progressBar"
+                                ref={progressBarRef}
                                 className="bg-primary size-full origin-left"
                             ></motion.div>
                         </div>
-                        <p id="duration" className="shrink-0">
+                        <p ref={durationRef} className="shrink-0">
                             -:--
                         </p>
                     </div>

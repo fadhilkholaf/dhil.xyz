@@ -1,5 +1,5 @@
 import Experience from "@/components/Experience";
-import { experiences } from "@/utils/data";
+import { experiences } from "@/constants/data/about";
 
 const Experiences = () => {
     return (

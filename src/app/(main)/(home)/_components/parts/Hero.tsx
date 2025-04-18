@@ -4,7 +4,6 @@ import Image from "next/image";
 
 import Me from "@/../public/images/home/fadhilkholaf.jpg";
 import DummyImageLandscape from "@/../public/images/main/gif.gif";
-import AnimatedText from "@/components/animations/AnimatedText";
 import PageTransitionLink from "@/components/PageTransitionLink";
 import { useCursorImage } from "@/hooks/useCursorImage";
 
@@ -29,11 +28,10 @@ const Hero = () => {
                         <h1>{"I'm Fadhil"}</h1>
                         <p>[fadhilkholaf]</p>
                     </div>
-                    <AnimatedText
-                        text={
-                            "Junior front-end dev all about Next.js and Tailwind CSS, plus a total tech enthusiast."
-                        }
-                    />
+                    <p>
+                        Junior front-end dev all about Next.js and Tailwind CSS,
+                        plus a total tech enthusiast.
+                    </p>
                     <PageTransitionLink href="/about">
                         More about me →
                     </PageTransitionLink>

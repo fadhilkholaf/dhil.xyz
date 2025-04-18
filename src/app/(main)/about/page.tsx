@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 
-import { baseUrl, openGraphBaseURL } from "@/utils/data";
+import { baseUrl, openGraphBaseURL } from "@/constants/data/urls";
 
 import Education from "./_components/parts/Education";
 import Experiences from "./_components/parts/Experiences";

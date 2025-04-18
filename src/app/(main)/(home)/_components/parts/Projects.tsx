@@ -1,8 +1,6 @@
-"use client";
-
 import PageTransitionLink from "@/components/PageTransitionLink";
 import Project from "@/components/Project";
-import { allProjects, featuredProjectName } from "@/utils/data";
+import { allProjects, featuredProjectName } from "@/constants/data/projects";
 
 const Projects = () => {
     return (
