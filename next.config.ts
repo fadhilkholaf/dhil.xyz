@@ -5,8 +5,12 @@ const nextConfig: NextConfig = {
     eslint: {
         ignoreDuringBuilds: true,
     },
+    typescript: {
+        ignoreBuildErrors: true,
+    },
     pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
     images: {
+        unoptimized: true,
         remotePatterns: [
             {
                 protocol: "https",
@@ -20,10 +24,11 @@ const nextConfig: NextConfig = {
                 protocol: "https",
                 hostname: "fadhilkholaf.my.id",
             },
+            {
+                protocol: "https",
+                hostname: "res.cloudinary.com",
+            },
         ],
-    },
-    typescript: {
-        ignoreBuildErrors: true,
     },
 };
 

@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 
-import Me from "@/../public/images/home/fadhilkholaf.jpg";
-import DummyImageLandscape from "@/../public/images/main/gif.gif";
+import Me from "@/public/images/home/fadhilkholaf.jpg";
+import DummyImageLandscape from "@/public/images/home/gif.gif";
 import PageTransitionLink from "@/components/PageTransitionLink";
 import { useCursorImage } from "@/hooks/useCursorImage";
 
@@ -29,11 +29,14 @@ const Hero = () => {
                         <p>[fadhilkholaf]</p>
                     </div>
                     <p>
-                        Junior front-end dev all about Next.js and Tailwind CSS,
-                        plus a total tech enthusiast.
+                        Web developer with more than a year of experience.
+                        Currently down into UI/UX things and also a passionate
+                        lifelong learner.
                     </p>
                     <PageTransitionLink href="/about">
-                        More about me →
+                        <span className="animated-underline before:bg-primary">
+                            More about me →
+                        </span>
                     </PageTransitionLink>
                 </div>
                 <Image

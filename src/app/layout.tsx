@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist_Mono, Italiana } from "next/font/google";
 import { ReactNode } from "react";
 
 import { Analytics } from "@vercel/analytics/next";
@@ -8,15 +8,16 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import LenisWrapper from "@/components/wrappers/LenisWrapper";
+import { BASE_URL, OG_BASE_API_URL } from "@/constants/constants";
 import { CursorImageProvider } from "@/hooks/useCursorImage";
 import { PageTransitionProvider } from "@/hooks/usePageTransition";
 import { PageTransitionTypeProvider } from "@/hooks/usePageTransitionType";
-import { baseUrl, openGraphDefaultImageURL } from "@/constants/data/urls";
 
 import "./globals.css";
 
-const geistSans = Geist({
-    variable: "--font-geist-sans",
+const italiana = Italiana({
+    weight: "400",
+    variable: "--font-italiana",
     subsets: ["latin"],
 });
 
@@ -26,10 +27,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-    metadataBase: new URL("/", baseUrl),
+    metadataBase: new URL("/", BASE_URL),
     title: { default: "Home | Fadhilkholaf", template: "%s | Fadhilkholaf" },
     description:
-        "Junior front-end dev all about Next.js and Tailwind CSS, plus a total tech enthusiast.",
+        "Web developer with more than a year of experience. Currently down into UI/UX things and also a passionate lifelong learner.",
     authors: [
         {
             name: "Muhammad Fadhil Kholaf",
@@ -53,13 +54,13 @@ export const metadata: Metadata = {
             "max-snippet": -1,
         },
     },
-    alternates: { canonical: baseUrl },
+    alternates: { canonical: "./" },
     openGraph: {
         siteName: "Fadhilkholaf",
-        url: baseUrl,
+        url: BASE_URL,
         images: [
             {
-                url: openGraphDefaultImageURL,
+                url: `${OG_BASE_API_URL}?name=Home`,
                 width: 800,
                 height: 418,
             },
@@ -68,7 +69,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         creator: "@fadhilkholaf",
-        images: openGraphDefaultImageURL,
+        images: `${OG_BASE_API_URL}?name=Home`,
     },
 };
 
@@ -80,7 +81,7 @@ export default function RootLayout({
     return (
         <html lang="en" className="bg-primary text-secondary h-fit w-full">
             <body
-                className={`${geistMono.className} ${geistSans.variable} size-full antialiased`}
+                className={`${geistMono.className} ${italiana.variable} size-full antialiased`}
             >
                 <LenisWrapper>
                     <PageTransitionTypeProvider>

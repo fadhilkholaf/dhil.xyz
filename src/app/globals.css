@@ -1,8 +1,23 @@
 @import "tailwindcss";
 
+:root {
+    --sh-class: oklch(78% 0.15 330);
+    --sh-identifier: oklch(82% 0.15 90);
+    --sh-sign: oklch(75% 0.17 200);
+    --sh-property: oklch(75% 0.17 130);
+    --sh-entity: oklch(80% 0.18 250);
+    --sh-jsxliterals: oklch(80% 0.18 45);
+    --sh-string: oklch(75% 0.2 20);
+    --sh-keyword: oklch(80% 0.18 280);
+    --sh-comment: oklch(60% 0.05 260);
+
+    --title-width: 0%;
+    --slide-duration: 0ms;
+}
+
 @theme {
-    --font-sans: "Geist", "Geist Fallback";
-    --font-mono: "Geist Mono", "Geist Mono Fallback";
+    --font-geist-mono: "Geist Mono";
+    --font-italiana: "Italiana";
 
     --color-primary: oklch(89.9% 0.061 343.231);
     --color-secondary: oklch(27.8% 0.033 256.848);
@@ -46,29 +61,32 @@
     }
 }
 
-:root {
-    --sh-class: oklch(78% 0.15 330);
-    --sh-identifier: oklch(82% 0.15 90);
-    --sh-sign: oklch(75% 0.17 200);
-    --sh-property: oklch(75% 0.17 130);
-    --sh-entity: oklch(80% 0.18 250);
-    --sh-jsxliterals: oklch(80% 0.18 45);
-    --sh-string: oklch(75% 0.2 20);
-    --sh-keyword: oklch(80% 0.18 280);
-    --sh-comment: oklch(60% 0.05 260);
-
-    --title-width: 0%;
-    --slide-duration: 0ms;
-}
-
 @layer base {
     a,
     button {
         @apply cursor-pointer underline underline-offset-[6px];
     }
 
+    html {
+        & ::-webkit-scrollbar {
+            @apply bg-primary size-2 p-2;
+        }
+
+        & ::-webkit-scrollbar-track {
+            @apply bg-primary rounded-lg;
+        }
+
+        & ::-webkit-scrollbar-thumb {
+            @apply bg-secondary rounded-lg;
+        }
+    }
+
     body {
         @apply text-sm md:text-base;
+
+        & ::selection {
+            @apply bg-secondary text-primary;
+        }
     }
 
     code {
@@ -96,14 +114,10 @@
     }
 
     pre {
-        @apply bg-secondary overflow-x-auto rounded-lg p-2 leading-none;
+        @apply bg-secondary overflow-x-auto rounded-lg p-4;
 
         & > code {
             @apply bg-none p-0;
-        }
-
-        & ::selection {
-            @apply bg-primary text-secondary;
         }
     }
 
@@ -127,21 +141,5 @@
         @media (width < 48rem) {
             @apply top-[calc(36px+2rem)];
         }
-    }
-
-    ::selection {
-        @apply bg-secondary text-primary;
-    }
-
-    ::-webkit-scrollbar {
-        @apply bg-primary size-2 p-2;
-    }
-
-    ::-webkit-scrollbar-track {
-        @apply bg-primary rounded-lg;
-    }
-
-    ::-webkit-scrollbar-thumb {
-        @apply bg-secondary rounded-lg;
     }
 }

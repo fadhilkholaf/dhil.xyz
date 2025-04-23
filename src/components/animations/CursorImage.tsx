@@ -41,7 +41,7 @@ const CursorImage = ({ cursorImage }: { cursorImage: string | null }) => {
     const mY = useMotionValue(0);
 
     useEffect(() => {
-        let movementTimeout: ReturnType<typeof setTimeout> | null = null;
+        let movementTimeout: NodeJS.Timeout;
 
         const setMotionValue = (e: MouseEvent) => {
             if (movementTimeout) {
@@ -64,6 +64,7 @@ const CursorImage = ({ cursorImage }: { cursorImage: string | null }) => {
         });
 
         return () => {
+            clearTimeout(movementTimeout);
             window.removeEventListener("mousemove", (e) => {
                 setMotionValue(e);
             });
@@ -93,9 +94,6 @@ const CursorImage = ({ cursorImage }: { cursorImage: string | null }) => {
                             width={400}
                             height={225}
                             priority
-                            unoptimized={
-                                cursorImage?.split(".")?.slice(-1)[0] === "gif"
-                            }
                             className="aspect-video"
                         />
                     </motion.div>

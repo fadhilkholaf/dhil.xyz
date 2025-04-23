@@ -5,12 +5,12 @@ import { useEffect, useRef, useState } from "react";
 
 import { motion, useMotionValue, Variants } from "motion/react";
 
-import { menus, extraMenus } from "@/constants/data/navbar";
+import { NAVBAR_MENUS, NAVBAR_MORE_MENUS } from "@/constants/constants";
 import { getCurrentlyPlaying } from "@/lib/spotify";
 import { SpotifyCurrentlyPlayingInterface } from "@/types/spotify";
 import { cn } from "@/utils/utils";
 
-import Logo from "@/public/images/main/fadhilkholaf.svg";
+import Logo from "@/public/images/home/fadhilkholaf.svg";
 import LilySquaredImage from "@/public/images/home/lily-squared.jpg";
 import Spotify_Primary_Logo_RGB_White from "@/public/images/spotify/Spotify_Primary_Logo_RGB_White.png";
 
@@ -209,13 +209,15 @@ const Navbar = () => {
                 />
             </PageTransitionLink>
             <ul className="bg-secondary text-primary flex h-fit w-full justify-between rounded-lg md:w-1/2">
-                {menus.map((menu, i) => (
+                {NAVBAR_MENUS.map((menu, i) => (
                     <PageTransitionLink
                         key={i}
                         href={menu.href}
                         className="bg-transparent"
                     >
-                        <p>{menu.label}</p>
+                        <p className="animated-underline before:bg-primary after:bg-transparent">
+                            {menu.label}
+                        </p>
                     </PageTransitionLink>
                 ))}
                 <li className="py-2">
@@ -226,17 +228,19 @@ const Navbar = () => {
                         ref={extraMenuButtonRef}
                         type="button"
                         onClick={() => setIsActive((prev) => !prev)}
-                        className="flex gap-x-2 rounded-lg px-4 py-2 no-underline"
+                        className="rounded-lg px-4 py-2 no-underline"
                     >
-                        More
-                        <span
-                            className={cn(
-                                "ease-out-cubic pointer-events-none block rotate-90 text-sm transition-transform duration-[250ms]",
-                                {
-                                    "-rotate-90": isActive,
-                                },
-                            )}
-                        >{`>`}</span>
+                        <span className="animated-underline before:bg-primary flex gap-x-2 after:bg-transparent">
+                            More
+                            <span
+                                className={cn(
+                                    "ease-out-cubic pointer-events-none block rotate-90 text-sm transition-transform duration-[250ms]",
+                                    {
+                                        "-rotate-90": isActive,
+                                    },
+                                )}
+                            >{`>`}</span>
+                        </span>
                     </button>
                 </li>
             </ul>
@@ -254,13 +258,15 @@ const Navbar = () => {
                     variants={activeVariants}
                     className="bg-secondary flex h-fit w-full origin-left flex-col justify-evenly rounded-lg py-2"
                 >
-                    {extraMenus.map((menu, i) => (
+                    {NAVBAR_MORE_MENUS.map((menu, i) => (
                         <li key={i} onClick={() => setIsActive(false)}>
                             <PageTransitionLink
                                 href={menu.href}
                                 className="inline-block w-full bg-transparent"
                             >
-                                {menu.label}
+                                <p className="animated-underline before:bg-primary w-full after:bg-transparent">
+                                    {menu.label}
+                                </p>
                             </PageTransitionLink>
                         </li>
                     ))}
@@ -290,7 +296,6 @@ const Navbar = () => {
                             width={spotifyCurrentlyPlaying ? 640 : undefined}
                             height={spotifyCurrentlyPlaying ? 640 : undefined}
                             priority
-                            unoptimized
                         />
                         <div className="flex h-full w-full flex-col items-center justify-evenly gap-y-2 overflow-hidden">
                             {spotifyCurrentlyPlaying === "loading" ? (
@@ -300,7 +305,7 @@ const Navbar = () => {
                                     <a
                                         href={spotifyCurrentlyPlaying.url}
                                         target="_blank"
-                                        className="flex w-full flex-row items-center gap-2 no-underline"
+                                        className="flex w-full flex-row items-center gap-x-2 no-underline"
                                     >
                                         <Image
                                             src={Spotify_Primary_Logo_RGB_White}
@@ -328,7 +333,15 @@ const Navbar = () => {
                                     </div>
                                 </>
                             ) : (
-                                <p>Not Playing</p>
+                                <p className="flex w-full flex-row items-center gap-x-2">
+                                    <Image
+                                        src={Spotify_Primary_Logo_RGB_White}
+                                        alt="Spotify_Primary_Logo_RGB_Black"
+                                        className="flex h-[24px] w-fit gap-x-2"
+                                        priority
+                                    />
+                                    <span>Not Playing</span>
+                                </p>
                             )}
                         </div>
                     </div>

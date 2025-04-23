@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 
-import { baseUrl, openGraphBaseURL } from "@/constants/data/urls";
+import { BASE_URL, OG_BASE_API_URL } from "@/constants/constants";
 
 import Hero from "./_components/parts/Hero";
 import MiniProjects from "./_components/parts/MiniProjects";
@@ -9,10 +9,10 @@ export const metadata: Metadata = {
     title: "Projects",
     openGraph: {
         siteName: "Fadhilkholaf",
-        url: baseUrl,
+        url: BASE_URL,
         images: [
             {
-                url: `${openGraphBaseURL}projects.png`,
+                url: `${OG_BASE_API_URL}?name=Projects`,
                 width: 800,
                 height: 418,
             },
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         creator: "@fadhilkholaf",
-        images: `${openGraphBaseURL}projects.png`,
+        images: `${OG_BASE_API_URL}?name=Projects`,
     },
 };
 

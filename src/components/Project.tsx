@@ -1,68 +1,37 @@
-"use client";
-
 import Image from "next/image";
-import { useEffect, useRef } from "react";
 
-import { useCursorImage } from "@/hooks/useCursorImage";
-import { ProjectInterface } from "@/types/project";
+import { ProjectMDXMetadata } from "@/types/mdx";
 
 import PageTransitionLink from "./PageTransitionLink";
 
-const Project = ({ project }: { project: ProjectInterface }) => {
-    const { setCursorImage } = useCursorImage();
-
-    const ref = useRef<HTMLLIElement>(null);
-
-    useEffect(() => {
-        const isMedium = window.innerWidth >= 768;
-        const currentRef = ref.current;
-        const image = project.image;
-
-        if (currentRef && isMedium && image) {
-            currentRef.addEventListener("pointerenter", () =>
-                setCursorImage(image.src),
-            );
-            currentRef.addEventListener("pointerleave", () =>
-                setCursorImage(null),
-            );
-        }
-
-        return () => {
-            if (currentRef && isMedium && image) {
-                currentRef.removeEventListener("pointerenter", () =>
-                    setCursorImage(image.src),
-                );
-                currentRef.removeEventListener("pointerleave", () =>
-                    setCursorImage(null),
-                );
-            }
-        };
-    }, []);
-
+const Project = ({ project }: { project: ProjectMDXMetadata }) => {
     return (
-        <li ref={ref} className="flex flex-col gap-4">
-            <header>
-                {project.image && (
-                    <Image
-                        src={project.image}
-                        alt={project.name}
-                        className="aspect-video h-fit w-full rounded-lg object-cover md:hidden"
-                    />
-                )}
-                <p className="mt-2">{project.type}</p>
+        <li className="flex flex-col gap-y-4">
+            <header className="flex flex-col gap-y-2">
+                <Image
+                    src={project.imageURL}
+                    alt={project.title}
+                    width={1280}
+                    height={720}
+                    priority
+                    className="aspect-video h-fit w-full rounded-lg object-cover"
+                />
+                <div>
+                    <h2>{project.title}</h2>
+                    <p>{project.tags.slice(0, 3).join(" • ")}</p>
+                </div>
             </header>
             <main>
-                <h3>{project.name}</h3>
-                <p>{project.tag}</p>
-            </main>
-            <footer className="flex gap-4">
                 <PageTransitionLink
-                    href={`/projects/${project.name.toLowerCase().replaceAll(" ", "-")}`}
+                    href={`/projects/${project.fileName}`}
                     transitionType="vertical"
+                    className="inline-block"
                 >
-                    Details →
+                    <span className="animated-underline before:bg-primary">
+                        Details →
+                    </span>
                 </PageTransitionLink>
-            </footer>
+            </main>
         </li>
     );
 };

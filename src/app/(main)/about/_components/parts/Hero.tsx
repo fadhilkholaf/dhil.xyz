@@ -1,14 +1,8 @@
-"use client";
-
 import Image from "next/image";
 
-import Me from "@/../public/images/home/fadhilkholaf.jpg";
-import DummyImageLandscape from "@/../public/images/main/gif.gif";
-import { useCursorImage } from "@/hooks/useCursorImage";
+import Ritsuki from "@/public/images/home/ritsuki.jpeg";
 
 const Hero = () => {
-    const { setCursorImage } = useCursorImage();
-
     return (
         <section className="flex h-fit w-full flex-col gap-16">
             <div>
@@ -35,14 +29,10 @@ const Hero = () => {
                     </p>
                 </div>
                 <Image
-                    src={Me}
-                    alt="me"
+                    src={Ritsuki}
+                    alt="Ritsuki"
                     priority
-                    onPointerEnter={() =>
-                        setCursorImage(DummyImageLandscape.src)
-                    }
-                    onPointerLeave={() => setCursorImage(null)}
-                    className="aspect-square h-fit w-2/3 max-w-[300px] -scale-x-100 self-center rounded-lg object-cover sm:self-baseline"
+                    className="aspect-square h-fit w-2/3 max-w-[300px] self-center rounded-lg object-cover sm:self-baseline"
                 />
             </main>
         </section>

@@ -8,6 +8,15 @@ import PageTransitionLink from "@/components/PageTransitionLink";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
     return {
+        h1: (props: ComponentPropsWithoutRef<"h1">) => (
+            <h1 className="pt-16" {...props} />
+        ),
+        h2: (props: ComponentPropsWithoutRef<"h1">) => (
+            <h2 className="pt-8" {...props} />
+        ),
+        h3: (props: ComponentPropsWithoutRef<"h1">) => (
+            <h3 className="pt-4" {...props} />
+        ),
         a: ({ href, ...props }: ComponentPropsWithoutRef<"a">) => {
             if (href?.startsWith("/")) {
                 return <PageTransitionLink href={href} {...props} />;
@@ -55,7 +64,8 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
                     alt={alt}
                     width={1280}
                     height={720}
-                    className="w-full rounded-lg"
+                    priority
+                    className="mt-2 w-full rounded-lg"
                     {...rest}
                 />
             );

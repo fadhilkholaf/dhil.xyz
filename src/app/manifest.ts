@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next";
 
-import { baseUrl } from "@/constants/data/urls";
+import { BASE_URL } from "@/constants/constants";
 
 const manifest = (): MetadataRoute.Manifest => {
     return {
@@ -10,13 +10,13 @@ const manifest = (): MetadataRoute.Manifest => {
         lang: "en-US",
         icons: [
             {
-                src: `${baseUrl}/images/icons/web-app-manifest-192x192.png`,
+                src: `${BASE_URL}/images/icons/web-app-manifest-192x192.png`,
                 sizes: "192x192",
                 type: "image/png",
                 purpose: "maskable",
             },
             {
-                src: `${baseUrl}/images/icons/web-app-manifest-512x512.png`,
+                src: `${BASE_URL}/images/icons/web-app-manifest-512x512.png`,
                 sizes: "512x512",
                 type: "image/png",
                 purpose: "maskable",
