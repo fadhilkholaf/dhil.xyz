@@ -60,7 +60,7 @@ const ProjectDetailsPage = async ({
     }
 
     const { default: Blog } = await import(
-        `@/contents/blog/${blog.fileName}.mdx`
+        `@/public/contents/blog/${blog.fileName}.mdx`
     );
 
     return (
