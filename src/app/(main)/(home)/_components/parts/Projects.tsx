@@ -1,5 +1,3 @@
-"use server";
-
 import { getAllFeaturedProjectsMetadata } from "@/actions/projects";
 import PageTransitionLink from "@/components/PageTransitionLink";
 import Project from "@/components/Project";
