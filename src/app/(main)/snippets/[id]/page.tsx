@@ -58,7 +58,7 @@ const ProjectDetailsPage = async ({
     }
 
     const { default: Snippet } = await import(
-        `@/public/contents/snippets/${snippet.fileName}.mdx`
+        `@/contents/snippets/${snippet.fileName}.mdx`
     );
 
     return (

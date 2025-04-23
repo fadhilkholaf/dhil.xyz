@@ -3,7 +3,7 @@ import { join } from "path";
 
 export const getMDXMetadata = async (dirName: string[], fileName: string) => {
     const { metadata } = await import(
-        `@/public/contents/${dirName.join("/")}/${fileName}`
+        `@/contents/${dirName.join("/")}/${fileName}`
     );
 
     return metadata;
@@ -11,7 +11,7 @@ export const getMDXMetadata = async (dirName: string[], fileName: string) => {
 
 export const getAllMDXMetadata = async (dirName: string[]) => {
     return await Promise.all(
-        readdirSync(join(process.cwd(), "public", "contents", ...dirName), {
+        readdirSync(join(process.cwd(), "src", "contents", ...dirName), {
             withFileTypes: true,
         })
             .filter(

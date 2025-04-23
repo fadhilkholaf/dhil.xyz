@@ -66,7 +66,7 @@ const ProjectDetailsPage = async ({
     const projectIndex = allProjects.findIndex((p) => p.fileName === id);
 
     const { default: Project } = await import(
-        `@/public/contents/projects/${projectIndex < mainProjects.length ? "main" : "mini"}/${project.fileName}.mdx`
+        `@/contents/projects/${projectIndex < mainProjects.length ? "main" : "mini"}/${project.fileName}.mdx`
     );
 
     const nextProject =

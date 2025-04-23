@@ -3,10 +3,10 @@ import Projects from "./_components/parts/Projects";
 
 const HomePage = () => {
     return (
-        <>
+        <main>
             <Hero />
-            {/* <Projects /> */}
-        </>
+            <Projects />
+        </main>
     );
 };
 
