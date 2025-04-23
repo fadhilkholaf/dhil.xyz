@@ -1,3 +1,5 @@
+"use server";
+
 import { FEATURED_PROJECTS } from "@/constants/constants";
 import { ProjectMDXMetadata } from "@/types/mdx";
 

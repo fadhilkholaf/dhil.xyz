@@ -1,3 +1,5 @@
+"use server";
+
 import { BlogMDXMetadata } from "@/types/mdx";
 
 import { getAllMDXMetadata } from "./mdx";

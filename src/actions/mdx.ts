@@ -1,5 +1,7 @@
-import { readdirSync } from "fs";
-import { join } from "path";
+"use server";
+
+import fs from "node:fs";
+import path from "node:path";
 
 export const getMDXMetadata = async (dirName: string[], fileName: string) => {
     const { metadata } = await import(
@@ -11,18 +13,18 @@ export const getMDXMetadata = async (dirName: string[], fileName: string) => {
 
 export const getAllMDXMetadata = async (dirName: string[]) => {
     return await Promise.all(
-        readdirSync(join(process.cwd(), "src", "contents", ...dirName), {
-            withFileTypes: true,
-        })
-            .filter(
-                (d) =>
-                    !d.isDirectory() &&
-                    d.name.split(".").slice(-1)[0] === "mdx",
+        fs
+            .readdirSync(
+                path.resolve(process.cwd(), "src", "contents", ...dirName),
+                {
+                    withFileTypes: true,
+                },
             )
+            .filter((d) => !d.isDirectory() && path.extname(d.name) === ".mdx")
             .map(async (d) => {
                 return {
                     ...(await getMDXMetadata(dirName, d.name)),
-                    fileName: d.name.split(".").slice(0, -1).join(""),
+                    fileName: d.name.replace(path.extname(d.name), ""),
                 };
             }),
     );
