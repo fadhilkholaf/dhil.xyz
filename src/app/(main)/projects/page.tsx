@@ -5,6 +5,8 @@ import { BASE_URL, OG_BASE_API_URL } from "@/constants/constants";
 import Hero from "./_components/parts/Hero";
 import MiniProjects from "./_components/parts/MiniProjects";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
     title: "Projects",
     openGraph: {

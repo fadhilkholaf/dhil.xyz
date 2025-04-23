@@ -4,6 +4,8 @@ import { getAllBlogMetadata } from "@/actions/blog";
 import { BASE_URL, OG_BASE_API_URL } from "@/constants/constants";
 import Blog from "@/components/Blog";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
     title: "Blog",
     openGraph: {
