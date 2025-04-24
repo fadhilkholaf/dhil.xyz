@@ -2,10 +2,11 @@
 
 import Image from "next/image";
 
-import Me from "@/public/images/home/fadhilkholaf.jpg";
-import DummyImageLandscape from "@/public/images/home/gif.gif";
 import PageTransitionLink from "@/components/PageTransitionLink";
 import { useCursorImage } from "@/hooks/useCursorImage";
+
+import Me from "@/public/images/home/fadhilkholaf.jpg";
+import DummyImageLandscape from "@/public/images/home/gif.gif";
 
 const Hero = () => {
     const { setCursorImage } = useCursorImage();

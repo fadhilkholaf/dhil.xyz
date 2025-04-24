@@ -6,7 +6,6 @@ import { getAllMDXMetadata } from "./mdx";
 export const getAllMainProjectsMetadata = async () => {
     const mainProjectsMetadata = (await getAllMDXMetadata([
         "projects",
-        "post",
         "main",
     ])) as ProjectMDXMetadata[];
 
@@ -21,7 +20,6 @@ export const getAllMainProjectsMetadata = async () => {
 export const getAllMiniProjectsMetadata = async () => {
     const mainProjectsMetadata = (await getAllMDXMetadata([
         "projects",
-        "post",
         "mini",
     ])) as ProjectMDXMetadata[];
 

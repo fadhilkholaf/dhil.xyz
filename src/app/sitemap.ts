@@ -15,6 +15,18 @@ const sitemap = (): MetadataRoute.Sitemap => {
             priority: 0.75,
         },
         {
+            url: "https://fadhilkholaf.my.id/blog",
+            lastModified: new Date(),
+            changeFrequency: "weekly",
+            priority: 0.75,
+        },
+        {
+            url: "https://fadhilkholaf.my.id/snippets",
+            lastModified: new Date(),
+            changeFrequency: "weekly",
+            priority: 0.75,
+        },
+        {
             url: "https://fadhilkholaf.my.id/about",
             lastModified: new Date(),
             changeFrequency: "yearly",
