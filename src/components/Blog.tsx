@@ -11,7 +11,7 @@ const Blog = ({ blog }: { blog: BlogMDXMetadata }) => {
             <PageTransitionLink
                 href={`/blog/${blog.fileName}`}
                 transitionType="vertical"
-                className="p-0"
+                className="p-0 text-pink-100"
             >
                 <article className="group relative overflow-hidden rounded-lg">
                     <header>

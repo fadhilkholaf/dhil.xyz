@@ -1,5 +1,5 @@
-import fs from "node:fs";
-import path from "node:path";
+import fs from "fs";
+import path from "path";
 
 export const getMDXMetadata = async (dirName: string[], fileName: string) => {
     const { metadata } = await import(
