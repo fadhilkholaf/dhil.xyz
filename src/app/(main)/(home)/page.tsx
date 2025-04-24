@@ -1,18 +1,12 @@
-import { getAllFeaturedProjectsMetadata } from "@/actions/projects";
-
 import Hero from "./_components/parts/Hero";
 import Projects from "./_components/parts/Projects";
 
-export const dynamic = "force-dynamic";
-
-const HomePage = async () => {
-    const featuredProjectsMetadata = await getAllFeaturedProjectsMetadata();
-
+const HomePage = () => {
     return (
-        <main>
+        <>
             <Hero />
-            <Projects featuredProjectsMetadata={featuredProjectsMetadata} />
-        </main>
+            <Projects />
+        </>
     );
 };
 

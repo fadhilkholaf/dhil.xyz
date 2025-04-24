@@ -1,11 +1,9 @@
-"use server";
-
 import fs from "node:fs";
 import path from "node:path";
 
 export const getMDXMetadata = async (dirName: string[], fileName: string) => {
     const { metadata } = await import(
-        `@/contents/${dirName.join("/")}/${fileName}`
+        `@/app/(main)/${dirName.join("/")}/${fileName}`
     );
 
     return metadata;
@@ -15,7 +13,7 @@ export const getAllMDXMetadata = async (dirName: string[]) => {
     return await Promise.all(
         fs
             .readdirSync(
-                path.resolve(process.cwd(), "src", "contents", ...dirName),
+                path.join(process.cwd(), "src", "app", "(main)", ...dirName),
                 {
                     withFileTypes: true,
                 },

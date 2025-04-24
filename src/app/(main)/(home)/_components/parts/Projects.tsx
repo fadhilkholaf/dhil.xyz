@@ -1,12 +1,10 @@
+import { getAllFeaturedProjectsMetadata } from "@/actions/projects";
 import PageTransitionLink from "@/components/PageTransitionLink";
 import Project from "@/components/Project";
-import { ProjectMDXMetadata } from "@/types/mdx";
 
-const Projects = ({
-    featuredProjectsMetadata,
-}: {
-    featuredProjectsMetadata: ProjectMDXMetadata[];
-}) => {
+const Projects = async () => {
+    const featuredProjectsMetadata = await getAllFeaturedProjectsMetadata();
+
     return (
         <section className="flex h-fit w-full flex-col gap-16">
             <header>

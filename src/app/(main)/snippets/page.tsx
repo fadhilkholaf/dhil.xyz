@@ -4,8 +4,6 @@ import { getAllSnippetsMetadata } from "@/actions/snippets";
 import Snippet from "@/components/Snippet";
 import { BASE_URL, OG_BASE_API_URL } from "@/constants/constants";
 
-export const dynamic = "force-dynamic";
-
 export const metadata: Metadata = {
     title: "Snippets",
     openGraph: {

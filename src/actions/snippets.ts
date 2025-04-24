@@ -1,5 +1,3 @@
-"use server";
-
 import { SnippetMDXMetadata } from "@/types/mdx";
 
 import { getAllMDXMetadata } from "./mdx";
