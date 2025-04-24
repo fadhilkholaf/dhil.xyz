@@ -30,6 +30,9 @@ const nextConfig: NextConfig = {
             },
         ],
     },
+    outputFileTracingIncludes: {
+        "/": ["./src/contents/**/*"],
+    },
 };
 
 const withMDX = createMDX();

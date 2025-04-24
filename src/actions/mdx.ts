@@ -3,7 +3,7 @@ import path from "node:path";
 
 export const getMDXMetadata = async (dirName: string[], fileName: string) => {
     const { metadata } = await import(
-        `@/app/(main)/${dirName.join("/")}/${fileName}`
+        `@/contents/${dirName.join("/")}/${fileName}`
     );
 
     return metadata;
@@ -13,7 +13,7 @@ export const getAllMDXMetadata = async (dirName: string[]) => {
     return await Promise.all(
         fs
             .readdirSync(
-                path.join(process.cwd(), "src", "app", "(main)", ...dirName),
+                path.join(process.cwd(), "src", "contents", ...dirName),
                 {
                     withFileTypes: true,
                 },
