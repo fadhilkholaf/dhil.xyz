@@ -30,15 +30,6 @@ const nextConfig: NextConfig = {
             },
         ],
     },
-    // outputFileTracingIncludes: {
-    //     "/": ["./src/contents/projects/**/*"],
-    //     "/projects": ["./src/contents/projects/**/*"],
-    //     "/projects/\\[id\\]": ["./src/contents/projects/**/*"],
-    //     "/blog": ["./src/contents/blog/**/*"],
-    //     "/blog/\\[id\\]": ["./src/contents/blog/**/*"],
-    //     "/snippets": ["./src/contents/snippets/**/*"],
-    //     "/snippets/\\[id\\]": ["./src/contents/snippets/**/*"],
-    // },
 };
 
 const withMDX = createMDX();

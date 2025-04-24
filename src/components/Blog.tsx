@@ -11,7 +11,7 @@ const Blog = ({ blog }: { blog: BlogMDXMetadata }) => {
             <PageTransitionLink
                 href={`/blog/${blog.fileName}`}
                 transitionType="vertical"
-                className="p-0 text-pink-100"
+                className="p-0"
             >
                 <article className="group relative overflow-hidden rounded-lg">
                     <header>
@@ -21,10 +21,10 @@ const Blog = ({ blog }: { blog: BlogMDXMetadata }) => {
                             width={1280}
                             height={720}
                             priority
-                            className="aspect-video h-fit w-full object-cover brightness-[0.40] transition-[scale] duration-[2000ms] ease-in-out group-hover:scale-[102.5%] md:aspect-[3/1]"
+                            className="aspect-video h-fit w-full object-cover brightness-75 transition-[filter,scale] duration-[1000ms] ease-in-out group-hover:scale-[102.5%] group-hover:brightness-50 md:aspect-[3/1]"
                         />
                     </header>
-                    <main className="absolute top-0 left-0 flex size-full flex-col justify-between p-4">
+                    <main className="absolute top-0 left-0 flex size-full flex-col justify-between px-4 py-2">
                         <header>
                             <h1 className="font-italiana text-3xl font-normal tracking-wide italic md:text-5xl">
                                 {blog.title}
