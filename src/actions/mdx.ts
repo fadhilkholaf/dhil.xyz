@@ -10,6 +10,12 @@ export const getMDXMetadata = async (dirName: string[], fileName: string) => {
 };
 
 export const getAllMDXMetadata = async (dirName: string[]) => {
+    if (
+        !fs.existsSync(path.join(process.cwd(), "src", "contents", ...dirName))
+    ) {
+        return [];
+    }
+
     return await Promise.all(
         fs
             .readdirSync(
