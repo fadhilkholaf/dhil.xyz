@@ -71,6 +71,8 @@ const CursorImage = ({ cursorImage }: { cursorImage: string | null }) => {
         };
     }, []);
 
+    const isGif = cursorImage?.slice(cursorImage.lastIndexOf(".")) === ".gif";
+
     return (
         <motion.div
             initial="initial"
@@ -94,6 +96,7 @@ const CursorImage = ({ cursorImage }: { cursorImage: string | null }) => {
                             width={400}
                             height={225}
                             priority
+                            unoptimized={isGif}
                             className="aspect-video"
                         />
                     </motion.div>

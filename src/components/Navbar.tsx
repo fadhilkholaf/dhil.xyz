@@ -56,8 +56,6 @@ const Navbar = () => {
     const duration = useMotionValue(0);
 
     useEffect(() => {
-        console.log(spotifyCurrentlyPlaying);
-
         const cssRoot = document.documentElement;
         let interval: ReturnType<typeof setInterval>;
         let timeout: ReturnType<typeof setTimeout>;
@@ -210,15 +208,16 @@ const Navbar = () => {
             </PageTransitionLink>
             <ul className="bg-secondary text-primary flex h-fit w-full justify-between rounded-lg md:w-1/2">
                 {NAVBAR_MENUS.map((menu, i) => (
-                    <PageTransitionLink
-                        key={i}
-                        href={menu.href}
-                        className="bg-transparent"
-                    >
-                        <p className="animated-underline before:bg-primary after:bg-transparent">
-                            {menu.label}
-                        </p>
-                    </PageTransitionLink>
+                    <li key={i}>
+                        <PageTransitionLink
+                            href={menu.href}
+                            className="inline-block bg-transparent"
+                        >
+                            <p className="animated-underline before:bg-primary after:bg-transparent">
+                                {menu.label}
+                            </p>
+                        </PageTransitionLink>
+                    </li>
                 ))}
                 <li className="py-2">
                     <span className="bg-primary block h-full w-px"></span>
@@ -293,8 +292,8 @@ const Navbar = () => {
                                     : "Lily squared"
                             }
                             className="h-full w-fit"
-                            width={spotifyCurrentlyPlaying ? 640 : undefined}
-                            height={spotifyCurrentlyPlaying ? 640 : undefined}
+                            width={spotifyCurrentlyPlaying ? 300 : undefined}
+                            height={spotifyCurrentlyPlaying ? 300 : undefined}
                             priority
                         />
                         <div className="flex h-full w-full flex-col items-center justify-evenly gap-y-2 overflow-hidden">

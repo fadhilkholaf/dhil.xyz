@@ -74,7 +74,7 @@ export const getCurrentlyPlaying =
             }
 
             const data: SpotifyCurrentlyPlayingInterface = {
-                image: currentlyPlaying.item.album.images[0].url,
+                image: currentlyPlaying.item.album.images[1].url,
                 title: currentlyPlaying.item.name,
                 artists: currentlyPlaying.item.artists.map(
                     (artist: SpotifyArtistInterface, i: number) => {
@@ -82,7 +82,7 @@ export const getCurrentlyPlaying =
                             return {
                                 id: artist.id,
                                 name: artist.name,
-                                image: firstArtist.images[0].url,
+                                image: firstArtist.images[1].url,
                                 genres: firstArtist.genres,
                             };
                         }

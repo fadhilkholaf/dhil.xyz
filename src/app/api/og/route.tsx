@@ -28,7 +28,7 @@ export const GET = async (request: NextRequest) => {
                 }}
             >
                 <img
-                    src="https://res.cloudinary.com/fadhilkholaf/image/upload/v1745398941/fadhilkholaf.my.id/opengraph/p1ekkrahrowxblaoaatw.png"
+                    src="https://res.cloudinary.com/fadhilkholaf/image/upload/v1745588407/fadhilkholaf.my.id/opengraph/fn9xsxvfnq2nvtxyud99.png"
                     alt=""
                     style={{ position: "absolute", width: 800, height: 418 }}
                 />
