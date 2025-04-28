@@ -278,24 +278,30 @@ const Navbar = () => {
                     className="bg-secondary text-primary flex h-fit w-full origin-right flex-col gap-y-4 rounded-lg p-4"
                 >
                     <div className="flex h-[6rem] w-full gap-x-4">
-                        <Image
-                            src={
-                                spotifyCurrentlyPlaying !== "loading" &&
-                                spotifyCurrentlyPlaying
-                                    ? spotifyCurrentlyPlaying.image
-                                    : LilySquaredImage
-                            }
-                            alt={
-                                spotifyCurrentlyPlaying !== "loading" &&
-                                spotifyCurrentlyPlaying
-                                    ? spotifyCurrentlyPlaying.album
-                                    : "Lily squared"
-                            }
-                            className="h-full w-fit"
-                            width={spotifyCurrentlyPlaying ? 300 : undefined}
-                            height={spotifyCurrentlyPlaying ? 300 : undefined}
-                            priority
-                        />
+                        <div className="size-[6rem] shrink-0">
+                            <Image
+                                src={
+                                    spotifyCurrentlyPlaying !== "loading" &&
+                                    spotifyCurrentlyPlaying
+                                        ? spotifyCurrentlyPlaying.image
+                                        : LilySquaredImage
+                                }
+                                alt={
+                                    spotifyCurrentlyPlaying !== "loading" &&
+                                    spotifyCurrentlyPlaying
+                                        ? spotifyCurrentlyPlaying.album
+                                        : "Lily squared"
+                                }
+                                className="h-full w-fit"
+                                width={
+                                    spotifyCurrentlyPlaying ? 300 : undefined
+                                }
+                                height={
+                                    spotifyCurrentlyPlaying ? 300 : undefined
+                                }
+                                priority
+                            />
+                        </div>
                         <div className="flex h-full w-full flex-col items-center justify-evenly gap-y-2 overflow-hidden">
                             {spotifyCurrentlyPlaying === "loading" ? (
                                 <p>Loading</p>
