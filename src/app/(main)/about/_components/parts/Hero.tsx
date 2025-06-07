@@ -18,7 +18,7 @@ const Hero = () => {
                         Malang. I was born in 2006 in Tulungagung, and I spent
                         the first 16 years of my life in Tulungagung and
                         Trenggalek. My journey to becoming a programmer started
-                        when I was about 14 years old.
+                        when I was about 16 years old.
                     </p>
                     <p>
                         In my first year of high school, I learned Java and
