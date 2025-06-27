@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import Ritsuki from "@/public/images/home/ritsuki.jpeg";
+import FadhilKholaf from "@/public/images/home/fadhilkholaf.jpg";
 
 const Hero = () => {
     return (
@@ -15,10 +15,10 @@ const Hero = () => {
                     </div>
                     <p>
                         I am a software engineering student at SMK Telkom
-                        Malang. I was born in 2006 in Tulungagung, and I spent
-                        the first 16 years of my life in Tulungagung and
-                        Trenggalek. My journey to becoming a programmer started
-                        when I was about 16 years old.
+                        Malang(Graduated). I was born in 2006 in Tulungagung,
+                        and I spent the first 16 years of my life in Tulungagung
+                        and Trenggalek. My journey to becoming a programmer
+                        started when I was about 16 years old.
                     </p>
                     <p>
                         In my first year of high school, I learned Java and
@@ -29,8 +29,8 @@ const Hero = () => {
                     </p>
                 </div>
                 <Image
-                    src={Ritsuki}
-                    alt="Ritsuki"
+                    src={FadhilKholaf}
+                    alt="Fadhil Kholaf"
                     priority
                     className="aspect-square h-fit w-2/3 max-w-[300px] self-center rounded-lg object-cover sm:self-baseline"
                 />

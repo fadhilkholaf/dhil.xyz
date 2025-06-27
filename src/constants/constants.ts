@@ -11,10 +11,6 @@ export const NAVBAR_MENUS: NavbarMenu[] = [
         href: "/",
     },
     {
-        label: "Projects",
-        href: "/projects",
-    },
-    {
         label: "About",
         href: "/about",
     },
@@ -22,21 +18,21 @@ export const NAVBAR_MENUS: NavbarMenu[] = [
 
 export const NAVBAR_MORE_MENUS: NavbarMenu[] = [
     {
+        label: "Attribution",
+        href: "/attribution",
+    },
+    {
         label: "Blog",
         href: "/blog",
     },
-    // {
-    //     label: "Friends",
-    //     href: "/friends",
-    // },
+    {
+        label: "Projects",
+        href: "/projects",
+    },
     {
         label: "Snippets",
         href: "/snippets",
     },
-    {
-        label: "Attribution",
-        href: "/attribution",
-    },
 ];
 
-export const FEATURED_PROJECTS = ["Kantin Negro", "Lily"];
+export const FEATURED_PROJECTS = ["Shop.", "Kantin Negro"];

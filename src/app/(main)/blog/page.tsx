@@ -31,7 +31,7 @@ const BlogPage = async () => {
         <section className="flex h-fit w-full flex-col gap-y-8">
             <header>
                 <h1>Blog</h1>
-                <p>One of the way expressing myself. Sometimes writing shit.</p>
+                <p>One of the way expressing myself.</p>
             </header>
             <main>
                 <ul className="flex flex-col gap-y-8">

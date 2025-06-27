@@ -21,8 +21,10 @@ export const footerData: {
         Website: [
             { title: "About", href: "/about" },
             { title: "Attribution", href: "/attribution" },
+            { title: "Blog", href: "/blog" },
             { title: "Home", href: "/" },
             { title: "Projects", href: "/projects" },
+            { title: "Snippets", href: "/snippets" },
         ],
     },
     {

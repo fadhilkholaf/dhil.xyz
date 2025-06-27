@@ -17,7 +17,7 @@ export const experiences: ExperienceInterface[] = [
 
 export const education: ExperienceInterface[] = [
     {
-        dateRange: "Jul 2022 - Present",
+        dateRange: "Jul 2022 - Jun 2025",
         position: "Software Engineering",
         office: "SMK Telkom Malang - Malang, Indonesia",
         description: [
@@ -28,5 +28,12 @@ export const education: ExperienceInterface[] = [
             "Introduction to MySQL databases and querying techniques.",
             "Introduction to web development using PHP, Node.js, Express, and React.js.",
         ],
+    },
+    {
+        dateRange: "Aug 2025 - Present",
+        position: "Information Systems",
+        office: "Universitas Negeri Surabaya - Surabaya, Indonesia",
+        description: ["Sarjana Komputer, information systems."],
+        works: [],
     },
 ];
