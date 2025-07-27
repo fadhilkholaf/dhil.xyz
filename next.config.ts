@@ -29,6 +29,30 @@ const nextConfig: NextConfig = {
             },
         ],
     },
+    async redirects() {
+        return [
+            {
+                source: "/github",
+                destination: "https://github.com/fadhilkholaf",
+                permanent: true,
+            },
+            {
+                source: "/instagram",
+                destination: "https://instagram.com/muhammadfadhilkholaf",
+                permanent: true,
+            },
+            {
+                source: "/linkedin",
+                destination: "https://linkedin.com/fadhilkholaf",
+                permanent: true,
+            },
+            {
+                source: "/x",
+                destination: "https://x.com/fadhilkholaf",
+                permanent: true,
+            },
+        ];
+    },
 };
 
 const withMDX = createMDX();
