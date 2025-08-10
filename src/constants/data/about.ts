@@ -20,7 +20,7 @@ export const education: ExperienceInterface[] = [
         dateRange: "Aug 2025 - Present",
         position: "Information Systems",
         office: "Universitas Negeri Surabaya - Surabaya, Indonesia",
-        description: ["Sarjana komputer, information systems."],
+        description: ["Major in Information Systems, Faculty of Engineering."],
         works: [],
     },
     {

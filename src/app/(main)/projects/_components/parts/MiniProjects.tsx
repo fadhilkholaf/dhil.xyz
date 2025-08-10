@@ -7,7 +7,7 @@ const MiniProjects = async () => {
     return (
         <section className="flex h-fit w-full flex-col gap-16">
             <header>
-                <h1>Mini Projects [{miniProjectsMetadata.length}]</h1>
+                <h1>Side Projects [{miniProjectsMetadata.length}]</h1>
             </header>
             <main>
                 <ul className="grid grid-cols-1 gap-x-8 gap-y-16 md:grid-cols-2">

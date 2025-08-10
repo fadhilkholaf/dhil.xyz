@@ -32,22 +32,22 @@ const nextConfig: NextConfig = {
     async redirects() {
         return [
             {
-                source: "/github",
+                source: "/gh",
                 destination: "https://github.com/fadhilkholaf",
                 permanent: true,
             },
             {
-                source: "/instagram",
+                source: "/ig",
                 destination: "https://instagram.com/muhammadfadhilkholaf",
                 permanent: true,
             },
             {
-                source: "/linkedin",
+                source: "/li",
                 destination: "https://linkedin.com/fadhilkholaf",
                 permanent: true,
             },
             {
-                source: "/x",
+                source: "/tw",
                 destination: "https://x.com/fadhilkholaf",
                 permanent: true,
             },
