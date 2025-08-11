@@ -43,7 +43,7 @@ const nextConfig: NextConfig = {
             },
             {
                 source: "/li",
-                destination: "https://linkedin.com/fadhilkholaf",
+                destination: "https://linkedin.com/in/fadhilkholaf",
                 permanent: true,
             },
             {
