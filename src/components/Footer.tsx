@@ -4,7 +4,7 @@ import PageTransitionLink from "./PageTransitionLink";
 
 const Footer = () => {
     return (
-        <footer className="layout flex h-fit flex-col justify-between gap-x-16 gap-y-8 py-32 lg:flex-row">
+        <footer className="layout flex h-fit flex-col justify-between gap-x-16 gap-y-8 py-16 lg:flex-row">
             <header className="flex w-full flex-col gap-y-4 break-words lg:w-1/3">
                 <div className="flex flex-col gap-y-2">
                     <h3>ファディル</h3>
