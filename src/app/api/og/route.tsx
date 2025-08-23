@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+
 import { ImageResponse } from "next/og";
 import { type NextRequest } from "next/server";
 
@@ -7,8 +9,8 @@ export const contentType = "image/png";
 
 export const GET = async (request: NextRequest) => {
     const searchParams = request.nextUrl.searchParams;
-    const title = searchParams.get("title");
-    const name = searchParams.get("name");
+    const title = searchParams.get("t");
+    const subtitle = searchParams.get("s");
 
     const fontData = await fetch(
         new URL(
@@ -23,21 +25,21 @@ export const GET = async (request: NextRequest) => {
                 style={{
                     display: "flex",
                     position: "relative",
-                    width: 800,
-                    height: 418,
+                    width: 600,
+                    height: 315,
                 }}
             >
                 <img
-                    src="https://res.cloudinary.com/fadhilkholaf/image/upload/v1745588407/fadhilkholaf.my.id/opengraph/fn9xsxvfnq2nvtxyud99.png"
-                    alt=""
-                    style={{ position: "absolute", width: 800, height: 418 }}
+                    src="https://95k1y8fb5v.ufs.sh/f/EyY37ktHRd8rIeH0ElGFbo2a8ISXHvwn0msGAEjBTcMgqukC"
+                    alt="Open Graph Image"
+                    style={{ position: "absolute", width: 600, height: 315 }}
                 />
                 <p
                     style={{
                         fontSize: 32,
                         position: "absolute",
-                        left: 103,
-                        bottom: 97,
+                        left: 39,
+                        bottom: 60,
                         letterSpacing: -1,
                     }}
                 >
@@ -47,18 +49,18 @@ export const GET = async (request: NextRequest) => {
                     style={{
                         fontSize: 32,
                         position: "absolute",
-                        left: 103,
-                        bottom: 55,
+                        left: 39,
+                        bottom: 18,
                         letterSpacing: -1,
                     }}
                 >
-                    {name && decodeURIComponent(name)}
+                    {subtitle && decodeURIComponent(subtitle)}
                 </p>
             </div>
         ),
         {
-            width: 800,
-            height: 418,
+            width: 600,
+            height: 315,
             fonts: [{ data: fontData, name: "Roboto Mono Bold" }],
         },
     );

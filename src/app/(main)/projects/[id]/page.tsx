@@ -7,7 +7,7 @@ import {
     getAllProjectsMetadata,
 } from "@/actions/projects";
 import PageTransitionLink from "@/components/PageTransitionLink";
-import { BASE_URL } from "@/constants/constants";
+import { BASE_URL, OG_BASE_API_URL } from "@/constants/constants";
 import { formatDate } from "@/utils/utils";
 
 export const generateMetadata = async ({
@@ -29,20 +29,20 @@ export const generateMetadata = async ({
         title: project.title,
         description: project.description,
         openGraph: {
-            siteName: "Fadhilkholaf",
+            siteName: "Dhil",
             url: BASE_URL,
             images: [
                 {
-                    url: `${BASE_URL}/api/og?title=${decodeURIComponent("Projects:")}&name=${encodeURIComponent(project.title)}`,
-                    width: 800,
-                    height: 418,
+                    url: `${OG_BASE_API_URL}?t=${decodeURIComponent("Projects:")}&s=${encodeURIComponent(project.title)}`,
+                    width: 600,
+                    height: 315,
                 },
             ],
         },
         twitter: {
             card: "summary_large_image",
             creator: "@fadhilkholaf",
-            images: `${BASE_URL}/api/og?title=${decodeURIComponent("Projects:")}&name=${encodeURIComponent(project.title)}`,
+            images: `${OG_BASE_API_URL}?t=${decodeURIComponent("Projects:")}&s=${encodeURIComponent(project.title)}`,
         },
     };
 };

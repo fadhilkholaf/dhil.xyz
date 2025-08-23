@@ -7,20 +7,20 @@ import Blog from "@/components/Blog";
 export const metadata: Metadata = {
     title: "Blog",
     openGraph: {
-        siteName: "Fadhilkholaf",
+        siteName: "Dhil",
         url: BASE_URL,
         images: [
             {
-                url: `${OG_BASE_API_URL}?name=Blog`,
-                width: 800,
-                height: 418,
+                url: `${OG_BASE_API_URL}?s=Blog`,
+                width: 600,
+                height: 315,
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
         creator: "@fadhilkholaf",
-        images: `${OG_BASE_API_URL}?name=Blog`,
+        images: `${OG_BASE_API_URL}?s=Blog`,
     },
 };
 

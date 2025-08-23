@@ -7,20 +7,20 @@ import { BASE_URL, OG_BASE_API_URL } from "@/constants/constants";
 export const metadata: Metadata = {
     title: "Snippets",
     openGraph: {
-        siteName: "Fadhilkholaf",
+        siteName: "Dhil",
         url: BASE_URL,
         images: [
             {
-                url: `${OG_BASE_API_URL}?name=Snippets`,
-                width: 800,
-                height: 418,
+                url: `${OG_BASE_API_URL}?s=Snippets`,
+                width: 600,
+                height: 315,
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
         creator: "@fadhilkholaf",
-        images: `${OG_BASE_API_URL}?name=Snippets`,
+        images: `${OG_BASE_API_URL}?s=Snippets`,
     },
 };
 

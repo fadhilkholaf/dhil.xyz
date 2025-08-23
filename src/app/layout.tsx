@@ -28,13 +28,13 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
     metadataBase: new URL("/", BASE_URL),
-    title: { default: "Home | Fadhilkholaf", template: "%s | Fadhilkholaf" },
+    title: { default: "Home | Dhil", template: "%s | Dhil" },
     description:
         "Web developer with more than a year of experience. Currently down into UI/UX things and also a passionate lifelong learner.",
     authors: [
         {
             name: "Muhammad Fadhil Kholaf",
-            url: "https://fadhilkholaf.my.id",
+            url: "https://dhil.xyz",
         },
     ],
     generator: "Next.js",
@@ -56,20 +56,20 @@ export const metadata: Metadata = {
     },
     alternates: { canonical: "./" },
     openGraph: {
-        siteName: "Fadhilkholaf",
+        siteName: "Dhil",
         url: BASE_URL,
         images: [
             {
-                url: `${OG_BASE_API_URL}?name=Home`,
-                width: 800,
-                height: 418,
+                url: `${OG_BASE_API_URL}?s=Home`,
+                width: 600,
+                height: 315,
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
         creator: "@fadhilkholaf",
-        images: `${OG_BASE_API_URL}?name=Home`,
+        images: `${OG_BASE_API_URL}?s=Home`,
     },
 };
 
@@ -88,7 +88,7 @@ export default function RootLayout({
                         <PageTransitionProvider>
                             <CursorImageProvider>
                                 <Navbar />
-                                <main className="layout flex h-fit flex-col gap-32 pt-32">
+                                <main className="layout flex h-fit flex-col gap-32 pt-24 md:pt-32">
                                     {children}
                                 </main>
                                 <Footer />

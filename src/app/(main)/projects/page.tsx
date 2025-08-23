@@ -8,20 +8,20 @@ import MiniProjects from "./_components/parts/MiniProjects";
 export const metadata: Metadata = {
     title: "Projects",
     openGraph: {
-        siteName: "Fadhilkholaf",
+        siteName: "Dhil",
         url: BASE_URL,
         images: [
             {
-                url: `${OG_BASE_API_URL}?name=Projects`,
-                width: 800,
-                height: 418,
+                url: `${OG_BASE_API_URL}?s=Projects`,
+                width: 600,
+                height: 315,
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
         creator: "@fadhilkholaf",
-        images: `${OG_BASE_API_URL}?name=Projects`,
+        images: `${OG_BASE_API_URL}?s=Projects`,
     },
 };
 

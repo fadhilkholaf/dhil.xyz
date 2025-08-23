@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { getAllSnippetsMetadata } from "@/actions/snippets";
-import { BASE_URL } from "@/constants/constants";
+import { BASE_URL, OG_BASE_API_URL } from "@/constants/constants";
 import PageTransitionLink from "@/components/PageTransitionLink";
 
 export const generateMetadata = async ({
@@ -24,20 +24,20 @@ export const generateMetadata = async ({
         title: snippet.title,
         description: snippet.description,
         openGraph: {
-            siteName: "Fadhilkholaf",
+            siteName: "Dhil",
             url: BASE_URL,
             images: [
                 {
-                    url: `${BASE_URL}/api/og?title=${decodeURIComponent("Snippet:")}&name=${encodeURIComponent(snippet.title)}`,
-                    width: 800,
-                    height: 418,
+                    url: `${OG_BASE_API_URL}?t=${decodeURIComponent("Snippet:")}&s=${encodeURIComponent(snippet.title)}`,
+                    width: 600,
+                    height: 315,
                 },
             ],
         },
         twitter: {
             card: "summary_large_image",
             creator: "@fadhilkholaf",
-            images: `${BASE_URL}/api/og?title=${decodeURIComponent("Snippet:")}&name=${encodeURIComponent(snippet.title)}`,
+            images: `${OG_BASE_API_URL}?t=${decodeURIComponent("Snippet:")}&s=${encodeURIComponent(snippet.title)}`,
         },
     };
 };

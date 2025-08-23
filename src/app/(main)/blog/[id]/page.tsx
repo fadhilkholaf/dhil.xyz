@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 
 import { getAllBlogMetadata } from "@/actions/blog";
 import PageTransitionLink from "@/components/PageTransitionLink";
-import { BASE_URL } from "@/constants/constants";
+import { BASE_URL, OG_BASE_API_URL } from "@/constants/constants";
 import { formatDate } from "@/utils/utils";
 
 export const generateMetadata = async ({
@@ -26,20 +26,20 @@ export const generateMetadata = async ({
         title: blog.title,
         description: blog.description,
         openGraph: {
-            siteName: "Fadhilkholaf",
+            siteName: "Dhil",
             url: BASE_URL,
             images: [
                 {
-                    url: `${BASE_URL}/api/og?title=${decodeURIComponent("Blog:")}&name=${encodeURIComponent(blog.title)}`,
-                    width: 800,
-                    height: 418,
+                    url: `${OG_BASE_API_URL}?t=${decodeURIComponent("Blog:")}&s=${encodeURIComponent(blog.title)}`,
+                    width: 600,
+                    height: 315,
                 },
             ],
         },
         twitter: {
             card: "summary_large_image",
             creator: "@fadhilkholaf",
-            images: `${BASE_URL}/api/og?title=${decodeURIComponent("Blog:")}&name=${encodeURIComponent(blog.title)}`,
+            images: `${OG_BASE_API_URL}?t=${decodeURIComponent("Blog:")}&s=${encodeURIComponent(blog.title)}`,
         },
     };
 };
